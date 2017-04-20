@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,16 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-C0-G6e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inicio0" translatesAutoresizingMaskIntoConstraints="NO" id="rmP-C0-G6e">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a OfferCity!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HZ-cF-351">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido a OfferCity!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HZ-cF-351">
                                 <rect key="frame" x="96" y="323" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Encuentra las mejores promociones cerca de ti" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UhK-UK-TPV">
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Encuentra las mejores promociones cerca de ti" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UhK-UK-TPV">
                                 <rect key="frame" x="75" y="364" width="225" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="IGO-CW-pCw"/>
@@ -43,22 +42,22 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VYh-Up-msH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CvZ-P7-Baz">
-                                <rect key="frame" x="168" y="500" width="39" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="CvZ-P7-Baz">
+                                <rect key="frame" x="160" y="505" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.074509803920000006" green="0.47058823529999999" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="PageChange:" destination="9Tv-f2-vup" eventType="valueChanged" id="Am2-jX-YTP"/>
                                 </connections>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQX-41-LAR">
-                                <rect key="frame" x="38" y="547" width="300" height="40"/>
-                                <color key="backgroundColor" red="0.11951891620000001" green="0.52141713339999995" blue="0.74077634160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="19" y="552" width="337" height="40"/>
+                                <color key="backgroundColor" red="0.17647058823529413" green="0.27058823529411763" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="n95-Gr-Kgh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <inset key="titleEdgeInsets" minX="97" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Continuar" image="fb-logo">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -72,16 +71,16 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPy-V3-0lp">
-                                <rect key="frame" x="38" y="597" width="300" height="40"/>
-                                <color key="backgroundColor" red="0.74077634160000005" green="0.1208850714" blue="0.1374964004" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="19" y="597" width="337" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sut-nn-VzX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <inset key="titleEdgeInsets" minX="97" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Continuar" image="google-logo">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -101,9 +100,9 @@
                             <constraint firstItem="TQX-41-LAR" firstAttribute="centerX" secondItem="bit-p0-uF5" secondAttribute="centerX" id="41M-H5-ALU"/>
                             <constraint firstItem="0HZ-cF-351" firstAttribute="centerY" secondItem="bit-p0-uF5" secondAttribute="centerY" id="CD3-Yw-A3l"/>
                             <constraint firstItem="KZ8-2y-CoI" firstAttribute="top" secondItem="UPy-V3-0lp" secondAttribute="bottom" constant="30" id="DkW-SO-Dvg"/>
-                            <constraint firstItem="TQX-41-LAR" firstAttribute="width" secondItem="bit-p0-uF5" secondAttribute="width" multiplier="0.8" id="E3p-EW-fhe"/>
+                            <constraint firstItem="TQX-41-LAR" firstAttribute="width" secondItem="bit-p0-uF5" secondAttribute="width" multiplier="0.9" id="E3p-EW-fhe"/>
                             <constraint firstItem="TQX-41-LAR" firstAttribute="top" secondItem="CvZ-P7-Baz" secondAttribute="bottom" constant="10" id="IPl-9N-jSo"/>
-                            <constraint firstItem="UPy-V3-0lp" firstAttribute="width" secondItem="bit-p0-uF5" secondAttribute="width" multiplier="0.8" id="Irx-Gf-9sY"/>
+                            <constraint firstItem="UPy-V3-0lp" firstAttribute="width" secondItem="bit-p0-uF5" secondAttribute="width" multiplier="0.9" id="Irx-Gf-9sY"/>
                             <constraint firstItem="VYh-Up-msH" firstAttribute="width" secondItem="rmP-C0-G6e" secondAttribute="width" id="Lu4-0r-HiI"/>
                             <constraint firstItem="CvZ-P7-Baz" firstAttribute="centerX" secondItem="bit-p0-uF5" secondAttribute="centerX" id="MWF-D1-SvL"/>
                             <constraint firstItem="UhK-UK-TPV" firstAttribute="centerX" secondItem="bit-p0-uF5" secondAttribute="centerX" id="UuC-iv-uTi"/>
@@ -114,11 +113,12 @@
                             <constraint firstItem="rmP-C0-G6e" firstAttribute="centerX" secondItem="bit-p0-uF5" secondAttribute="centerX" id="eqr-lG-og4"/>
                             <constraint firstItem="UhK-UK-TPV" firstAttribute="top" secondItem="0HZ-cF-351" secondAttribute="bottom" constant="20" id="ken-ov-ur6"/>
                             <constraint firstItem="UhK-UK-TPV" firstAttribute="width" secondItem="bit-p0-uF5" secondAttribute="width" multiplier="0.6" id="lZl-wm-ICJ"/>
-                            <constraint firstItem="UPy-V3-0lp" firstAttribute="top" secondItem="TQX-41-LAR" secondAttribute="bottom" constant="10" id="ooW-AE-dhl"/>
+                            <constraint firstItem="UPy-V3-0lp" firstAttribute="top" secondItem="TQX-41-LAR" secondAttribute="bottom" constant="5" id="ooW-AE-dhl"/>
                             <constraint firstItem="VYh-Up-msH" firstAttribute="centerX" secondItem="bit-p0-uF5" secondAttribute="centerX" id="pUr-Di-Ky7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="30s-JJ-pZc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="fbButton" destination="TQX-41-LAR" id="52s-XM-iRZ"/>
                         <outlet property="imageView" destination="rmP-C0-G6e" id="n9B-6n-NsZ"/>
@@ -175,7 +175,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
                                                 </view>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" tag="300" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seleccionar" translatesAutoresizingMaskIntoConstraints="NO" id="IMW-76-3Hj">
-                                                    <rect key="frame" x="73" y="13" width="20" height="20"/>
+                                                    <rect key="frame" x="43" y="43" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="RQw-no-JOA"/>
                                                         <constraint firstAttribute="width" constant="20" id="zqw-YI-Zkg"/>
@@ -186,12 +186,12 @@
                                         <constraints>
                                             <constraint firstItem="gg4-f0-3Zg" firstAttribute="centerX" secondItem="JXu-oc-Hnh" secondAttribute="centerX" id="5Ue-am-tce"/>
                                             <constraint firstItem="UA5-zY-l04" firstAttribute="height" secondItem="JXu-oc-Hnh" secondAttribute="height" id="5ox-gB-KPY"/>
+                                            <constraint firstItem="IMW-76-3Hj" firstAttribute="centerX" secondItem="JXu-oc-Hnh" secondAttribute="centerX" id="9hN-Sd-dEN"/>
                                             <constraint firstItem="JsQ-0s-sdN" firstAttribute="centerY" secondItem="JXu-oc-Hnh" secondAttribute="centerY" id="CAJ-Tn-Zjm"/>
                                             <constraint firstItem="JsQ-0s-sdN" firstAttribute="height" secondItem="JXu-oc-Hnh" secondAttribute="height" id="H1B-cq-OHk"/>
+                                            <constraint firstItem="IMW-76-3Hj" firstAttribute="centerY" secondItem="JXu-oc-Hnh" secondAttribute="centerY" id="LQn-xK-Ngq"/>
                                             <constraint firstItem="UA5-zY-l04" firstAttribute="centerX" secondItem="JXu-oc-Hnh" secondAttribute="centerX" id="PD8-1u-2WT"/>
                                             <constraint firstItem="gg4-f0-3Zg" firstAttribute="width" secondItem="JXu-oc-Hnh" secondAttribute="width" id="Sdg-87-bw7"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="IMW-76-3Hj" secondAttribute="trailing" constant="5" id="Tfl-Ya-tKN"/>
-                                            <constraint firstItem="IMW-76-3Hj" firstAttribute="top" secondItem="JXu-oc-Hnh" secondAttribute="topMargin" constant="5" id="aCH-Sc-aOD"/>
                                             <constraint firstItem="UA5-zY-l04" firstAttribute="width" secondItem="JXu-oc-Hnh" secondAttribute="width" id="cHj-qm-5mv"/>
                                             <constraint firstItem="JsQ-0s-sdN" firstAttribute="width" secondItem="JXu-oc-Hnh" secondAttribute="width" id="cST-5b-S1f"/>
                                             <constraint firstItem="JsQ-0s-sdN" firstAttribute="centerX" secondItem="JXu-oc-Hnh" secondAttribute="centerX" id="f2X-QX-fj3"/>
@@ -357,8 +357,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Inicio0" width="1080" height="1920"/>
         <image name="fb-logo" width="20" height="20"/>
         <image name="google-logo" width="20" height="20"/>
-        <image name="seleccionar" width="51" height="51"/>
+        <image name="seleccionar" width="20" height="20"/>
     </resources>
 </document>

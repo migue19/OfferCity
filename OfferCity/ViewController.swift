@@ -18,7 +18,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var arrayImage = ["fb-logo","google-logo","seleccionar"]
+    //var arrayImage = ["fb-logo","google-logo","seleccionar"]
     var timer: Timer!
     var updateCounter: Int!
     var settings: [Settings] = []
@@ -27,6 +27,9 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         ///////Core Data
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -49,21 +52,31 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector( ViewController.updateTimer), userInfo: nil, repeats: true)
         
-        scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(arrayImage.count)), height: scrollView.frame.size.height )
+        scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(4)), height: scrollView.frame.size.height )
         
         scrollView.delegate = self
     }
+    
+    
+   /* override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let height: CGFloat = 20 //whatever height you want
+        let bounds = self.navigationController!.navigationBar.bounds
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height - height)
+        
+    }*/
+    
     
     //MARK: - Funciones Page Control
     
     internal func updateTimer()
     {
         
-        if(updateCounter <= 2)
+        if(updateCounter <= 3)
         {
             pageControl.currentPage = updateCounter
             
-            let image: String = arrayImage[updateCounter]
+            let image: String = "Inicio" + String(updateCounter)
             imageView.image = UIImage(named: image)
             
             updateCounter = updateCounter + 1
@@ -77,7 +90,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         updateCounter = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         
         pageControl.currentPage = updateCounter
-        let image: String = arrayImage[updateCounter]
+        let image: String = "Inicio" + String(updateCounter)
         imageView.image = UIImage(named: image)
         
         

@@ -11,13 +11,21 @@ import UIKit
 class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     @IBOutlet weak var preferenciasCollection: UICollectionView!
     var imei = "000354597072001669"
-    var preferencias:[String] = ["Puebla",
+    var nombres:[String] = ["Puebla",
                                  "Ciudad de México",
                                  "Monterrey",
                                  "Guadalajara",
-                                 "Queretaro",
+                                 "Querétaro",
                                  "Oaxaca"
                                ]
+    var imagenes:[String] = ["Puebla",
+                            "Ciudad-de-Mexico",
+                            "Monterrey",
+                            "Guadalajara",
+                            "Queretaro",
+                            "Oaxaca"
+    ]
+    
     var array: [Int] = []
     
     override func viewDidLoad() {
@@ -39,6 +47,14 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
         
     }
     
+    /*override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let height: CGFloat = 50 //whatever height you want
+        let bounds = self.navigationController!.navigationBar.bounds
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height + height)
+        
+    }*/
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,9 +63,9 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
     
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(preferencias.count)
+        print(nombres.count)
         
-        return preferencias.count
+        return nombres.count
     }
     
     
@@ -61,9 +77,9 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
         //cell.backgroundColor = UIColor.red
         let imageView = cell.viewWithTag(100) as! UIImageView
         let labelView = cell.viewWithTag(50) as! UILabel
-        labelView.text = preferencias[indexPath.row]
+        labelView.text = nombres[indexPath.row]
         //imageView.image = UIImage(named: preferencias[indexPath.row])
-        imageView.image = UIImage(named: "estilo")
+        imageView.image = UIImage(named: imagenes[indexPath.row])
         return cell
     }
     
@@ -80,7 +96,7 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
         {
             //subView.backgroundColor = UIColor.init(red: 299.0/255.0, green: 135.0/255.0, blue: 34.0/255.0, alpha: 0.6)
             select.isHidden = false
-            subView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.6)
+            subView.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.6)
             array.append(indexPath.row+1)
             ImprimirArray()
             
@@ -270,4 +286,7 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
      }*/
     
 }
+
+
+
 
