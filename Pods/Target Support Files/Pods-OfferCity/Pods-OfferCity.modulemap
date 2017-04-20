@@ -1,0 +1,6 @@
+framework module Pods_OfferCity {
+  umbrella header "Pods-OfferCity-umbrella.h"
+
+  export *
+  module * { export * }
+}
