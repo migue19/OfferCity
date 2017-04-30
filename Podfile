@@ -16,5 +16,6 @@ target 'OfferCity' do
    pod 'GoogleMaps'
    pod 'GooglePlaces'
    pod 'AlamofireSwiftyJSON'
+   pod 'HandyJSON'
 
 end

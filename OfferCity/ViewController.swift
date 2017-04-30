@@ -119,7 +119,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self){
             (result,error) in
             if error != nil{
-                print("Error al loguearse: \(error)")
+                print("Error al loguearse: \(String(describing: error))")
                 return
             }
             /*if(result!.token.tokenString! != nil){
@@ -162,7 +162,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
             if error != nil{
-                print("error al crear el firebase user  con la cuenta de Google: \(error)")
+                print("error al crear el firebase user  con la cuenta de Google: \(String(describing: error))")
                 return
             }
             

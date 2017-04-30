@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import Alamofire
 
 
@@ -29,6 +28,15 @@ class RestService{
                 return
             }
             
+            
+            //response?.stringValue
+            
+            //print(response!)
+            //print(response?.stringValue)
+            
+            //if let object = ShortProfileResponse.deserialize(from: response) {
+                // …
+            //}
             
             let contact: Int = response!["contact"].intValue
             let existeRegistro: Int = response!["existeRegistro"].intValue

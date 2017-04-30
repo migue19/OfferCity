@@ -10,6 +10,7 @@ import Foundation
 
 
 class ShortProfileResponse {
+
     var contacto = Int()
     var existeRegistro = Int()
     var mySubscription = Int()
@@ -20,7 +21,6 @@ class ShortProfileResponse {
     var visitaPerfil = Int()
     
 
-    
     
     init(contacto: Int, existeRegistro: Int, mySubscription: Int, name: String, pitcher: Int, publicProfile: Int, total: Int, visitaPerfil: Int ) {
         self.contacto = contacto
