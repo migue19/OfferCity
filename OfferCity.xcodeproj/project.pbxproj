@@ -67,6 +67,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3C3E4D601EB822830052D4B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D1449971EA2FC0F0068C597 /* AppDelegate.swift */,
+				7D1449A61EA2FC0F0068C597 /* Info.plist */,
+				3C3E4D631EB822EA0052D4B6 /* Firebase */,
+				7D9219471EA42922006C6976 /* Connection */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3C3E4D611EB8228A0052D4B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D14499B1EA2FC0F0068C597 /* Main.storyboard */,
+				7D1449A11EA2FC0F0068C597 /* Assets.xcassets */,
+				7D1449A31EA2FC0F0068C597 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3C3E4D621EB822920052D4B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C3E4D641EB8244F0052D4B6 /* LogIn */,
+				7D9219461EA428DB006C6976 /* TabController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3C3E4D631EB822EA0052D4B6 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
+				7D9219361EA4275B006C6976 /* GoogleService-Info.plist */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		3C3E4D641EB8244F0052D4B6 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				7D1449991EA2FC0F0068C597 /* ViewController.swift */,
+				7D92193B1EA428BC006C6976 /* PreferenciasViewController.swift */,
+			);
+			name = LogIn;
+			sourceTree = "<group>";
+		};
 		7BD7666BB43E8D09519E36B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,17 +144,9 @@
 		7D1449961EA2FC0F0068C597 /* OfferCity */ = {
 			isa = PBXGroup;
 			children = (
-				7D9219471EA42922006C6976 /* Connection */,
-				7D9219461EA428DB006C6976 /* TabController */,
-				7D1449971EA2FC0F0068C597 /* AppDelegate.swift */,
-				7D1449991EA2FC0F0068C597 /* ViewController.swift */,
-				7D92193B1EA428BC006C6976 /* PreferenciasViewController.swift */,
-				7D14499B1EA2FC0F0068C597 /* Main.storyboard */,
-				7D1449A11EA2FC0F0068C597 /* Assets.xcassets */,
-				7D1449A31EA2FC0F0068C597 /* LaunchScreen.storyboard */,
-				7D1449A61EA2FC0F0068C597 /* Info.plist */,
-				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
-				7D9219361EA4275B006C6976 /* GoogleService-Info.plist */,
+				3C3E4D601EB822830052D4B6 /* Model */,
+				3C3E4D611EB8228A0052D4B6 /* View */,
+				3C3E4D621EB822920052D4B6 /* Controller */,
 			);
 			path = OfferCity;
 			sourceTree = "<group>";
