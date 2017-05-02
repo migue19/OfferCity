@@ -260,7 +260,7 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
             print("Enviar Preferencias al Servicio")
             
             
-            self.performSegue(withIdentifier: "showTab", sender: self)
+            self.performSegue(withIdentifier: "PreferenciasToTabBar", sender: self)
             
             //Creacion de la instancia anidada de AsyncTask
             /*let preferenceTask = PreferenceTask( context: self )

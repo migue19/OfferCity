@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3E4D661EB824B50052D4B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D651EB824B50052D4B6 /* HomeViewController.swift */; };
+		3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */; };
+		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
+		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
 		7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449971EA2FC0F0068C597 /* AppDelegate.swift */; };
 		7D14499A1EA2FC0F0068C597 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449991EA2FC0F0068C597 /* ViewController.swift */; };
 		7D14499D1EA2FC0F0068C597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D14499B1EA2FC0F0068C597 /* Main.storyboard */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.release.xcconfig"; sourceTree = "<group>"; };
+		3C3E4D651EB824B50052D4B6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CercadetiViewController.swift; sourceTree = "<group>"; };
+		3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
+		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
 		7D1449941EA2FC0F0068C597 /* OfferCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfferCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1449971EA2FC0F0068C597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1449991EA2FC0F0068C597 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +123,16 @@
 			name = LogIn;
 			sourceTree = "<group>";
 		};
+		3C3E4D671EB825EA0052D4B6 /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */,
+				3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */,
+				3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */,
+			);
+			name = Slides;
+			sourceTree = "<group>";
+		};
 		7BD7666BB43E8D09519E36B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +172,10 @@
 		7D9219461EA428DB006C6976 /* TabController */ = {
 			isa = PBXGroup;
 			children = (
-				7D9219381EA428BC006C6976 /* MapaViewController.swift */,
+				3C3E4D651EB824B50052D4B6 /* HomeViewController.swift */,
+				3C3E4D671EB825EA0052D4B6 /* Slides */,
 				7D9219391EA428BC006C6976 /* PerfilViewController.swift */,
+				7D9219381EA428BC006C6976 /* MapaViewController.swift */,
 			);
 			name = TabController;
 			sourceTree = "<group>";
@@ -313,15 +333,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9219421EA428BC006C6976 /* PreferenciasViewController.swift in Sources */,
+				3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
 				7D14499A1EA2FC0F0068C597 /* ViewController.swift in Sources */,
 				7D9219441EA428BC006C6976 /* RestService.swift in Sources */,
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
+				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
+				3C3E4D661EB824B50052D4B6 /* HomeViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
+				3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
