@@ -8,7 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
-import Firebase
+//import Firebase
 import GoogleSignIn
 
 class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDelegate,GIDSignInDelegate, UIScrollViewDelegate  {
@@ -155,10 +155,10 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         }
         print("Logueo con Google Correcto", user)
         
-        guard let idtoken = user.authentication.idToken else {return}
-        guard let accestoken = user.authentication.accessToken else {return}
+        //guard let idtoken = user.authentication.idToken else {return}
+        //guard let accestoken = user.authentication.accessToken else {return}
         
-        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idtoken, accessToken: accestoken)
+        /*let credentials = FIRGoogleAuthProvider.credential(withIDToken: idtoken, accessToken: accestoken)
         
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
             if error != nil{
@@ -168,7 +168,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
             
             guard let uid = user?.uid else{return}
             print("Login completo con Google en Firebase id: ", uid)
-        })
+        })*/
         
         self.performSegue(withIdentifier: "showCiudad", sender: self)
         print(user.profile.email)

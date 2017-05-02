@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import Firebase
+//import Firebase
 import FBSDKCoreKit
 import GoogleSignIn
 import GoogleMaps
@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
+        //FIRApp.configure()
         
         GMSServices.provideAPIKey("AIzaSyDzN-JLHb9dy3B1uiYpSCd2eCb6xCMkHgk")
         
         GMSPlacesClient.provideAPIKey("AIzaSyDzN-JLHb9dy3B1uiYpSCd2eCb6xCMkHgk")
         
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        //GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
