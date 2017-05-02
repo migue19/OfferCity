@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2i4-W8-Rpq">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2i4-W8-Rpq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -229,10 +229,10 @@
             </objects>
             <point key="canvasLocation" x="1900" y="83.208395802098963"/>
         </scene>
-        <!--Filtro-->
+        <!--Perfil-->
         <scene sceneID="ht8-vE-FuJ">
             <objects>
-                <viewController id="352-7h-7Lg" sceneMemberID="viewController">
+                <viewController id="352-7h-7Lg" customClass="PerfilViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="So3-pi-Xbr"/>
                         <viewControllerLayoutGuide type="bottom" id="zDL-5K-Szu"/>
@@ -242,11 +242,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Filtro" id="znb-N2-pe4"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" id="znb-N2-pe4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clx-a0-auX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="412"/>
+            <point key="canvasLocation" x="3478" y="-244"/>
         </scene>
         <!--Mapa-->
         <scene sceneID="d5X-tM-sRo">
@@ -265,12 +265,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAu-ix-A2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="-896"/>
+            <point key="canvasLocation" x="3478" y="461"/>
         </scene>
-        <!--Perfil-->
+        <!--Home-->
         <scene sceneID="IbY-lx-WiW">
             <objects>
-                <viewController id="spq-c3-rGG" customClass="PerfilViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="spq-c3-rGG" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iwv-ou-UBl"/>
                         <viewControllerLayoutGuide type="bottom" id="v1O-Ux-xCu"/>
@@ -308,7 +308,7 @@
                             <constraint firstItem="MtM-Zg-snx" firstAttribute="centerX" secondItem="wAF-dQ-x9x" secondAttribute="centerX" id="ysS-Rs-04d"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" id="wln-eh-0Rw"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="wln-eh-0Rw"/>
                     <connections>
                         <outlet property="Name" destination="gvn-gm-pnL" id="lii-iJ-VSn"/>
                         <outlet property="Visitas" destination="MtM-Zg-snx" id="cdJ-u8-mi1"/>
@@ -316,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGg-OG-K2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="-244"/>
+            <point key="canvasLocation" x="3478" y="-935"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6Ez-AY-FiX">
