@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         //FIRApp.configure()
         
         GMSServices.provideAPIKey("AIzaSyDzN-JLHb9dy3B1uiYpSCd2eCb6xCMkHgk")
@@ -30,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
+        // MARK: - Tab Bar tintColor
+        
+        UITabBar.appearance().tintColor = UIColor(red: 121.0 / 255, green: 148.0 / 255, blue: 180.0 / 255, alpha: 1)
         
         return true
     }

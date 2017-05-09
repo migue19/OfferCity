@@ -508,7 +508,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -526,9 +526,9 @@
         <image name="Inicio0" width="1080" height="1920"/>
         <image name="fb-logo" width="20" height="20"/>
         <image name="google-logo" width="20" height="20"/>
-        <image name="home" width="40" height="40"/>
-        <image name="mapa" width="41" height="40"/>
-        <image name="perfil" width="41" height="40"/>
+        <image name="home" width="20" height="20"/>
+        <image name="mapa" width="20" height="20"/>
+        <image name="perfil" width="20" height="20"/>
         <image name="seleccionar" width="20" height="20"/>
     </resources>
 </document>
