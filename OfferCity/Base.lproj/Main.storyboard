@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="1900" y="83.208395802098963"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="rFW-Xd-0KV">
             <objects>
                 <viewController id="rzI-D6-BAY" sceneMemberID="viewController">
@@ -240,13 +240,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="tO4-qw-hWw"/>
+                    <tabBarItem key="tabBarItem" title="" image="mapa" id="tO4-qw-hWw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0i-ks-Uli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3794" y="82"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="108-2o-2UG">
             <objects>
                 <viewController id="eJ7-V8-ciB" sceneMemberID="viewController">
@@ -259,13 +259,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dti-MS-9I8"/>
+                    <tabBarItem key="tabBarItem" title="" image="perfil" id="dti-MS-9I8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4w-WC-fzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3810" y="741"/>
         </scene>
-        <!--Item 1-->
+        <!--Home View Controller-->
         <scene sceneID="QSt-GD-K7n">
             <objects>
                 <viewController id="sze-Jd-xac" customClass="HomeViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
@@ -287,7 +287,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="V4T-DE-HhG"/>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="V4T-DE-HhG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzZ-hM-HL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -431,6 +431,9 @@
         <image name="Inicio0" width="1080" height="1920"/>
         <image name="fb-logo" width="20" height="20"/>
         <image name="google-logo" width="20" height="20"/>
+        <image name="home" width="40" height="40"/>
+        <image name="mapa" width="41" height="40"/>
+        <image name="perfil" width="41" height="40"/>
         <image name="seleccionar" width="20" height="20"/>
     </resources>
 </document>
