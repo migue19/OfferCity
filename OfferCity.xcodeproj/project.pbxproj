@@ -12,7 +12,7 @@
 		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
 		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
 		7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449971EA2FC0F0068C597 /* AppDelegate.swift */; };
-		7D14499A1EA2FC0F0068C597 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449991EA2FC0F0068C597 /* ViewController.swift */; };
+		7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */; };
 		7D14499D1EA2FC0F0068C597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D14499B1EA2FC0F0068C597 /* Main.storyboard */; };
 		7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */; };
 		7D1449A21EA2FC0F0068C597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D1449A11EA2FC0F0068C597 /* Assets.xcassets */; };
@@ -36,7 +36,7 @@
 		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
 		7D1449941EA2FC0F0068C597 /* OfferCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfferCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1449971EA2FC0F0068C597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D1449991EA2FC0F0068C597 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		7D14499C1EA2FC0F0068C597 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D14499F1EA2FC0F0068C597 /* OfferCity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OfferCity.xcdatamodel; sourceTree = "<group>"; };
 		7D1449A11EA2FC0F0068C597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 		3C3E4D601EB822830052D4B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7D1449971EA2FC0F0068C597 /* AppDelegate.swift */,
-				7D1449A61EA2FC0F0068C597 /* Info.plist */,
+				3CB7826F1EC24B2C0023991E /* CoreData */,
+				3CB7826E1EC24A9E0023991E /* InfoPlist */,
 				3C3E4D631EB822EA0052D4B6 /* Firebase */,
 				7D9219471EA42922006C6976 /* Connection */,
 			);
@@ -108,7 +108,6 @@
 		3C3E4D631EB822EA0052D4B6 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
 				7D9219361EA4275B006C6976 /* GoogleService-Info.plist */,
 			);
 			name = Firebase;
@@ -117,7 +116,7 @@
 		3C3E4D641EB8244F0052D4B6 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				7D1449991EA2FC0F0068C597 /* ViewController.swift */,
+				7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */,
 				7D92193B1EA428BC006C6976 /* PreferenciasViewController.swift */,
 			);
 			name = LogIn;
@@ -131,6 +130,30 @@
 				3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */,
 			);
 			name = Slides;
+			sourceTree = "<group>";
+		};
+		3CB7826D1EC24A830023991E /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				7D1449971EA2FC0F0068C597 /* AppDelegate.swift */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		3CB7826E1EC24A9E0023991E /* InfoPlist */ = {
+			isa = PBXGroup;
+			children = (
+				7D1449A61EA2FC0F0068C597 /* Info.plist */,
+			);
+			name = InfoPlist;
+			sourceTree = "<group>";
+		};
+		3CB7826F1EC24B2C0023991E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		7BD7666BB43E8D09519E36B7 /* Frameworks */ = {
@@ -162,6 +185,7 @@
 		7D1449961EA2FC0F0068C597 /* OfferCity */ = {
 			isa = PBXGroup;
 			children = (
+				3CB7826D1EC24A830023991E /* Singleton */,
 				3C3E4D601EB822830052D4B6 /* Model */,
 				3C3E4D611EB8228A0052D4B6 /* View */,
 				3C3E4D621EB822920052D4B6 /* Controller */,
@@ -335,7 +359,7 @@
 				7D9219421EA428BC006C6976 /* PreferenciasViewController.swift in Sources */,
 				3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
-				7D14499A1EA2FC0F0068C597 /* ViewController.swift in Sources */,
+				7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */,
 				7D9219441EA428BC006C6976 /* RestService.swift in Sources */,
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,

@@ -8,66 +8,51 @@
 
 import UIKit
 import FBSDKLoginKit
-//import Firebase
 import GoogleSignIn
 
-class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDelegate,GIDSignInDelegate, UIScrollViewDelegate  {
+class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDelegate,GIDSignInDelegate, UIScrollViewDelegate  {
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     
-    //var arrayImage = ["fb-logo","google-logo","seleccionar"]
+    // MARK: - Propertys
+    
     var timer: Timer!
     var updateCounter: Int!
     var settings: [Settings] = []
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        ///////Core Data
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+        let context = AppDelegate.viewContext
         
         let user = Settings(context: context)
         
         user.descripcion = "User"
         user.valor = "Miguel"
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        //Regresar a una vista anterior
-        //navigationController?.popViewController(animated: true)
         
         getData()
-        
         
         updateCounter = 0
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector( ViewController.updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector( WelcomeViewController.updateTimer), userInfo: nil, repeats: true)
         
         scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(4)), height: scrollView.frame.size.height )
         
         scrollView.delegate = self
     }
     
-    
-   /* override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let height: CGFloat = 20 //whatever height you want
-        let bounds = self.navigationController!.navigationBar.bounds
-        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height - height)
-        
-    }*/
-    
-    
-    //MARK: - Funciones Page Control
+    //MARK: - Page Control
     
     internal func updateTimer()
     {
@@ -84,6 +69,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         else{
             updateCounter = 0
         }
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -96,14 +82,10 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         
     }
     
-    /////////////////Fin
+    // MARK: - Login Facebook
     
-    
-    
-    
-    //MARK: - Login Facebook
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("has salido de facebook")
+        print("Salio de Facebook")
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
@@ -111,7 +93,7 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
             print(error)
             return
         }
-        print("felicidades te logueaste con facebook")
+        print("Logueado Correctamente Con Facebook")
     }
     
     
@@ -139,10 +121,8 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         }
     }
     
-    /////////Fin
-    
-    
     // MARK: - Login Google
+    
     @IBAction func CustomGoogleSingIn(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
         
@@ -153,22 +133,8 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
             print("Error al Loggearse con google: \(error)")
             return
         }
-        print("Logueo con Google Correcto", user)
         
-        //guard let idtoken = user.authentication.idToken else {return}
-        //guard let accestoken = user.authentication.accessToken else {return}
-        
-        /*let credentials = FIRGoogleAuthProvider.credential(withIDToken: idtoken, accessToken: accestoken)
-        
-        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
-            if error != nil{
-                print("error al crear el firebase user  con la cuenta de Google: \(String(describing: error))")
-                return
-            }
-            
-            guard let uid = user?.uid else{return}
-            print("Login completo con Google en Firebase id: ", uid)
-        })*/
+        print("Logueo Google Correcto", user)
         
         self.performSegue(withIdentifier: "showCiudad", sender: self)
         print(user.profile.email)
@@ -177,18 +143,16 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         print(user.profile.givenName)
         print(user.profile.familyName)
         
-}
-//////////Fin
-    
+    }
     
     func getData(){
-     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do{
-        settings = try context.fetch(Settings.fetchRequest())
-          print(settings)
+            settings = try context.fetch(Settings.fetchRequest())
+            print(settings)
         }
         catch{
-          print("Failed feching")
+            print("Failed feching")
         }
         
     }
@@ -202,8 +166,8 @@ class ViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDeleg
         context.delete(user)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    
+        
     }
-
+    
 }
 
