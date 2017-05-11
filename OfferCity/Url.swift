@@ -9,10 +9,8 @@
 import Foundation
 
 struct Url {
-    
-    static let shared = Url()
-    
-    func mostrarEstablecimiento() -> String {
+        
+    static public func mostrarEstablecimiento() -> String {
         return "https://offercity.herokuapp.com/api/mostrarEstablecimiento"
     }
     

@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
 class CercadetiViewController: UIViewController {
     
@@ -27,7 +29,7 @@ class CercadetiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         
         setupView()
     }
@@ -89,8 +91,7 @@ extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        //let width = collectionView.bounds.width
-        let width = UIScreen.main.bounds.width
+        let width = collectionView.bounds.width
         let height = width
         
         return CGSize(width: width , height: height)
@@ -102,7 +103,7 @@ extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
                                 layout collectionViewLayout: UICollectionViewLayout,
                                 minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     
-        return -11
+        return 0
     }
     
     internal func collectionView(_ collectionView: UICollectionView,

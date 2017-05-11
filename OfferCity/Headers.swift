@@ -11,9 +11,7 @@ import Alamofire
 
 struct Headers {
     
-    static let shared = Headers()
-    
-    func mostrarEstablecimiento() -> HTTPHeaders {
+    static public func `default`() -> HTTPHeaders {
         let headers: HTTPHeaders = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Accept": "application/json",

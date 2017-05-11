@@ -10,10 +10,8 @@ import Foundation
 import Alamofire
 
 struct Encoding {
-
-    static let shared = Encoding()
     
-    func `default`() -> URLEncoding {
+    static public func `default`() -> URLEncoding {
         return URLEncoding.httpBody
     }
     
