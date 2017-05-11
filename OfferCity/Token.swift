@@ -9,6 +9,7 @@
 import Foundation
 
 struct Token {
+    
     static let shared = Token()
     
     func mostrarEstablecimiento() -> String {

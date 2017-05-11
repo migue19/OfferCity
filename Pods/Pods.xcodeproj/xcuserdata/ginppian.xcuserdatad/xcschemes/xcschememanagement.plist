@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AlamofireSwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-OfferCity.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -78,6 +88,16 @@
 			<true/>
 		</dict>
 		<key>2771B241FCE337E606D5617826A23443</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28B88A45336F395B8F4EAD1169012F3C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,6 +127,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9502FB01641FBABB78522037E882757B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B1C4AAFAF49036C7007633DAA3C806AD</key>
 		<dict>
 			<key>primary</key>
@@ -123,11 +148,6 @@
 			<true/>
 		</dict>
 		<key>C68748E71A3DDB40B0AAF4BC0A8F9030</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA6436B3C7F5A9E6175D98C44E53DA14</key>
 		<dict>
 			<key>primary</key>
 			<true/>

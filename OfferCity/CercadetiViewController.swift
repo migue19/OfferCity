@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CercadetiViewController: UIViewController {
     
@@ -26,10 +27,6 @@ class CercadetiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.collectionView.collectionViewLayout = self
-
-        self.edgesForExtendedLayout = UIRectEdge.top
-        self.automaticallyAdjustsScrollViewInsets = false
 
         
         setupView()
@@ -59,6 +56,7 @@ class CercadetiViewController: UIViewController {
             collectionView.isHidden = true
         }
     }
+    
 }
 
 extension CercadetiViewController: UICollectionViewDataSource {

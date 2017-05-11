@@ -18,4 +18,7 @@ target 'OfferCity' do
    pod 'AlamofireSwiftyJSON'
    pod 'HandyJSON'
    pod 'CarbonKit'
+   pod 'AlamofireObjectMapper', '~> 4.0'
+   pod 'ObjectMapper', '~> 2.2'
+
 end
