@@ -91,7 +91,8 @@ extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = collectionView.bounds.width
+        //let width = collectionView.bounds.width
+        let width = UIScreen.main.bounds.width
         let height = width
         
         return CGSize(width: width , height: height)
