@@ -16,7 +16,7 @@
 import UIKit
 import CarbonKit
 
-class HomeViewController: UIViewController, CarbonTabSwipeNavigationDelegate {
+class InicioViewController: UIViewController, CarbonTabSwipeNavigationDelegate {
 
     var carbonTabSwipeNavigation: CarbonTabSwipeNavigation = CarbonTabSwipeNavigation()
     

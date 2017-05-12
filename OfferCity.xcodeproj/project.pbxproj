@@ -12,7 +12,9 @@
 		3C32B8181EC4D3D300AE78E0 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B8171EC4D3D300AE78E0 /* Headers.swift */; };
 		3C32B81B1EC4D79900AE78E0 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B81A1EC4D79900AE78E0 /* Params.swift */; };
 		3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B81C1EC4DA8C00AE78E0 /* Encoding.swift */; };
-		3C3E4D661EB824B50052D4B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D651EB824B50052D4B6 /* HomeViewController.swift */; };
+		3C32B8421EC50AF200AE78E0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B8411EC50AF200AE78E0 /* Reachability.swift */; };
+		3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B8461EC5296F00AE78E0 /* DownloadImage.swift */; };
+		3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D651EB824B50052D4B6 /* InicioViewController.swift */; };
 		3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */; };
 		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
 		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
@@ -41,7 +43,9 @@
 		3C32B8171EC4D3D300AE78E0 /* Headers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		3C32B81A1EC4D79900AE78E0 /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		3C32B81C1EC4DA8C00AE78E0 /* Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
-		3C3E4D651EB824B50052D4B6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3C32B8411EC50AF200AE78E0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		3C32B8461EC5296F00AE78E0 /* DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
+		3C3E4D651EB824B50052D4B6 /* InicioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InicioViewController.swift; sourceTree = "<group>"; };
 		3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CercadetiViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
@@ -92,11 +96,19 @@
 			children = (
 				3C32B8131EC4CB5800AE78E0 /* Url.swift */,
 				3C32B8151EC4CDD300AE78E0 /* Token.swift */,
-				3C32B8171EC4D3D300AE78E0 /* Headers.swift */,
 				3C32B81A1EC4D79900AE78E0 /* Params.swift */,
+				3C32B8171EC4D3D300AE78E0 /* Headers.swift */,
 				3C32B81C1EC4DA8C00AE78E0 /* Encoding.swift */,
 			);
 			name = Servicios;
+			sourceTree = "<group>";
+		};
+		3C32B8401EC50AD200AE78E0 /* Conexion */ = {
+			isa = PBXGroup;
+			children = (
+				3C32B8411EC50AF200AE78E0 /* Reachability.swift */,
+			);
+			name = Conexion;
 			sourceTree = "<group>";
 		};
 		3C3E4D601EB822830052D4B6 /* Model */ = {
@@ -161,6 +173,8 @@
 			children = (
 				7D1449971EA2FC0F0068C597 /* AppDelegate.swift */,
 				3C32B81E1EC4DB2200AE78E0 /* Servicios */,
+				3C32B8401EC50AD200AE78E0 /* Conexion */,
+				3C32B8461EC5296F00AE78E0 /* DownloadImage.swift */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -225,7 +239,7 @@
 		3CB782751EC2604B0023991E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3C3E4D651EB824B50052D4B6 /* HomeViewController.swift */,
+				3C3E4D651EB824B50052D4B6 /* InicioViewController.swift */,
 				3C3E4D671EB825EA0052D4B6 /* Slides */,
 			);
 			name = Home;
@@ -439,11 +453,13 @@
 				7D9219441EA428BC006C6976 /* RestService.swift in Sources */,
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,
+				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
-				3C3E4D661EB824B50052D4B6 /* HomeViewController.swift in Sources */,
+				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
+				3C32B8421EC50AF200AE78E0 /* Reachability.swift in Sources */,
 				3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */,
 				3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */,
 				3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */,
