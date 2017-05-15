@@ -11,6 +11,12 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 import CoreData
+import SDWebImage
+
+/*NOTA:
+    ⚠️ Hace falta el caso de que si llega un UPDATE
+    ⚠️ Guardar imagenes en CoreData
+ */
 
 class CercadetiViewController: UIViewController {
     
@@ -21,58 +27,104 @@ class CercadetiViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
     
+    @IBOutlet weak var contentView: UIView!
     // MARK: - Propertys
     
-    fileprivate var restaurantes = [Restaurantes]()
-//    fileprivate var restaurantes: [Restaurantes] = {
-//        
-//        var _restaurantes = [Restaurantes]()
-//        
-//        let context = AppDelegate.viewContext
-//        let fetch = NSFetchRequest<Restaurantes>(entityName: "Restaurantes")
-//        
-//        do {
-//            _restaurantes = try context.fetch(fetch)
-//        } catch {
-//            fatalError("Failed to fetch: \(error)")
-//        }
-//        
-//        return _restaurantes
-//    }()
+    fileprivate var restaurantes : [Restaurantes] = {
+        
+        var _restaurantes = [Restaurantes]()
+        
+        if !Reachability.isConnectedToNetwork() {
+            
+            let context = AppDelegate.viewContext
+            let fetch = NSFetchRequest<Restaurantes>(entityName: "Restaurantes")
+            
+            do {
+                _restaurantes = try context.fetch(fetch)
+                
+            } catch {
+                fatalError("Failed to fetch: \(error)")
+            }
+            
+        }
+    
+        return _restaurantes
+    
+    }()
     
     // MARK: - Constructor
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if Reachability.isConnectedToNetwork() {
             
             getData()
-            
         }
         
+        updateView()
+    }
+    
+}
+
+// MARK: - Views
+
+extension CercadetiViewController {
+    
+    fileprivate func setupView() {
         
     }
     
-    
-    // MARK: - Setup Views
-    
-    private func setupView() {
+    fileprivate func setupMessage() {
         
     }
     
-    private func setupMessage() {
+    fileprivate func updateView() {
+        
+        let existenRestaurantes = restaurantes.count > 0
+        
+        if existenRestaurantes {
+            
+            self.collectionView.isHidden = false
+            self.imageView.isHidden = true
+            self.label.isHidden = true
+        } else {
+        
+            self.collectionView.isHidden = true
+            self.imageView.isHidden = false
+            self.label.isHidden = false
+            self.view.backgroundColor = UIColor.white
+            self.activityIndicator.isHidden = true
+            self.contentView.backgroundColor = UIColor.white
+        }
+        
+
+        
         
     }
     
-    private func updateView() {
+}
+
+// MARK: - Core Data
+
+extension CercadetiViewController {
+    
+    func isExist(id_establecimiento: Int) -> Bool {
         
+        let fetchRequest = NSFetchRequest<Restaurantes>(entityName: "Restaurantes")
+        fetchRequest.predicate = NSPredicate(format: "id_establecimiento = \(id_establecimiento)", argumentArray: nil)
+        
+        let res = try! AppDelegate.viewContext.fetch(fetchRequest)
+        if res.count > 0 {
+            
+            return true
+        } else {
+            
+            return false
+        }
     }
     
     func getData() {
-        
-        self.activityIndicator.startAnimating()
         
         DispatchQueue.global(qos: .default).async {
             print("This is run on the background queue")
@@ -90,77 +142,48 @@ class CercadetiViewController: UIViewController {
                         
                         for restaurante in restaurantes {
                             
-                            print(restaurante.nombre!)
-                            self.saveData(restauranteMapper: restaurante)
+                            if !self.isExist(id_establecimiento: restaurante.id_establecimiento) {
                             
+                                self.saveData(restauranteMapper: restaurante)
+                            }
                         }
                         
                         let context = AppDelegate.viewContext
                         let fetch = NSFetchRequest<Restaurantes>(entityName: "Restaurantes")
                         
                         do {
+                            
                             self.restaurantes = try context.fetch(fetch)
                         } catch {
+                            
                             fatalError("Failed to fetch: \(error)")
                         }
-
                     }
                     
                     self.activityIndicator.stopAnimating()
                     self.activityIndicator.isHidden = true
                     
-                    self.collectionView.reloadData()
+                    self.collectionView.isHidden = false
                     
+                    self.collectionView.reloadData()
             }
             
             DispatchQueue.main.async {
                 print("This is run on the main queue, after the previous code in outer block")
                 
-                //self.activityIndicator.startAnimating()
+                self.collectionView.isHidden = true
+                self.imageView.isHidden = true
+                self.label.isHidden = true
+                
+                //self.view.backgroundColor = UIColor.blue
+                
+                self.activityIndicator.startAnimating()
+                
                 
             }
         }
-        
     }
     
-    //extension CercadetiViewController {
-    //
-    //    func getData() {
-    //
-    //        DispatchQueue.global(qos: .default).async {
-    //            print("This is run on the background queue")
-    //
-    //            Alamofire.request(Url.mostrarEstablecimiento(), method: .post, parameters: Params.mostrarEstablecimiento(), encoding: Encoding.default(), headers: Headers.default())
-    //
-    //                .responseObject { (response: DataResponse<EdoardoMapper>) in
-    //
-    //                    let edoardo = response.result.value
-    //                    print(edoardo?.arrayRes ?? "valio barriga")
-    //
-    //                    if let restaurantes = edoardo?.arrayRes {
-    //
-    //                        // Save Data
-    //
-    //                        for restaurante in restaurantes {
-    //
-    //                            self.saveData(restauranteMapper: restaurante)
-    //
-    //                        }
-    //                    }
-    //
-    //                    self.activityIndicator.stopAnimating()
-    //                    self.activityIndicator.isHidden = true
-    //
-    //            }
-    //
-    //            DispatchQueue.main.async {
-    //                print("This is run on the main queue, after the previous code in outer block")
-    //
-    //                self.activityIndicator.startAnimating()
-    //
-    //            }
-    //        }
-    //    }
     
     func saveData(restauranteMapper: RestaurantesMapper) {
         
@@ -194,70 +217,101 @@ class CercadetiViewController: UIViewController {
     
 }
 
+// MARK: - DataSource
+
 extension CercadetiViewController: UICollectionViewDataSource {
-
+    
     public func collectionView(_ collectionView: UICollectionView,
-                                numberOfItemsInSection section: Int) -> Int {
-
+                               numberOfItemsInSection section: Int) -> Int {
+        
+        print("😎 \(self.restaurantes.count)")
         return self.restaurantes.count
     }
-
+    
     public func collectionView(_ collectionView: UICollectionView,
-                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+                               cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // Cell
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CercadetiCollectionViewCell.identifier, for: indexPath) as? CercadetiCollectionViewCell else {
+            
             fatalError("Unexpected IndexPath")
         }
-
-        // Get
-
-        let restaurante = self.restaurantes[indexPath.item]
-
+        
+        // Get Restaurante
+        
+        let restaurante = self.restaurantes[indexPath.row]
+        
+        
         // Fill
-
+        
+        cell.tag = indexPath.row
         cell.labelNombre.text = restaurante.nombre
-        print(restaurante.nombre)
         cell.labelDireccion.text = restaurante.descripcion
-        print(restaurante.photo!)
-        cell.imagFoto.downloadedFrom(link: restaurante.photo!)
+        
+        // Image
+        
+        //cell.imagFoto.downloadedFrom(link: restaurante.photo!)
 
+        cell.imagFoto.sd_setShowActivityIndicatorView(true)
+        cell.imagFoto.sd_setIndicatorStyle(.white)
+        //cell.imagFoto.sd_setImage(with: URL(string: restaurante.photo!), placeholderImage: #imageLiteral(resourceName: "borrar1"))
+        cell.imagFoto.sd_setImage(with: URL(string: restaurante.photo!))
+        
         return cell
-
+        
     }
 }
 
+// MARK: - FlowLayout
+
 extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
-
+    
     //Use for size
-
+    
     internal func collectionView(_ collectionView: UICollectionView,
-                               layout collectionViewLayout: UICollectionViewLayout,
-                               sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width = collectionView.bounds.width
         let height = width
-
-        return CGSize(width: width , height: height)
+        
+        return CGSize(width: width , height: height+55)
+//        let size = collectionView.bounds.width/2.0
+//        let sizelandscape = collectionView.bounds.width/4.0
+//        
+//        switch UIDevice.current.orientation{
+//        case .portrait:
+//            return CGSize(width: size, height: size)
+//        case .portraitUpsideDown:
+//            return CGSize(width: size, height: size)
+//        case .landscapeLeft:
+//            return CGSize(width: sizelandscape, height: sizelandscape)
+//        case .landscapeRight:
+//            return CGSize(width: sizelandscape, height: sizelandscape)
+//        default:
+//            return CGSize(width: size, height: size)
+//        }
     }
-
+    
     //Use for interspacing
-
+    
     internal func collectionView(_ collectionView: UICollectionView,
-                                layout collectionViewLayout: UICollectionViewLayout,
-                                minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-
-        return 0
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return -12
     }
-
+    
     internal func collectionView(_ collectionView: UICollectionView,
-                                layout collectionViewLayout: UICollectionViewLayout,
-                                insetForSectionAt section: Int) -> UIEdgeInsets {
-
+                                 layout collectionViewLayout: UICollectionViewLayout,
+                                 insetForSectionAt section: Int) -> UIEdgeInsets {
+        
         return UIEdgeInsets(top: 17, left: 0, bottom: 0, right: 0)
     }
 }
 
-
+// MARK: - Clases Object Mapper
 
 class EdoardoMapper: Mappable {
     
@@ -270,6 +324,7 @@ class EdoardoMapper: Mappable {
     func mapping(map: Map) {
         arrayRes            <- map["restaurantes"]
     }
+    
 }
 
 class RestaurantesMapper: Mappable {
@@ -295,6 +350,7 @@ class RestaurantesMapper: Mappable {
         descripcion         <- map["descripcion"]
         photo               <- map["photo"]
     }
+    
 }
 
 
