@@ -26,7 +26,9 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
                             "Oaxaca"
     ]
     
-    var array: [Int] = []
+    var ciudad = -1
+    
+    //var array: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,8 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         
-        /*let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton*/
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
         
         //preferenciasCollection.la
         
@@ -86,7 +88,40 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)!
+        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         let subView = cell.viewWithTag(400)! as UIView
+        let select = cell.viewWithTag(300) as! UIImageView
+        
+        if ciudad != indexPath.row{
+           
+            if ciudad == -1 {
+                select.isHidden = false
+                subView.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.6)
+                ciudad = indexPath.row
+            }
+            else
+            {
+             let indPath2 = IndexPath(row: ciudad, section: 0)
+               let cell2 = collectionView.cellForItem(at: indPath2)!
+               let subView2 = cell2.viewWithTag(400)! as UIView
+               let select2 = cell2.viewWithTag(300) as! UIImageView
+               select2.isHidden = true
+               subView2.backgroundColor = nil
+                
+                select.isHidden = false
+                subView.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.6)
+                ciudad = indexPath.row
+            }
+        }
+        else{
+            select.isHidden = true
+            subView.backgroundColor = nil
+            ciudad = -1
+        }
+        
+        
+        print("La Ciudad es: ", ciudad)
+        /*let subView = cell.viewWithTag(400)! as UIView
         let select = cell.viewWithTag(300) as! UIImageView
         
     
@@ -97,17 +132,20 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
             //subView.backgroundColor = UIColor.init(red: 299.0/255.0, green: 135.0/255.0, blue: 34.0/255.0, alpha: 0.6)
             select.isHidden = false
             subView.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.6)
-            array.append(indexPath.row+1)
-            ImprimirArray()
+            //array.append(indexPath.row+1)
+            //ImprimirArray()
             
         }
         else{
             select.isHidden = true
             subView.backgroundColor = nil
-            deleteElementArray(elemento: indexPath.row+1)
-            ImprimirArray()
-        }
+            //deleteElementArray(elemento: indexPath.row+1)
+            //ImprimirArray()
+        }*/
     }
+    
+    
+    
     
   
     
@@ -154,7 +192,7 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
     
     
     
-    func ImprimirArray(){
+    /*func ImprimirArray(){
         print("imprimiendo array: ")
         array.sort()
         
@@ -175,7 +213,7 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
             }
         }
         
-    }
+    }*/
     
     
     //MARK: TASKS
@@ -243,9 +281,9 @@ class PreferenciasViewController: UIViewController, UICollectionViewDelegate,UIC
     
     @IBAction func sendPreference(_ sender: Any) {
         
-        if (array == []){
+        if (ciudad == -1){
             let alert = UIAlertController(title: "Aviso",
-                                          message: "Debe de seleccionar almenos una preferencia",
+                                          message: "Debe Seleccionar Una Ciudad",
                                           preferredStyle: UIAlertControllerStyle.alert)
             
             let cancelAction = UIAlertAction(title: "OK",

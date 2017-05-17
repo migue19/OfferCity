@@ -12,6 +12,7 @@ import FBSDKCoreKit
 import GoogleSignIn
 import GoogleMaps
 import GooglePlaces
+import Firebase
 
 
 @UIApplicationMain
@@ -22,20 +23,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //FIRApp.configure()
+        FIRApp.configure()
         
         GMSServices.provideAPIKey("AIzaSyDzN-JLHb9dy3B1uiYpSCd2eCb6xCMkHgk")
         
         GMSPlacesClient.provideAPIKey("AIzaSyDzN-JLHb9dy3B1uiYpSCd2eCb6xCMkHgk")
         
-        //GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
-        // MARK: - Tab Bar tintColor
+        //MARK: - NavBar Color
+        //UINavigationBar.appearance().backgroundColor = UIColor.red
         
+        // MARK: - Tab Bar tintColor
         UITabBar.appearance().tintColor = UIColor(red: 121.0 / 255, green: 148.0 / 255, blue: 180.0 / 255, alpha: 1)
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let main = storyboard.instantiateViewController(withIdentifier: "TabPrincipal") as! TabBarPrincipalController
+        self.window!.rootViewController = main
+        
         
         return true
     }

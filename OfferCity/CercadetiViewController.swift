@@ -216,7 +216,7 @@ extension CercadetiViewController: UICollectionViewDataSource {
         // Fill
 
         cell.labelNombre.text = restaurante.nombre
-        print(restaurante.nombre)
+        print(restaurante.nombre ?? "")
         cell.labelDireccion.text = restaurante.descripcion
         print(restaurante.photo!)
         cell.imagFoto.downloadedFrom(link: restaurante.photo!)

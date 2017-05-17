@@ -19,6 +19,7 @@
 		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
 		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
 		3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */; };
+		7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */; };
 		7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449971EA2FC0F0068C597 /* AppDelegate.swift */; };
 		7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */; };
 		7D14499D1EA2FC0F0068C597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D14499B1EA2FC0F0068C597 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193C1EA428BC006C6976 /* RestConnection.swift */; };
 		7D9219441EA428BC006C6976 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193D1EA428BC006C6976 /* RestService.swift */; };
 		7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193E1EA428BC006C6976 /* ShortProfileResponse.swift */; };
+		7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA948811ECA67C000287356 /* SettingsDAO.swift */; };
 		EDC5F3814B2FBD50A1A76DB2 /* Pods_OfferCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904801B63E040080B7AADE64 /* Pods_OfferCity.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,7 @@
 		3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
 		3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CercadetiCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPrincipalController.swift; sourceTree = "<group>"; };
 		7D1449941EA2FC0F0068C597 /* OfferCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfferCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1449971EA2FC0F0068C597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		7D92193C1EA428BC006C6976 /* RestConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConnection.swift; sourceTree = "<group>"; };
 		7D92193D1EA428BC006C6976 /* RestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		7D92193E1EA428BC006C6976 /* ShortProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortProfileResponse.swift; sourceTree = "<group>"; };
+		7DA948811ECA67C000287356 /* SettingsDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDAO.swift; sourceTree = "<group>"; };
 		904801B63E040080B7AADE64 /* Pods_OfferCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757453FFCFAC126F68E64A1 /* Pods-OfferCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
+				7DA948811ECA67C000287356 /* SettingsDAO.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				3CB782751EC2604B0023991E /* Home */,
 				3CB782731EC260110023991E /* Perfil */,
 				3CB782741EC2601C0023991E /* Mapas */,
+				7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */,
 			);
 			name = TabController;
 			sourceTree = "<group>";
@@ -456,9 +462,11 @@
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
+				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
 				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
+				7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */,
 				3C32B8421EC50AF200AE78E0 /* Reachability.swift in Sources */,
 				3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */,
 				3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */,
