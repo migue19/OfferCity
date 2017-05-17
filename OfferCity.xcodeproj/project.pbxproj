@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2A4AA31ECCE232007D279D /* DetalladaAcercaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */; };
+		3C2A4AB21ECCE8AC007D279D /* VDRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA71ECCE8AC007D279D /* VDRatingTableViewCell.swift */; };
+		3C2A4AB31ECCE8AC007D279D /* VDCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA81ECCE8AC007D279D /* VDCheckInTableViewCell.swift */; };
+		3C2A4AB41ECCE8AC007D279D /* VDDescripcionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA91ECCE8AC007D279D /* VDDescripcionTableViewCell.swift */; };
+		3C2A4AB51ECCE8AC007D279D /* VDTelefonoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AAA1ECCE8AC007D279D /* VDTelefonoTableViewCell.swift */; };
+		3C2A4AB61ECCE8AC007D279D /* VDHoraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AAB1ECCE8AC007D279D /* VDHoraTableViewCell.swift */; };
+		3C2A4AB71ECCE8AC007D279D /* VDBotonesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AAC1ECCE8AC007D279D /* VDBotonesTableViewCell.swift */; };
+		3C2A4AB81ECCE8AC007D279D /* VDLocalizacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AAD1ECCE8AC007D279D /* VDLocalizacionTableViewCell.swift */; };
+		3C2A4AB91ECCE8AC007D279D /* VDMapaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AAE1ECCE8AC007D279D /* VDMapaTableViewCell.swift */; };
+		3C2A4ABA1ECCE8AC007D279D /* VDRedesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AAF1ECCE8AC007D279D /* VDRedesTableViewCell.swift */; };
+		3C2A4ABB1ECCE8AC007D279D /* VDIconosRedesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AB01ECCE8AC007D279D /* VDIconosRedesTableViewCell.swift */; };
 		3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B8131EC4CB5800AE78E0 /* Url.swift */; };
 		3C32B8161EC4CDD300AE78E0 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B8151EC4CDD300AE78E0 /* Token.swift */; };
 		3C32B8181EC4D3D300AE78E0 /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C32B8171EC4D3D300AE78E0 /* Headers.swift */; };
@@ -44,6 +55,17 @@
 
 /* Begin PBXFileReference section */
 		10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.release.xcconfig"; sourceTree = "<group>"; };
+		3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalladaAcercaViewController.swift; sourceTree = "<group>"; };
+		3C2A4AA71ECCE8AC007D279D /* VDRatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRatingTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AA81ECCE8AC007D279D /* VDCheckInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDCheckInTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AA91ECCE8AC007D279D /* VDDescripcionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDDescripcionTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AAA1ECCE8AC007D279D /* VDTelefonoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDTelefonoTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AAB1ECCE8AC007D279D /* VDHoraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDHoraTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AAC1ECCE8AC007D279D /* VDBotonesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDBotonesTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AAD1ECCE8AC007D279D /* VDLocalizacionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDLocalizacionTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AAE1ECCE8AC007D279D /* VDMapaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDMapaTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AAF1ECCE8AC007D279D /* VDRedesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRedesTableViewCell.swift; sourceTree = "<group>"; };
+		3C2A4AB01ECCE8AC007D279D /* VDIconosRedesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDIconosRedesTableViewCell.swift; sourceTree = "<group>"; };
 		3C32B8131EC4CB5800AE78E0 /* Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		3C32B8151EC4CDD300AE78E0 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		3C32B8171EC4D3D300AE78E0 /* Headers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
@@ -103,6 +125,32 @@
 				10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3C2A4AA41ECCE23A007D279D /* Detallada */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */,
+				3C2A4AA51ECCE895007D279D /* Cells */,
+			);
+			name = Detallada;
+			sourceTree = "<group>";
+		};
+		3C2A4AA51ECCE895007D279D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A4AA71ECCE8AC007D279D /* VDRatingTableViewCell.swift */,
+				3C2A4AA81ECCE8AC007D279D /* VDCheckInTableViewCell.swift */,
+				3C2A4AA91ECCE8AC007D279D /* VDDescripcionTableViewCell.swift */,
+				3C2A4AAA1ECCE8AC007D279D /* VDTelefonoTableViewCell.swift */,
+				3C2A4AAB1ECCE8AC007D279D /* VDHoraTableViewCell.swift */,
+				3C2A4AAC1ECCE8AC007D279D /* VDBotonesTableViewCell.swift */,
+				3C2A4AAD1ECCE8AC007D279D /* VDLocalizacionTableViewCell.swift */,
+				3C2A4AAE1ECCE8AC007D279D /* VDMapaTableViewCell.swift */,
+				3C2A4AAF1ECCE8AC007D279D /* VDRedesTableViewCell.swift */,
+				3C2A4AB01ECCE8AC007D279D /* VDIconosRedesTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		3C32B81E1EC4DB2200AE78E0 /* Servicios */ = {
@@ -215,6 +263,7 @@
 			children = (
 				3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */,
 				3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */,
+				3C2A4AA41ECCE23A007D279D /* Detallada */,
 			);
 			name = Cercadeti;
 			sourceTree = "<group>";
@@ -468,13 +517,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9219421EA428BC006C6976 /* PreferenciasViewController.swift in Sources */,
+				3C2A4AB61ECCE8AC007D279D /* VDHoraTableViewCell.swift in Sources */,
+				3C2A4AB71ECCE8AC007D279D /* VDBotonesTableViewCell.swift in Sources */,
 				3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */,
+				3C2A4ABB1ECCE8AC007D279D /* VDIconosRedesTableViewCell.swift in Sources */,
 				3C32B81B1EC4D79900AE78E0 /* Params.swift in Sources */,
+				3C2A4AB21ECCE8AC007D279D /* VDRatingTableViewCell.swift in Sources */,
+				3C2A4AB81ECCE8AC007D279D /* VDLocalizacionTableViewCell.swift in Sources */,
 				3C32B8181EC4D3D300AE78E0 /* Headers.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
 				7D0330A91ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift in Sources */,
 				7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */,
 				7D9219441EA428BC006C6976 /* RestService.swift in Sources */,
+				3C2A4AB31ECCE8AC007D279D /* VDCheckInTableViewCell.swift in Sources */,
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
@@ -482,14 +537,19 @@
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
 				7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */,
 				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
+				3C2A4ABA1ECCE8AC007D279D /* VDRedesTableViewCell.swift in Sources */,
 				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
 				7D0330AB1ECC7B9800D46CCA /* CustomImageTableViewCell.swift in Sources */,
+				3C2A4AB41ECCE8AC007D279D /* VDDescripcionTableViewCell.swift in Sources */,
+				3C2A4AB51ECCE8AC007D279D /* VDTelefonoTableViewCell.swift in Sources */,
 				7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */,
 				3C32B8421EC50AF200AE78E0 /* Reachability.swift in Sources */,
 				3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */,
+				3C2A4AA31ECCE232007D279D /* DetalladaAcercaViewController.swift in Sources */,
 				3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */,
+				3C2A4AB91ECCE8AC007D279D /* VDMapaTableViewCell.swift in Sources */,
 				3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */,
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
 				3C32B8161EC4CDD300AE78E0 /* Token.swift in Sources */,

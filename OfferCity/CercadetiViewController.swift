@@ -264,6 +264,18 @@ extension CercadetiViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - Delegate 
+
+extension CercadetiViewController: UICollectionViewDelegate {
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                                    didSelectItemAt indexPath: IndexPath) {
+     
+        performSegue(withIdentifier: "acercadetiDetalladaAcerca", sender: self)
+    }
+    
+}
+
 // MARK: - FlowLayout
 
 extension CercadetiViewController: UICollectionViewDelegateFlowLayout {

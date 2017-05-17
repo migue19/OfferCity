@@ -64,6 +64,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImageSlideshow.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -112,7 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>38EA14B9D2654BA77D3D0DE74BA999E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44CAD6CE523055ED339E87154473A254</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53A19C749ADA73A0C1AB86BD32726A5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -123,11 +143,6 @@
 			<true/>
 		</dict>
 		<key>681BE6E3D02A43F9BA63777AC435C8FD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>880AE9C84DB422537EEA75ADB9D697EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,7 +187,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9105F98B810D8F4DA7E890BBE6D253C</key>
+		<key>F78C1CFB1095A35CB73CA669ECFFCE66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF9DAEB157082D537A10095B51E9F5EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
