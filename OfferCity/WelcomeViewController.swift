@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
+import CoreData
 
 class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignInUIDelegate,GIDSignInDelegate, UIScrollViewDelegate  {
     
@@ -29,17 +30,9 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        let context = AppDelegate.viewContext
-        
-        let user = Settings(context: context)
-        
-        user.descripcion = "User"
-        user.valor = "Miguel"
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
-        getData()
-        
+
+        self.getData()
+    
         updateCounter = 0
         
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -114,8 +107,32 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
                     return
                 }
                 
+                var userID = ""
+                var name = ""
+                var firstName = ""
+                var lastName = ""
+                var email = ""
+                var facebookProfileUrl = ""
+                
+                if let data = result as? [String:Any] {
+                     userID = data["id"] as! String
+                     name = data["name"] as! String
+                     firstName = data["first_name"] as! String
+                     lastName = data["last_name"] as! String
+                     email = data["email"] as! String
+                     facebookProfileUrl = "http://graph.facebook.com/\(userID)/picture?type=large"
+                }
+                
+                
+                self.InsertSetting(descripcion: "Name", valor: name)
+                self.InsertSetting(descripcion: "FirstName", valor: firstName)
+                self.InsertSetting(descripcion: "LastName", valor: lastName)
+                self.InsertSetting(descripcion: "Email", valor: email)
+                self.InsertSetting(descripcion: "ImageURL", valor: facebookProfileUrl)
+                
+                self.getData()
+                
                 self.performSegue(withIdentifier: "showCiudad", sender: self)
-                print(result!)
             }
             
         }
@@ -136,12 +153,16 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         
         print("Logueo Google Correcto", user)
         
+     
+       self.InsertSetting(descripcion: "Name", valor: user.profile.name)
+       self.InsertSetting(descripcion: "FirstName", valor: user.profile.givenName)
+       self.InsertSetting(descripcion: "LastName", valor: user.profile.familyName)
+       self.InsertSetting(descripcion: "Email", valor: user.profile.email)
+       self.InsertSetting(descripcion: "ImageURL", valor: String(describing: user.profile.imageURL(withDimension: 400)!))
+   
+        getData()
+        
         self.performSegue(withIdentifier: "showCiudad", sender: self)
-        print(user.profile.email)
-        print(user.profile.imageURL(withDimension: 400))
-        print(user.profile.name)
-        print(user.profile.givenName)
-        print(user.profile.familyName)
         
     }
     
@@ -149,7 +170,16 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do{
             settings = try context.fetch(Settings.fetchRequest())
-            print(settings)
+            
+            if settings.count > 0 {
+                for setting in settings{
+                    print(setting.descripcion ?? "")
+                    print(setting.valor ?? "")
+                    print("")
+                }
+            }else{
+                 print("No Hay Datos Para Mostrar")
+            }
         }
         catch{
             print("Failed feching")
@@ -157,16 +187,110 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         
     }
     
+    func InsertSetting(descripcion: String, valor: String){
+        let context = AppDelegate.viewContext
+        
+        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "descripcion = %@", descripcion)
+        
+        do{
+            let fetchResult = try context.fetch(request)
+            if fetchResult.count > 0{
+                print("Updateando Setting")
+                UpdateSettingCoreData(setting: fetchResult[0], descripcion: descripcion, valor: valor)
+            
+            }else{
+                print("Insertando Setting")
+                let userData = Settings(context: context)
+                
+                userData.descripcion = descripcion
+                userData.valor = valor
+                
+                (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            }
+        }
+        catch{
+           print("No se pudo hacer la conexion con la DB")
+        
+        }
+    }
     
-    func deleteUserCoreData(){
+    
+    func deleteSettingCoreData(setting: Settings){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let user = settings[0]
-        
-        context.delete(user)
+        context.delete(setting)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
+    }
+    
+    func UpdateSettingCoreData(setting: Settings,descripcion: String, valor: String) {
+        setting.setValue(descripcion, forKey: "descripcion")
+        setting.setValue(valor, forKey: "valor")
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    
+    
+    func findAndUpdateSettings(descripcion: String, valor: String){
+        let context = AppDelegate.viewContext
+        
+        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "descripcion = %@", descripcion)
+        
+            do{
+                let settings2 = try context.fetch(request)
+                if settings2.count > 0 {
+                    for setting in settings2{
+                        self.UpdateSettingCoreData(setting: setting, descripcion: descripcion, valor: valor)
+                    }
+                }else{
+                     print("No Hay Datos Para Updatear")
+                }
+            }
+            catch{
+                print("Failed feching")
+            }
+    }
+    
+    
+    func findAndDeleteSettings(descripcion: String) {
+        let context = AppDelegate.viewContext
+        
+        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "descripcion = %@", descripcion)
+        
+        do{
+            let settings2 = try context.fetch(request)
+            
+            if settings2.count > 0 {
+                for setting in settings2{
+                    deleteSettingCoreData(setting: setting)
+                }
+            }
+            else{
+                print("No Hay Datos Para Borrar")
+            }
+        }
+        catch{
+            print("Failed feching")
+        }
+
+        
+    }
+    
+    
+    func deleteAllSettings(){
+        let array = ["Email","Name","FirstName","LastName","ImageURL"]
+        
+        for description in array {
+            self.findAndDeleteSettings(descripcion: description)
+        }
     }
     
 }

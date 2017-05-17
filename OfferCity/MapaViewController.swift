@@ -37,18 +37,6 @@ class MapaViewController: UIViewController {
                 print("JSON: \(JSON)")
             }
         }*/
-   
-        
-        
-                
-        
-       
-        
-        
-        
-       
-        
-        
 
         // Do any additional setup after loading the view.
     }

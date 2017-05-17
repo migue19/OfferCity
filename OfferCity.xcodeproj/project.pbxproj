@@ -19,6 +19,11 @@
 		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
 		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
 		3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */; };
+		7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */; };
+		7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A41ECC7B4900D46CCA /* FXBlurView.m */; };
+		7D0330A71ECC7B5B00D46CCA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A61ECC7B5B00D46CCA /* AvatarImageView.swift */; };
+		7D0330A91ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A81ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift */; };
+		7D0330AB1ECC7B9800D46CCA /* CustomImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330AA1ECC7B9800D46CCA /* CustomImageTableViewCell.swift */; };
 		7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449971EA2FC0F0068C597 /* AppDelegate.swift */; };
 		7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */; };
 		7D14499D1EA2FC0F0068C597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D14499B1EA2FC0F0068C597 /* Main.storyboard */; };
@@ -33,6 +38,7 @@
 		7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193C1EA428BC006C6976 /* RestConnection.swift */; };
 		7D9219441EA428BC006C6976 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193D1EA428BC006C6976 /* RestService.swift */; };
 		7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193E1EA428BC006C6976 /* ShortProfileResponse.swift */; };
+		7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA948811ECA67C000287356 /* SettingsDAO.swift */; };
 		EDC5F3814B2FBD50A1A76DB2 /* Pods_OfferCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904801B63E040080B7AADE64 /* Pods_OfferCity.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +56,13 @@
 		3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
 		3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CercadetiCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPrincipalController.swift; sourceTree = "<group>"; };
+		7D0330A21ECC7B4800D46CCA /* OfferCity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfferCity-Bridging-Header.h"; sourceTree = "<group>"; };
+		7D0330A31ECC7B4900D46CCA /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		7D0330A41ECC7B4900D46CCA /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		7D0330A61ECC7B5B00D46CCA /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		7D0330A81ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderSectionTableViewCell.swift; sourceTree = "<group>"; };
+		7D0330AA1ECC7B9800D46CCA /* CustomImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageTableViewCell.swift; sourceTree = "<group>"; };
 		7D1449941EA2FC0F0068C597 /* OfferCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfferCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1449971EA2FC0F0068C597 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D1449991EA2FC0F0068C597 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +79,7 @@
 		7D92193C1EA428BC006C6976 /* RestConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestConnection.swift; sourceTree = "<group>"; };
 		7D92193D1EA428BC006C6976 /* RestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		7D92193E1EA428BC006C6976 /* ShortProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortProfileResponse.swift; sourceTree = "<group>"; };
+		7DA948811ECA67C000287356 /* SettingsDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDAO.swift; sourceTree = "<group>"; };
 		904801B63E040080B7AADE64 /* Pods_OfferCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757453FFCFAC126F68E64A1 /* Pods-OfferCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
+				7DA948811ECA67C000287356 /* SettingsDAO.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -223,7 +238,13 @@
 		3CB782731EC260110023991E /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				7D0330A31ECC7B4900D46CCA /* FXBlurView.h */,
+				7D0330A41ECC7B4900D46CCA /* FXBlurView.m */,
+				7D0330A81ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift */,
+				7D0330A61ECC7B5B00D46CCA /* AvatarImageView.swift */,
+				7D0330AA1ECC7B9800D46CCA /* CustomImageTableViewCell.swift */,
 				7D9219391EA428BC006C6976 /* PerfilViewController.swift */,
+				7D0330A21ECC7B4800D46CCA /* OfferCity-Bridging-Header.h */,
 			);
 			name = Perfil;
 			sourceTree = "<group>";
@@ -288,6 +309,7 @@
 				3CB782751EC2604B0023991E /* Home */,
 				3CB782731EC260110023991E /* Perfil */,
 				3CB782741EC2601C0023991E /* Mapas */,
+				7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */,
 			);
 			name = TabController;
 			sourceTree = "<group>";
@@ -355,6 +377,7 @@
 					7D1449931EA2FC0F0068C597 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MC2W678MVZ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -449,6 +472,7 @@
 				3C32B81B1EC4D79900AE78E0 /* Params.swift in Sources */,
 				3C32B8181EC4D3D300AE78E0 /* Headers.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
+				7D0330A91ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift in Sources */,
 				7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */,
 				7D9219441EA428BC006C6976 /* RestService.swift in Sources */,
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
@@ -456,9 +480,13 @@
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
+				7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */,
+				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
 				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
+				7D0330AB1ECC7B9800D46CCA /* CustomImageTableViewCell.swift in Sources */,
+				7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */,
 				3C32B8421EC50AF200AE78E0 /* Reachability.swift in Sources */,
 				3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */,
 				3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */,
@@ -466,6 +494,7 @@
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
 				3C32B8161EC4CDD300AE78E0 /* Token.swift in Sources */,
 				3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */,
+				7D0330A71ECC7B5B00D46CCA /* AvatarImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,11 +618,14 @@
 			baseConfigurationReference = C757453FFCFAC126F68E64A1 /* Pods-OfferCity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = OfferCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.nut.OfferCity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OfferCity/OfferCity-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -603,11 +635,13 @@
 			baseConfigurationReference = 10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = OfferCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.nut.OfferCity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OfferCity/OfferCity-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
