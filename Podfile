@@ -20,5 +20,6 @@ target 'OfferCity' do
    pod 'CarbonKit'
    pod 'AlamofireObjectMapper', '~> 4.0'
    pod 'ObjectMapper', '~> 2.2'
+   pod 'SDWebImage/WebP'
 
 end
