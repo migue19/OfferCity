@@ -28,6 +28,7 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     var options = ["City Points","Promociones Usadas","Ciudad","Ayuda","Reservaciones","Ajustes"]
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
@@ -155,7 +156,7 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         
         
         let imageView = cell.viewWithTag(10) as! UIImageView
-        imageView.image = UIImage(named: "header_bg")
+        imageView.image = UIImage(named: "Perfil_iconos-\(row+1)")
         
         let textLabel = cell.viewWithTag(20) as! UILabel
         textLabel.text = options[row]
