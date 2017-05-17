@@ -19,7 +19,16 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    static var persistentContainer: NSPersistentContainer = {
+        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    }()
+    
+    static var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,11 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK: - Tab Bar tintColor
         UITabBar.appearance().tintColor = UIColor(red: 121.0 / 255, green: 148.0 / 255, blue: 180.0 / 255, alpha: 1)
         
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let main = storyboard.instantiateViewController(withIdentifier: "TabPrincipal") as! TabBarPrincipalController
-        self.window!.rootViewController = main
-        
+        let context = AppDelegate.viewContext
+        do{
+            let settings = try context.fetch(Settings.fetchRequest())
+            if settings.count > 0 {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let main = storyboard.instantiateViewController(withIdentifier: "TabPrincipal") as! TabBarPrincipalController
+                self.window!.rootViewController = main
+            }
+        }
+        catch{
+            print("Error al obtener los Datos de la DB-> AppDelegate ")
+        }
         
         return true
     }
@@ -85,13 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
     
-    static var persistentContainer: NSPersistentContainer = {
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-    }()
-
-    static var viewContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
+  
     
     lazy var persistentContainer: NSPersistentContainer = {
         /*
