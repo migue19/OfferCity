@@ -506,7 +506,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-Jh-l5I">
-                                                    <rect key="frame" x="8" y="8" width="217" height="225"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="233" height="233"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sombra" translatesAutoresizingMaskIntoConstraints="NO" id="Kvm-hf-zEy">
                                                     <rect key="frame" x="0.0" y="0.0" width="233" height="233"/>
@@ -543,12 +543,12 @@
                                             <constraint firstItem="Kvm-hf-zEy" firstAttribute="top" secondItem="hsA-GN-zSJ" secondAttribute="topMargin" constant="-8" id="Ic3-SO-bXv"/>
                                             <constraint firstItem="ujh-KA-Jee" firstAttribute="top" secondItem="qDU-SH-1rd" secondAttribute="bottom" constant="8" id="Icf-i4-qJH"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="ujh-KA-Jee" secondAttribute="bottom" constant="12" id="Jxl-uj-H3o"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Rje-Jh-l5I" secondAttribute="trailing" id="O43-7W-ATK"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Rje-Jh-l5I" secondAttribute="trailing" constant="-8" id="O43-7W-ATK"/>
                                             <constraint firstItem="ujh-KA-Jee" firstAttribute="leading" secondItem="hsA-GN-zSJ" secondAttribute="leadingMargin" constant="8" id="St4-49-idY"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Kvm-hf-zEy" secondAttribute="trailing" constant="-8" id="WuA-1F-AWc"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="qDU-SH-1rd" secondAttribute="trailing" constant="12" id="fyv-oF-uWA"/>
-                                            <constraint firstItem="Rje-Jh-l5I" firstAttribute="leading" secondItem="hsA-GN-zSJ" secondAttribute="leadingMargin" id="fzW-Sg-bXr"/>
-                                            <constraint firstItem="Rje-Jh-l5I" firstAttribute="top" secondItem="hsA-GN-zSJ" secondAttribute="topMargin" id="htd-py-Qtj"/>
+                                            <constraint firstItem="Rje-Jh-l5I" firstAttribute="leading" secondItem="hsA-GN-zSJ" secondAttribute="leadingMargin" constant="-8" id="fzW-Sg-bXr"/>
+                                            <constraint firstItem="Rje-Jh-l5I" firstAttribute="top" secondItem="hsA-GN-zSJ" secondAttribute="topMargin" constant="-8" id="htd-py-Qtj"/>
                                             <constraint firstItem="qDU-SH-1rd" firstAttribute="leading" secondItem="hsA-GN-zSJ" secondAttribute="leadingMargin" constant="12" id="i5V-sT-uYw"/>
                                         </constraints>
                                         <size key="customSize" width="233" height="233"/>
@@ -664,7 +664,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
