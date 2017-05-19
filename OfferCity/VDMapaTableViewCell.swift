@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class VDMapaTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var imagen: UIImageView!
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    
+    // MARK: - Constructor
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        loadView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -22,4 +29,33 @@ class VDMapaTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    // MARK: - Actions
+    
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        print("Mapa 📌")
+    }
+}
+
+extension VDMapaTableViewCell {
+    
+    func loadView() {
+    
+        let camera = GMSCameraPosition.camera(withLatitude: 19.071514,
+                                              longitude: -98.245873,
+                                              zoom: 10.0)
+        
+        let map = GMSMapView.map(withFrame: self.mapView.bounds,
+                                 camera: camera)
+        
+        //map.isMyLocationEnabled = true
+        self.mapView = map
+        
+
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 19.071514, longitude: -98.245873)
+        marker.title = "Puebla"
+        marker.snippet = "México"
+        marker.map = mapView
+    }
 }

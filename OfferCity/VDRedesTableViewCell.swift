@@ -9,16 +9,36 @@
 import UIKit
 
 class VDRedesTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
 
+    @IBOutlet weak var imagen: UIImageView!
+    
+    // MARK: - Constructor
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupCell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
+    // MARK: - Actions
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        print("One Social Network...")
+    }
+}
+
+extension VDRedesTableViewCell {
+    
+    func setupCell() {
+        
+        let color = UIColor(red: 241/255, green: 244/255, blue: 247/255, alpha: 1)
+        
+        imagen?.superview?.backgroundColor = color
+    }
 }

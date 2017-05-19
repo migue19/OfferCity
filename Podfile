@@ -22,5 +22,7 @@ target 'OfferCity' do
    pod 'ObjectMapper', '~> 2.2'
    pod 'SDWebImage/WebP'
    pod 'ImageSlideshow', '~> 1.3'
+   pod 'FloatRatingView', '~> 2.0.0'
+   pod 'BEMCheckBox'
 
 end
