@@ -179,7 +179,7 @@ extension CercadetiViewController {
                     
                     self.activityIndicator.stopAnimating()
                     self.activityIndicator.isHidden = true
-                    
+                    self.imageView.isHidden = true
                     self.collectionView.isHidden = false
                     
                     self.collectionView.reloadData()
@@ -194,6 +194,7 @@ extension CercadetiViewController {
                 
                 //self.view.backgroundColor = UIColor.blue
                 
+                self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
                 
                 

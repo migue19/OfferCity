@@ -16,6 +16,7 @@ class DetalladaAcercaViewController: UIViewController {
     
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var contentDescripSlideshow: UIView!
     
     // MARK: - Propertys
     
@@ -337,11 +338,16 @@ extension DetalladaAcercaViewController {
         
         // Add view
         
-        let view2 = UIView(frame: CGRect(x: 0, y: 100, width: 44, height: 44))
-        view2.backgroundColor = .orange
-        view2.layer.zPosition = 1000
-            slideshow.addSubview(view2)
-        //self.view.addSubview(view2)
+//        let view2 = UIView(frame: CGRect(x: 0, y: 100, width: 44, height: 44))
+//        view2.backgroundColor = .orange
+//        view2.layer.zPosition = 1000
+//            slideshow.addSubview(view2)
+        descriptionSlideshow()
+    }
+    
+    func descriptionSlideshow() {
+        
+        self.contentDescripSlideshow.layer.zPosition = 1000
     }
     
     func didTap() {
@@ -375,7 +381,7 @@ extension DetalladaAcercaViewController {
         
         //navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
-        print("👀")
+        print("Dismiss 👀")
     }
     
     func getNavBarTransluced() {

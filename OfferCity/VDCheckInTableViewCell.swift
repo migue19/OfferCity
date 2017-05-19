@@ -39,19 +39,21 @@ extension VDCheckInTableViewCell {
         
         checkbox.on = true
         
-//        checkbox.onFillColor = .blue
-//        checkbox.tintColor = .red
-//        checkbox.onTintColor = .green
-//        checkbox.onCheckColor = .yellow
-
-                checkbox.onFillColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
-                checkbox.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
-                checkbox.onTintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
-                checkbox.onCheckColor = .white
-
+        //        checkbox.onFillColor = .blue
+        //        checkbox.tintColor = .red
+        //        checkbox.onTintColor = .green
+        //        checkbox.onCheckColor = .yellow
+        
+        checkbox.onFillColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+        checkbox.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+        checkbox.onTintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+        checkbox.onCheckColor = .white
+        
         
         checkbox.onAnimationType = .fill
         checkbox.offAnimationType = .fill
+        
+        checkbox.on = false
         
         // Delegate
         checkbox.delegate = self
