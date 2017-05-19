@@ -1312,7 +1312,7 @@
                                                     <rect key="frame" x="0.0" y="8" width="375" height="73"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ele-xU-bHd">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ele-xU-bHd">
                                                     <rect key="frame" x="0.0" y="8" width="375" height="73"/>
                                                     <connections>
                                                         <action selector="buttonAction:" destination="QuR-d5-LFk" eventType="touchUpInside" id="CBw-qc-slr"/>
