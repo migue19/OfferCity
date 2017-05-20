@@ -1433,17 +1433,10 @@
                             <constraint firstItem="zcN-0o-WH6" firstAttribute="top" secondItem="5J0-30-6bc" secondAttribute="bottom" constant="5" id="w3H-mY-iwg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JCa-Gh-yFa">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="gvs-Lc-7Bl">
-                            <connections>
-                                <action selector="closeDetallada:" destination="eIA-qK-1LU" id="UcD-Uh-oAy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="JCa-Gh-yFa"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
-                        <outlet property="barButtonItemClose" destination="gvs-Lc-7Bl" id="h62-u1-sTh"/>
                         <outlet property="contentButtonReservar" destination="mky-r9-MZX" id="nEH-3P-NOO"/>
                         <outlet property="contentDescripSlideshow" destination="GKe-d0-JVY" id="nlP-0y-Ya5"/>
                         <outlet property="labelReservar" destination="wou-Zf-odG" id="vRK-an-uoy"/>
@@ -2484,7 +2477,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2507,7 +2500,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXu-6N-JiX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNk-3t-Jd5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNk-3t-Jd5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
