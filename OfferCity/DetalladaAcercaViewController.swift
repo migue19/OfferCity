@@ -36,7 +36,6 @@ class DetalladaAcercaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //getNavBarTransluced()
         translucedNavigationBar()
         
         loadImageForSlideShow()
@@ -44,16 +43,7 @@ class DetalladaAcercaViewController: UIViewController {
         
         contentButtonReservar.layer.cornerRadius = 21
         labelReservar.text = "RESERVAR"
-        if UIScreen.main.bounds.width > 320 {
-            
-            labelReservar.font = UIFont.boldSystemFont(ofSize: 14.0)
 
-            
-        } else {
-            
-            labelReservar.font = UIFont.boldSystemFont(ofSize: 10.0)
-
-        }
         
         
     }
@@ -71,6 +61,14 @@ class DetalladaAcercaViewController: UIViewController {
         
         tableView.separatorStyle = .none
         
+        // Setup Font
+        
+        setupFont_forButtonReservar_ForiphoneSE_or_iphone7()
+     
+        // BarButtonItem with Image
+        
+        setupLeftBarButtonItemWithImage()
+        
     }
  
     
@@ -85,6 +83,28 @@ class DetalladaAcercaViewController: UIViewController {
         close()
     }
     
+}
+
+// MARK: - Vista 
+
+extension DetalladaAcercaViewController {
+    
+    func setupFont_forButtonReservar_ForiphoneSE_or_iphone7() {
+        
+        if UIScreen.main.bounds.width > 320 {
+            
+            labelReservar.font = UIFont.boldSystemFont(ofSize: 14.0)
+        } else {
+            
+            labelReservar.font = UIFont.boldSystemFont(ofSize: 10.0)
+        }
+    }
+    
+    func setupLeftBarButtonItemWithImage() {
+        
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
+        self.navigationItem.leftBarButtonItem = newBbi
+    }
 }
 
 // MARK: - Data Source
@@ -287,7 +307,7 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
         
         cell.selectedBackgroundView = auxView
         
-        setupItems()
+        //setupItems()
         
     }
     
@@ -395,7 +415,7 @@ extension DetalladaAcercaViewController {
     
 }
 
-// MARK: - Navigation Bar
+// MARK: - Navigation Bar Storyboard
 
 extension DetalladaAcercaViewController {
     
@@ -413,6 +433,10 @@ extension DetalladaAcercaViewController {
             self.navigationController?.navigationBar.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
             print("more")
             
+
+            let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "azulOffer"), target: self, action: #selector(DetalladaAcercaViewController.close))
+            navigationItem.leftBarButtonItem = nbbi
+            
         } else {
             self.navigationController?.navigationBar.tintColor = UIColor.white
             print("less")
@@ -428,9 +452,23 @@ extension DetalladaAcercaViewController {
     
     func setupItems() {
         
-        self.barButtonItemClose.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal, barMetrics: .default)
+        //self.barButtonItemClose.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal, barMetrics: .default)
     }
     
+}
+
+// MARK: - Bar Button Item
+
+extension UIBarButtonItem {
+    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setImage(colorfulImage, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 21.0, height: 21.0)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        
+        let barButtonItem = UIBarButtonItem(customView: button)
+        return barButtonItem
+    }
 }
 
 // MARK: - Navigation Bar Programatically
