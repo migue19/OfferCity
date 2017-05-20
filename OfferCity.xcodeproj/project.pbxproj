@@ -32,7 +32,6 @@
 		3CCA5B7D1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B7C1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift */; };
 		3CCA5B7F1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B7E1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift */; };
 		3CCA5B811ECEADF000A6AE42 /* VDRedes4TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B801ECEADF000A6AE42 /* VDRedes4TableViewCell.swift */; };
-		3CCA5B831ECEC43100A6AE42 /* BorrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B821ECEC43100A6AE42 /* BorrarViewController.swift */; };
 		3CEDE0821ECF8BEA003C3716 /* EventosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0811ECF8BEA003C3716 /* EventosCollectionViewCell.swift */; };
 		3CEDE0841ECFA9AC003C3716 /* PromosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0831ECFA9AC003C3716 /* PromosCollectionViewCell.swift */; };
 		3CEDE0871ECFD8CE003C3716 /* DetalladaEventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0861ECFD8CE003C3716 /* DetalladaEventosViewController.swift */; };
@@ -95,7 +94,6 @@
 		3CCA5B7C1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRedes2TableViewCell.swift; sourceTree = "<group>"; };
 		3CCA5B7E1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRedes3TableViewCell.swift; sourceTree = "<group>"; };
 		3CCA5B801ECEADF000A6AE42 /* VDRedes4TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRedes4TableViewCell.swift; sourceTree = "<group>"; };
-		3CCA5B821ECEC43100A6AE42 /* BorrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrarViewController.swift; sourceTree = "<group>"; };
 		3CEDE0811ECF8BEA003C3716 /* EventosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CEDE0831ECFA9AC003C3716 /* PromosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromosCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CEDE0861ECFD8CE003C3716 /* DetalladaEventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalladaEventosViewController.swift; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				7D14499B1EA2FC0F0068C597 /* Main.storyboard */,
-				3CCA5B821ECEC43100A6AE42 /* BorrarViewController.swift */,
 				7D1449A11EA2FC0F0068C597 /* Assets.xcassets */,
 				7D1449A31EA2FC0F0068C597 /* LaunchScreen.storyboard */,
 			);
@@ -620,7 +617,6 @@
 				3CEDE0841ECFA9AC003C3716 /* PromosCollectionViewCell.swift in Sources */,
 				7D9219421EA428BC006C6976 /* PreferenciasViewController.swift in Sources */,
 				3C2A4AB61ECCE8AC007D279D /* VDHoraTableViewCell.swift in Sources */,
-				3CCA5B831ECEC43100A6AE42 /* BorrarViewController.swift in Sources */,
 				3CEDE09A1ECFF94C003C3716 /* VDERedes3TableViewCell.swift in Sources */,
 				3CEDE0931ECFF90B003C3716 /* VDEMapaTableViewCell.swift in Sources */,
 				3C2A4AB71ECCE8AC007D279D /* VDBotonesTableViewCell.swift in Sources */,

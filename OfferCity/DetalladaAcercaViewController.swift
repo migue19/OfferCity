@@ -19,12 +19,11 @@ class DetalladaAcercaViewController: UIViewController {
     @IBOutlet weak var contentDescripSlideshow: UIView!
     @IBOutlet weak var contentButtonReservar: UIView!
     @IBOutlet weak var labelReservar: UILabel!
-    
+    @IBOutlet weak var barButtonItemClose: UIBarButtonItem!
     
     // MARK: - Propertys
     
     var imageFromCellToDetall: UIImage!
-    
     var localSource = [ImageSource]()
     
     let arrayRedes = ["twitter", "facebook", "instagram", "web"]
@@ -37,9 +36,8 @@ class DetalladaAcercaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setNavigationBar()
-        //translucedNavigationBar()
-        getNavBarTransluced()
+        //getNavBarTransluced()
+        translucedNavigationBar()
         
         loadImageForSlideShow()
         setupSlideShow()
@@ -82,6 +80,10 @@ class DetalladaAcercaViewController: UIViewController {
         print("Button Reservar")
     }
     
+    @IBAction func closeDetallada(_ sender: UIBarButtonItem) {
+        
+        close()
+    }
     
 }
 
@@ -269,6 +271,8 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
         
         // Prin Section and Row
         print("Section: \(indexPath.section), Row: \(indexPath.row)")
+        
+        performSegue(withIdentifier: "asdf", sender: self)
     }
     
     func tableView(_ tableView: UITableView,
@@ -282,6 +286,8 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
                                           alpha: 0.3)
         
         cell.selectedBackgroundView = auxView
+        
+        setupItems()
         
     }
     
@@ -393,6 +399,44 @@ extension DetalladaAcercaViewController {
 
 extension DetalladaAcercaViewController {
     
+    func translucedNavigationBar() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= (slideshow.bounds.height-50) {
+            
+            self.navigationController?.navigationBar.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+            print("more")
+            
+        } else {
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            print("less")
+        }
+    }
+    
+    func close() {
+        
+        //navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        print("Dismiss 👀")
+    }
+    
+    func setupItems() {
+        
+        self.barButtonItemClose.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal, barMetrics: .default)
+    }
+    
+}
+
+// MARK: - Navigation Bar Programatically
+
+extension DetalladaAcercaViewController {
+
     func setNavigationBar() {
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -419,7 +463,7 @@ extension DetalladaAcercaViewController {
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(DetalladaAcercaViewController.done))
         navItem.leftBarButtonItem = doneItem
         navBar.setItems([navItem], animated: false)
-
+        
         
         //navBar.setBackgroundImage(#imageLiteral(resourceName: "borrarBar"), for: .default)
         navBar.setBackgroundImage(UIImage(), for: .default)
@@ -430,29 +474,8 @@ extension DetalladaAcercaViewController {
         
         self.view.addSubview(navBar)
     }
-    
-    func translucedNavigationBar() {
-        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
-    }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y >= (slideshow.bounds.height-50) {
-//            
-//            self.navigationController?.navigationBar.tintColor = UIColor.red
-//            print("more")
-//            
-//        } else {
-//            self.navigationController?.navigationBar.tintColor = UIColor.white
-//            print("less")
-//        }
-//    }
-    
-}
 
+}
 
 
 

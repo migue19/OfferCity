@@ -70,13 +70,16 @@ class CercadetiViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "acercadetiDetalladaAcerca" {
             
-            let vc = segue.destination as! DetalladaAcercaViewController
+            let nav = segue.destination as? UINavigationController
+            let vc = nav?.topViewController as? DetalladaAcercaViewController
+            
+            //let vc = segue.destination as! DetalladaAcercaViewController
             if self.imageFromCellToDetall == nil {
                 
-                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+                vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
             } else {
                 
-                vc.imageFromCellToDetall = self.imageFromCellToDetall
+                vc?.imageFromCellToDetall = self.imageFromCellToDetall
             }
             
         }
