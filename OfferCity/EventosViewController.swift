@@ -11,6 +11,7 @@ import UIKit
 class EventosViewController: UIViewController {
     
     // MARK: - Propertys
+    var imageFromCellToDetall: UIImage!
     
     let arrayImage = [#imageLiteral(resourceName: "borrarEvento1"), #imageLiteral(resourceName: "borrarEvento2"), #imageLiteral(resourceName: "borrarEvento3"), #imageLiteral(resourceName: "borrarEvento4")]
     let arrayEvento = ["Marc Anthony ", "LOS ANGELES AZULES", "Mijares", "Sofía Niño de Rivera"]
@@ -23,6 +24,22 @@ class EventosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "eventosDetalladaEventos" {
+            
+            let vc = segue.destination as! DetalladaEventosViewController
+            
+            if self.imageFromCellToDetall == nil {
+                
+                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            } else {
+                
+                vc.imageFromCellToDetall = self.imageFromCellToDetall
+            }
+            
+        }
     }
 
 }
@@ -59,6 +76,12 @@ extension EventosViewController {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! EventosCollectionViewCell
+        self.imageFromCellToDetall = cell.imagFoto.image
+        
+        performSegue(withIdentifier: "eventosDetalladaEventos", sender: self)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView,

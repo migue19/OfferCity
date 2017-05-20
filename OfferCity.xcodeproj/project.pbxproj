@@ -35,6 +35,16 @@
 		3CCA5B831ECEC43100A6AE42 /* BorrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B821ECEC43100A6AE42 /* BorrarViewController.swift */; };
 		3CEDE0821ECF8BEA003C3716 /* EventosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0811ECF8BEA003C3716 /* EventosCollectionViewCell.swift */; };
 		3CEDE0841ECFA9AC003C3716 /* PromosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0831ECFA9AC003C3716 /* PromosCollectionViewCell.swift */; };
+		3CEDE0871ECFD8CE003C3716 /* DetalladaEventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0861ECFD8CE003C3716 /* DetalladaEventosViewController.swift */; };
+		3CEDE08A1ECFD8EC003C3716 /* DetalladaPromosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0891ECFD8EC003C3716 /* DetalladaPromosViewController.swift */; };
+		3CEDE08D1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE08C1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift */; };
+		3CEDE08F1ECFF8EE003C3716 /* VDETelefonoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE08E1ECFF8EE003C3716 /* VDETelefonoTableViewCell.swift */; };
+		3CEDE0911ECFF8FE003C3716 /* VDEHoraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0901ECFF8FE003C3716 /* VDEHoraTableViewCell.swift */; };
+		3CEDE0931ECFF90B003C3716 /* VDEMapaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0921ECFF90B003C3716 /* VDEMapaTableViewCell.swift */; };
+		3CEDE0961ECFF934003C3716 /* VDERedesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0951ECFF934003C3716 /* VDERedesTableViewCell.swift */; };
+		3CEDE0981ECFF93E003C3716 /* VDERedes2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0971ECFF93E003C3716 /* VDERedes2TableViewCell.swift */; };
+		3CEDE09A1ECFF94C003C3716 /* VDERedes3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0991ECFF94C003C3716 /* VDERedes3TableViewCell.swift */; };
+		3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE09B1ECFF959003C3716 /* VDERedes4TableViewCell.swift */; };
 		7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */; };
 		7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A41ECC7B4900D46CCA /* FXBlurView.m */; };
 		7D0330A71ECC7B5B00D46CCA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A61ECC7B5B00D46CCA /* AvatarImageView.swift */; };
@@ -88,6 +98,16 @@
 		3CCA5B821ECEC43100A6AE42 /* BorrarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrarViewController.swift; sourceTree = "<group>"; };
 		3CEDE0811ECF8BEA003C3716 /* EventosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CEDE0831ECFA9AC003C3716 /* PromosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromosCollectionViewCell.swift; sourceTree = "<group>"; };
+		3CEDE0861ECFD8CE003C3716 /* DetalladaEventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalladaEventosViewController.swift; sourceTree = "<group>"; };
+		3CEDE0891ECFD8EC003C3716 /* DetalladaPromosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalladaPromosViewController.swift; sourceTree = "<group>"; };
+		3CEDE08C1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDEDescripcionTableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE08E1ECFF8EE003C3716 /* VDETelefonoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDETelefonoTableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE0901ECFF8FE003C3716 /* VDEHoraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDEHoraTableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE0921ECFF90B003C3716 /* VDEMapaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDEMapaTableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE0951ECFF934003C3716 /* VDERedesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedesTableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE0971ECFF93E003C3716 /* VDERedes2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedes2TableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE0991ECFF94C003C3716 /* VDERedes3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedes3TableViewCell.swift; sourceTree = "<group>"; };
+		3CEDE09B1ECFF959003C3716 /* VDERedes4TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedes4TableViewCell.swift; sourceTree = "<group>"; };
 		7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPrincipalController.swift; sourceTree = "<group>"; };
 		7D0330A21ECC7B4800D46CCA /* OfferCity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfferCity-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0330A31ECC7B4900D46CCA /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -137,13 +157,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3C2A4AA41ECCE23A007D279D /* Detallada */ = {
+		3C2A4AA41ECCE23A007D279D /* DetalladaCerca */ = {
 			isa = PBXGroup;
 			children = (
 				3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */,
 				3C2A4AA51ECCE895007D279D /* Cells */,
 			);
-			name = Detallada;
+			name = DetalladaCerca;
 			sourceTree = "<group>";
 		};
 		3C2A4AA51ECCE895007D279D /* Cells */ = {
@@ -289,7 +309,7 @@
 			children = (
 				3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */,
 				3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */,
-				3C2A4AA41ECCE23A007D279D /* Detallada */,
+				3C2A4AA41ECCE23A007D279D /* DetalladaCerca */,
 			);
 			name = Cercadeti;
 			sourceTree = "<group>";
@@ -299,6 +319,7 @@
 			children = (
 				3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */,
 				3CEDE0811ECF8BEA003C3716 /* EventosCollectionViewCell.swift */,
+				3CEDE0851ECFD8A2003C3716 /* DetalladaEventos */,
 			);
 			name = Eventos;
 			sourceTree = "<group>";
@@ -308,6 +329,7 @@
 			children = (
 				3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */,
 				3CEDE0831ECFA9AC003C3716 /* PromosCollectionViewCell.swift */,
+				3CEDE0881ECFD8D3003C3716 /* DetalladaPromos */,
 			);
 			name = Promociones;
 			sourceTree = "<group>";
@@ -352,6 +374,46 @@
 				3CCA5B801ECEADF000A6AE42 /* VDRedes4TableViewCell.swift */,
 			);
 			name = RedeSociales;
+			sourceTree = "<group>";
+		};
+		3CEDE0851ECFD8A2003C3716 /* DetalladaEventos */ = {
+			isa = PBXGroup;
+			children = (
+				3CEDE0861ECFD8CE003C3716 /* DetalladaEventosViewController.swift */,
+				3CEDE08B1ECFE972003C3716 /* Cells */,
+			);
+			name = DetalladaEventos;
+			sourceTree = "<group>";
+		};
+		3CEDE0881ECFD8D3003C3716 /* DetalladaPromos */ = {
+			isa = PBXGroup;
+			children = (
+				3CEDE0891ECFD8EC003C3716 /* DetalladaPromosViewController.swift */,
+			);
+			name = DetalladaPromos;
+			sourceTree = "<group>";
+		};
+		3CEDE08B1ECFE972003C3716 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3CEDE08C1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift */,
+				3CEDE08E1ECFF8EE003C3716 /* VDETelefonoTableViewCell.swift */,
+				3CEDE0901ECFF8FE003C3716 /* VDEHoraTableViewCell.swift */,
+				3CEDE0941ECFF91D003C3716 /* RedesSociales */,
+				3CEDE0921ECFF90B003C3716 /* VDEMapaTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		3CEDE0941ECFF91D003C3716 /* RedesSociales */ = {
+			isa = PBXGroup;
+			children = (
+				3CEDE0951ECFF934003C3716 /* VDERedesTableViewCell.swift */,
+				3CEDE0971ECFF93E003C3716 /* VDERedes2TableViewCell.swift */,
+				3CEDE0991ECFF94C003C3716 /* VDERedes3TableViewCell.swift */,
+				3CEDE09B1ECFF959003C3716 /* VDERedes4TableViewCell.swift */,
+			);
+			name = RedesSociales;
 			sourceTree = "<group>";
 		};
 		7BD7666BB43E8D09519E36B7 /* Frameworks */ = {
@@ -559,12 +621,17 @@
 				7D9219421EA428BC006C6976 /* PreferenciasViewController.swift in Sources */,
 				3C2A4AB61ECCE8AC007D279D /* VDHoraTableViewCell.swift in Sources */,
 				3CCA5B831ECEC43100A6AE42 /* BorrarViewController.swift in Sources */,
+				3CEDE09A1ECFF94C003C3716 /* VDERedes3TableViewCell.swift in Sources */,
+				3CEDE0931ECFF90B003C3716 /* VDEMapaTableViewCell.swift in Sources */,
 				3C2A4AB71ECCE8AC007D279D /* VDBotonesTableViewCell.swift in Sources */,
+				3CEDE0981ECFF93E003C3716 /* VDERedes2TableViewCell.swift in Sources */,
 				3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */,
 				3C32B81B1EC4D79900AE78E0 /* Params.swift in Sources */,
+				3CEDE08F1ECFF8EE003C3716 /* VDETelefonoTableViewCell.swift in Sources */,
 				3C2A4AB21ECCE8AC007D279D /* VDRatingTableViewCell.swift in Sources */,
 				3C32B8181EC4D3D300AE78E0 /* Headers.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
+				3CEDE0961ECFF934003C3716 /* VDERedesTableViewCell.swift in Sources */,
 				7D0330A91ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift in Sources */,
 				7D14499A1EA2FC0F0068C597 /* WelcomeViewController.swift in Sources */,
 				3CEDE0821ECF8BEA003C3716 /* EventosCollectionViewCell.swift in Sources */,
@@ -573,12 +640,15 @@
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
+				3CEDE0911ECFF8FE003C3716 /* VDEHoraTableViewCell.swift in Sources */,
+				3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
 				7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */,
 				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
 				3CCA5B811ECEADF000A6AE42 /* VDRedes4TableViewCell.swift in Sources */,
 				3C2A4ABA1ECCE8AC007D279D /* VDRedesTableViewCell.swift in Sources */,
+				3CEDE0871ECFD8CE003C3716 /* DetalladaEventosViewController.swift in Sources */,
 				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
@@ -593,6 +663,8 @@
 				3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */,
 				3C2A4AB91ECCE8AC007D279D /* VDMapaTableViewCell.swift in Sources */,
 				3CCA5B7F1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift in Sources */,
+				3CEDE08A1ECFD8EC003C3716 /* DetalladaPromosViewController.swift in Sources */,
+				3CEDE08D1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift in Sources */,
 				3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */,
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
 				3C32B8161EC4CDD300AE78E0 /* Token.swift in Sources */,
