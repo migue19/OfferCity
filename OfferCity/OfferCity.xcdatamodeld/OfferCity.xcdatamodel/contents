@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Imagen" representedClassName="Imagen" syncable="YES" codeGenerationType="class">
+        <attribute name="imagen" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="Restaurantes" representedClassName="Restaurantes" syncable="YES" codeGenerationType="class">
         <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_establecimiento" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -18,5 +21,6 @@
     <elements>
         <element name="Restaurantes" positionX="-63" positionY="0" width="128" height="180"/>
         <element name="Settings" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Imagen" positionX="-63" positionY="63" width="128" height="60"/>
     </elements>
 </model>
