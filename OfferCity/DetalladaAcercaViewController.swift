@@ -17,6 +17,9 @@ class DetalladaAcercaViewController: UIViewController {
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var contentDescripSlideshow: UIView!
+    @IBOutlet weak var contentButtonReservar: UIView!
+    @IBOutlet weak var labelReservar: UILabel!
+    
     
     // MARK: - Propertys
     
@@ -41,6 +44,20 @@ class DetalladaAcercaViewController: UIViewController {
         loadImageForSlideShow()
         setupSlideShow()
         
+        contentButtonReservar.layer.cornerRadius = 21
+        labelReservar.text = "RESERVAR"
+        if UIScreen.main.bounds.width > 320 {
+            
+            labelReservar.font = UIFont.boldSystemFont(ofSize: 14.0)
+
+            
+        } else {
+            
+            labelReservar.font = UIFont.boldSystemFont(ofSize: 10.0)
+
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +74,14 @@ class DetalladaAcercaViewController: UIViewController {
         tableView.separatorStyle = .none
         
     }
+ 
+    
+    // MARK: - Actions
+    
+    @IBAction func buttonReservarAction(_ sender: UIButton) {
+        print("Button Reservar")
+    }
+    
     
 }
 

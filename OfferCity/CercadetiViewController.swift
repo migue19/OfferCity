@@ -334,7 +334,7 @@ extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
                                  layout collectionViewLayout: UICollectionViewLayout,
                                  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return -12
+        return 0
     }
     
     internal func collectionView(_ collectionView: UICollectionView,
