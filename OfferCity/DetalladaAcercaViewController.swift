@@ -26,8 +26,8 @@ class DetalladaAcercaViewController: UIViewController {
     var imageFromCellToDetall: UIImage!
     var localSource = [ImageSource]()
     
-    let arrayRedes = ["twitter", "facebook", "instagram", "web"]
-//    let arrayRedes = ["twitter", "facebook", "instagram"]
+//    let arrayRedes = ["twitter", "facebook", "instagram", "web"]
+    let arrayRedes = ["twitter", "facebook", "instagram"]
 //    let arrayRedes = ["twitter", "facebook"]
 //    let arrayRedes = ["twitter"]
     
@@ -193,7 +193,7 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    
         switch indexPath.section {
         case 0:
             switch indexPath.row {
