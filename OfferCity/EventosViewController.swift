@@ -52,6 +52,28 @@ extension EventosViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - Delegate
+
+extension EventosViewController {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        
+        let newCell = cell as! EventosCollectionViewCell
+        
+        newCell.viewPrecio.layer.shadowColor = UIColor.lightGray.cgColor
+        newCell.viewPrecio.layer.shadowOffset = CGSize(width: 5.0, height: 3.0)
+        newCell.viewPrecio.layer.shadowRadius = 5
+        newCell.viewPrecio.layer.shadowOpacity = 0.8
+    }
+}
+
 // MARK: - FlowLayOut
 
 extension EventosViewController: UICollectionViewDelegateFlowLayout {

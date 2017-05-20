@@ -271,7 +271,9 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
         print("Section: \(indexPath.section), Row: \(indexPath.row)")
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
 
         let auxView = UIView()
         auxView.backgroundColor = UIColor(red: 100/255.0,

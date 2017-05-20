@@ -20,6 +20,7 @@ class EventosCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imagPin: UIImageView!
     @IBOutlet var imagFecha: UIImageView!
     @IBOutlet var labelPrecio: UILabel!
+    @IBOutlet weak var viewPrecio: UIView!
     
     // MARK: - Propertys
     

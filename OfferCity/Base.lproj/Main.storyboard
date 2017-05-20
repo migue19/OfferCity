@@ -1619,6 +1619,7 @@
                                             <outlet property="labelFecha" destination="sX6-PZ-isY" id="Xze-df-Ygs"/>
                                             <outlet property="labelPrecio" destination="GGl-Bk-EHk" id="oRt-mb-ypt"/>
                                             <outlet property="labelUbicacion" destination="MU6-J6-Qwg" id="6cK-A0-osO"/>
+                                            <outlet property="viewPrecio" destination="4NB-Vg-tX1" id="b7L-JV-AZa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
