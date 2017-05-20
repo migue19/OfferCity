@@ -6,6 +6,7 @@ PODS:
   - AlamofireSwiftyJSON (0.2.0):
     - Alamofire (~> 4.0)
     - SwiftyJSON (~> 3.1)
+  - BEMCheckBox (1.4.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -36,6 +37,7 @@ PODS:
   - FirebaseCore (3.5.2):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.9)
+  - FloatRatingView (2.0)
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
   - GoogleMaps/Base (2.2.0)
@@ -66,6 +68,9 @@ PODS:
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
   - HandyJSON (1.6.1)
+  - ImageSlideshow (1.3.0):
+    - ImageSlideshow/Core (= 1.3.0)
+  - ImageSlideshow/Core (1.3.0)
   - libwebp (0.5.1):
     - libwebp/core (= 0.5.1)
     - libwebp/dec (= 0.5.1)
@@ -100,16 +105,19 @@ PODS:
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 4.0)
   - AlamofireSwiftyJSON
+  - BEMCheckBox
   - CarbonKit
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - Firebase/Auth
   - Firebase/Core
+  - FloatRatingView (~> 2.0.0)
   - GoogleMaps
   - GooglePlaces
   - GoogleSignIn
   - HandyJSON
+  - ImageSlideshow (~> 1.3)
   - ObjectMapper (~> 2.2)
   - SDWebImage/WebP
 
@@ -117,6 +125,7 @@ SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   AlamofireSwiftyJSON: 5a49196b8b061e32f5ebc84fa0815300bd8a974e
+  BEMCheckBox: e18e4a148905b290bd03d98b767651c104f4eda3
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CarbonKit: af16a9c0d2b6c908a5985fe4633424d38c9bfc0a
   FBSDKCoreKit: 82eac696eb6157da5f4266c3a241f00e9bd72471
@@ -127,6 +136,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
   FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  FloatRatingView: 857ab8f10040d06a42fc979f486c8f9fecd2f2e5
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
@@ -134,11 +144,12 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   HandyJSON: dcc98115467462a4749db81bc8a9052607600bdf
+  ImageSlideshow: 96e2bb4e6f16f8b682ad5bb41691f463bed58a07
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   ObjectMapper: '042708195cc46c20871cbcbec0453826398273fd'
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 38ea6c9d8d4ff5bec703bdd25072d1e0268f94d8
+PODFILE CHECKSUM: de315bf70a456eac32bc6b12d6d701a81eb77305
 
 COCOAPODS: 1.2.0

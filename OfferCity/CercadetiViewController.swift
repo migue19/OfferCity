@@ -26,9 +26,11 @@ class CercadetiViewController: UIViewController {
     @IBOutlet var label: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
-    
     @IBOutlet weak var contentView: UIView!
+    
     // MARK: - Propertys
+    
+    var imageFromCellToDetall: UIImage!
     
     fileprivate var restaurantes : [Restaurantes] = {
         
@@ -63,6 +65,21 @@ class CercadetiViewController: UIViewController {
         }
         
         updateView()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "acercadetiDetalladaAcerca" {
+            
+            let vc = segue.destination as! DetalladaAcercaViewController
+            if self.imageFromCellToDetall == nil {
+                
+                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            } else {
+                
+                vc.imageFromCellToDetall = self.imageFromCellToDetall
+            }
+            
+        }
     }
     
 }
@@ -162,7 +179,7 @@ extension CercadetiViewController {
                     
                     self.activityIndicator.stopAnimating()
                     self.activityIndicator.isHidden = true
-                    
+                    self.imageView.isHidden = true
                     self.collectionView.isHidden = false
                     
                     self.collectionView.reloadData()
@@ -177,6 +194,7 @@ extension CercadetiViewController {
                 
                 //self.view.backgroundColor = UIColor.blue
                 
+                self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
                 
                 
@@ -264,6 +282,21 @@ extension CercadetiViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - Delegate 
+
+extension CercadetiViewController: UICollectionViewDelegate {
+    
+    public func collectionView(_ collectionView: UICollectionView,
+                                    didSelectItemAt indexPath: IndexPath) {
+     
+        let cell = collectionView.cellForItem(at: indexPath) as! CercadetiCollectionViewCell
+        self.imageFromCellToDetall = cell.imagFoto.image
+        
+        performSegue(withIdentifier: "acercadetiDetalladaAcerca", sender: self)
+    }
+    
+}
+
 // MARK: - FlowLayout
 
 extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
@@ -271,8 +304,8 @@ extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
     //Use for size
     
     internal func collectionView(_ collectionView: UICollectionView,
-                                 layout collectionViewLayout: UICollectionViewLayout,
-                                 sizeForItemAt indexPath: IndexPath) -> CGSize {
+                                    layout collectionViewLayout: UICollectionViewLayout,
+                                    sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = collectionView.bounds.width
         let height = width
@@ -301,7 +334,7 @@ extension CercadetiViewController: UICollectionViewDelegateFlowLayout {
                                  layout collectionViewLayout: UICollectionViewLayout,
                                  minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return -12
+        return 0
     }
     
     internal func collectionView(_ collectionView: UICollectionView,

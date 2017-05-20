@@ -73,5 +73,9 @@
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
+    
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Esta app usa tu ubicación para mostrarte restaurantes cercanos</string>
+
 </dict>
 </plist>
