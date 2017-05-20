@@ -19,13 +19,14 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     @IBOutlet var headerLabel:UILabel!
     @IBOutlet var headerImageView:UIImageView!
     @IBOutlet var headerBlurImageView:UIImageView!
+    var imagenes: [Imagen] = []
     
     var blurredHeaderImageView:UIImageView?
     
     @IBOutlet weak var tableView: UITableView!
     
     
-    var options = ["City Points","Promociones Usadas","Ciudad","Ayuda","Reservaciones","Ajustes"]
+    var options = ["City Points","Promociones Usadas","Ciudad","Ayuda","Reservaciones","Ajustes", "Cerrar Session"]
     
     
     
@@ -40,6 +41,8 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         header.insertSubview(headerImageView, belowSubview: headerLabel)
         
+        self.LoadImageProfile()
+        
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         ///appDelegate.shouldRotate = false // or false to disable rotation
         
@@ -48,6 +51,8 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     override func viewDidAppear(_ animated: Bool) {
         
         // Header - Image
+        
+        self.LoadImageProfile()
         
         headerImageView = UIImageView(frame: header.bounds)
         headerImageView?.image = UIImage(named: "city")
@@ -173,6 +178,37 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         return cell
         
     }
+    
+    
+    
+    
+    
+    
+    //Core Data
+    
+    
+    func LoadImageProfile(){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+             imagenes = try context.fetch(Imagen.fetchRequest())
+            
+            if imagenes.count > 0 {
+                for image in imagenes{
+                    print(image.imagen ?? "")
+                    
+                    avatarImage.image = UIImage(data: image.imagen! as Data)
+                    print("")
+                }
+            }else{
+                print("No Hay Datos Para Mostrar")
+            }
+        }
+        catch{
+            print("Failed feching")
+        }
+        
+    }
+    
     
     
     

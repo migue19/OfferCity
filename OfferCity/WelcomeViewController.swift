@@ -130,6 +130,11 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
                 self.InsertSetting(descripcion: "Email", valor: email)
                 self.InsertSetting(descripcion: "ImageURL", valor: facebookProfileUrl)
                 
+                let urlimage = URL(string: facebookProfileUrl)
+                
+                self.downloadImage(url: urlimage!)
+                
+                
                 self.getData()
                 
                 self.performSegue(withIdentifier: "showCiudad", sender: self)
@@ -158,10 +163,13 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
        self.InsertSetting(descripcion: "FirstName", valor: user.profile.givenName)
        self.InsertSetting(descripcion: "LastName", valor: user.profile.familyName)
        self.InsertSetting(descripcion: "Email", valor: user.profile.email)
-       self.InsertSetting(descripcion: "ImageURL", valor: String(describing: user.profile.imageURL(withDimension: 400)!))
+        
+       let urlimage = user.profile.imageURL(withDimension: 400)
+        
+       self.InsertSetting(descripcion: "ImageURL", valor: String(describing: urlimage!))
         
         
-        
+       downloadImage(url: urlimage!)
         
        //saveImage(tempImage, path: fileInDocumentsDirectory("tempImage"))
    
@@ -299,18 +307,6 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
     }
     
     
-    
-    
-    func SaveOnDataBase(){
-    self.downloadImage(url: <#T##URL#>)
-    
-    
-    }
-    
-    
-    
-    
-    
     //////Descargar Imagen y Guardarla Asyncronamente
     func downloadImage(url: URL) {
         print("Download Started")
@@ -319,13 +315,16 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
             
             
             guard let data = data, error == nil else { return }
+            let context = AppDelegate.viewContext
             
+            let userData = Imagen(context: context)
             
+            userData.imagen = data as NSData
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
-            
-            
             /*DispatchQueue.main.async() { () -> Void in
                 self.imageView.image = UIImage(data: data)
             }*/

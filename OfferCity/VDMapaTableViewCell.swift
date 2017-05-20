@@ -43,15 +43,11 @@ extension VDMapaTableViewCell {
     
         let camera = GMSCameraPosition.camera(withLatitude: 19.071514,
                                               longitude: -98.245873,
-                                              zoom: 10.0)
+                                              zoom: 15.0)
         
-        let map = GMSMapView.map(withFrame: self.mapView.bounds,
-                                 camera: camera)
+        mapView.camera = camera
+        mapView.isMyLocationEnabled = true
         
-        //map.isMyLocationEnabled = true
-        self.mapView = map
-        
-
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: 19.071514, longitude: -98.245873)
         marker.title = "Puebla"
