@@ -40,35 +40,7 @@ class DetalladaAcercaViewController: UIViewController {
         
         loadImageForSlideShow()
         setupSlideShow()
-        
-        contentButtonReservar.layer.cornerRadius = 21
-        labelReservar.text = "RESERVAR"
-
-        
-        
-    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        // Change heigh slideshow
-        
-        slideshow.frame = CGRect(x: 0,
-                                 y: 0,
-                                 width: UIScreen.main.bounds.width,
-                                 height: UIScreen.main.bounds.height/2.2)
-        
-        // Sin linea entre cells
-        
-        tableView.separatorStyle = .none
-        
-        // Setup Font
-        
-        setupFont_forButtonReservar_ForiphoneSE_or_iphone7()
-     
-        // BarButtonItem with Image
-        
-        setupLeftBarButtonItemWithImage()
-        
     }
  
     
@@ -85,7 +57,41 @@ class DetalladaAcercaViewController: UIViewController {
     
 }
 
-// MARK: - Vista 
+// MARK: - Lifecycle
+
+extension DetalladaAcercaViewController {
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // Change heigh slideshow
+        
+        slideshow.frame = CGRect(x: 0,
+                                 y: 0,
+                                 width: UIScreen.main.bounds.width,
+                                 height: UIScreen.main.bounds.height/2.2)
+        
+        // Sin linea entre cells
+        
+        tableView.separatorStyle = .none
+        
+        // Setup Font
+        
+        setupFont_forButtonReservar_ForiphoneSE_or_iphone7()
+        
+        // Setup Button Reservar
+        
+        setupButtonReservar()
+        
+        // BarButtonItem with Image
+        
+        setupLeftBarButtonItemWithImage()
+        
+    }
+    
+}
+
+
+// MARK: - Vista
 
 extension DetalladaAcercaViewController {
     
@@ -104,6 +110,12 @@ extension DetalladaAcercaViewController {
         
         let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
         self.navigationItem.leftBarButtonItem = newBbi
+    }
+    
+    func setupButtonReservar() {
+        
+        contentButtonReservar.layer.cornerRadius = 21
+        labelReservar.text = "RESERVAR"
     }
 }
 
