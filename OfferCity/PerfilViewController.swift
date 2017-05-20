@@ -35,6 +35,11 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         tableView.dataSource = self
         tableView.dataSource = self
         
+        headerImageView = UIImageView(frame: header.bounds)
+        headerImageView?.image = UIImage(named: "city")
+        headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
+        header.insertSubview(headerImageView, belowSubview: headerLabel)
+        
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         ///appDelegate.shouldRotate = false // or false to disable rotation
         

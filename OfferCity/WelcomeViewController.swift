@@ -159,6 +159,11 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
        self.InsertSetting(descripcion: "LastName", valor: user.profile.familyName)
        self.InsertSetting(descripcion: "Email", valor: user.profile.email)
        self.InsertSetting(descripcion: "ImageURL", valor: String(describing: user.profile.imageURL(withDimension: 400)!))
+        
+        
+        
+        
+       //saveImage(tempImage, path: fileInDocumentsDirectory("tempImage"))
    
         getData()
         
@@ -292,6 +297,49 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
             self.findAndDeleteSettings(descripcion: description)
         }
     }
+    
+    
+    
+    
+    func SaveOnDataBase(){
+    self.downloadImage(url: <#T##URL#>)
+    
+    
+    }
+    
+    
+    
+    
+    
+    //////Descargar Imagen y Guardarla Asyncronamente
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { (data, response, error)  in
+            
+            
+            
+            guard let data = data, error == nil else { return }
+            
+            
+            
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            
+            
+            /*DispatchQueue.main.async() { () -> Void in
+                self.imageView.image = UIImage(data: data)
+            }*/
+        }
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    
     
 }
 
