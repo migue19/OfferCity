@@ -19,12 +19,11 @@ class DetalladaAcercaViewController: UIViewController {
     @IBOutlet weak var contentDescripSlideshow: UIView!
     @IBOutlet weak var contentButtonReservar: UIView!
     @IBOutlet weak var labelReservar: UILabel!
-    
+    @IBOutlet weak var barButtonItemClose: UIBarButtonItem!
     
     // MARK: - Propertys
     
     var imageFromCellToDetall: UIImage!
-    
     var localSource = [ImageSource]()
     
     let arrayRedes = ["twitter", "facebook", "instagram", "web"]
@@ -37,25 +36,14 @@ class DetalladaAcercaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setNavigationBar()
-        //translucedNavigationBar()
-        getNavBarTransluced()
+        translucedNavigationBar()
         
         loadImageForSlideShow()
         setupSlideShow()
         
         contentButtonReservar.layer.cornerRadius = 21
         labelReservar.text = "RESERVAR"
-        if UIScreen.main.bounds.width > 320 {
-            
-            labelReservar.font = UIFont.boldSystemFont(ofSize: 14.0)
 
-            
-        } else {
-            
-            labelReservar.font = UIFont.boldSystemFont(ofSize: 10.0)
-
-        }
         
         
     }
@@ -73,6 +61,14 @@ class DetalladaAcercaViewController: UIViewController {
         
         tableView.separatorStyle = .none
         
+        // Setup Font
+        
+        setupFont_forButtonReservar_ForiphoneSE_or_iphone7()
+     
+        // BarButtonItem with Image
+        
+        setupLeftBarButtonItemWithImage()
+        
     }
  
     
@@ -82,7 +78,33 @@ class DetalladaAcercaViewController: UIViewController {
         print("Button Reservar")
     }
     
+    @IBAction func closeDetallada(_ sender: UIBarButtonItem) {
+        
+        close()
+    }
     
+}
+
+// MARK: - Vista 
+
+extension DetalladaAcercaViewController {
+    
+    func setupFont_forButtonReservar_ForiphoneSE_or_iphone7() {
+        
+        if UIScreen.main.bounds.width > 320 {
+            
+            labelReservar.font = UIFont.boldSystemFont(ofSize: 14.0)
+        } else {
+            
+            labelReservar.font = UIFont.boldSystemFont(ofSize: 10.0)
+        }
+    }
+    
+    func setupLeftBarButtonItemWithImage() {
+        
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
+        self.navigationItem.leftBarButtonItem = newBbi
+    }
 }
 
 // MARK: - Data Source
@@ -269,6 +291,8 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
         
         // Prin Section and Row
         print("Section: \(indexPath.section), Row: \(indexPath.row)")
+        
+        performSegue(withIdentifier: "asdf", sender: self)
     }
     
     func tableView(_ tableView: UITableView,
@@ -282,6 +306,8 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
                                           alpha: 0.3)
         
         cell.selectedBackgroundView = auxView
+        
+        //setupItems()
         
     }
     
@@ -389,10 +415,66 @@ extension DetalladaAcercaViewController {
     
 }
 
-// MARK: - Navigation Bar
+// MARK: - Navigation Bar Storyboard
 
 extension DetalladaAcercaViewController {
     
+    func translucedNavigationBar() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= (slideshow.bounds.height-50) {
+            
+            self.navigationController?.navigationBar.tintColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+            print("more")
+            
+
+            let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "azulOffer"), target: self, action: #selector(DetalladaAcercaViewController.close))
+            navigationItem.leftBarButtonItem = nbbi
+            
+        } else {
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            print("less")
+        }
+    }
+    
+    func close() {
+        
+        //navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        print("Dismiss 👀")
+    }
+    
+    func setupItems() {
+        
+        //self.barButtonItemClose.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal, barMetrics: .default)
+    }
+    
+}
+
+// MARK: - Bar Button Item
+
+extension UIBarButtonItem {
+    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setImage(colorfulImage, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 21.0, height: 21.0)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        
+        let barButtonItem = UIBarButtonItem(customView: button)
+        return barButtonItem
+    }
+}
+
+// MARK: - Navigation Bar Programatically
+
+extension DetalladaAcercaViewController {
+
     func setNavigationBar() {
         
         let screenSize: CGRect = UIScreen.main.bounds
@@ -419,7 +501,7 @@ extension DetalladaAcercaViewController {
         let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(DetalladaAcercaViewController.done))
         navItem.leftBarButtonItem = doneItem
         navBar.setItems([navItem], animated: false)
-
+        
         
         //navBar.setBackgroundImage(#imageLiteral(resourceName: "borrarBar"), for: .default)
         navBar.setBackgroundImage(UIImage(), for: .default)
@@ -430,29 +512,8 @@ extension DetalladaAcercaViewController {
         
         self.view.addSubview(navBar)
     }
-    
-    func translucedNavigationBar() {
-        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
-    }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y >= (slideshow.bounds.height-50) {
-//            
-//            self.navigationController?.navigationBar.tintColor = UIColor.red
-//            print("more")
-//            
-//        } else {
-//            self.navigationController?.navigationBar.tintColor = UIColor.white
-//            print("less")
-//        }
-//    }
-    
-}
 
+}
 
 
 

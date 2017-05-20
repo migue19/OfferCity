@@ -592,7 +592,7 @@
                         <outlet property="contentView" destination="sxY-BP-q2Q" id="6QO-zn-fWP"/>
                         <outlet property="imageView" destination="nBt-Sn-RNX" id="D86-Dt-uHd"/>
                         <outlet property="label" destination="1F8-16-RSA" id="c3J-ts-Bqi"/>
-                        <segue destination="eIA-qK-1LU" kind="showDetail" identifier="acercadetiDetalladaAcerca" id="3sX-bJ-IxK"/>
+                        <segue destination="bXu-6N-JiX" kind="showDetail" identifier="acercadetiDetalladaAcerca" id="3sX-bJ-IxK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGW-61-IaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,7 +602,7 @@
         <!--Detallada Acerca View Controller-->
         <scene sceneID="ing-xH-ffm">
             <objects>
-                <viewController id="eIA-qK-1LU" customClass="DetalladaAcercaViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eIA-qK-1LU" customClass="DetalladaAcercaViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o6C-MX-IDg"/>
                         <viewControllerLayoutGuide type="bottom" id="EGL-yz-NrM"/>
@@ -1433,19 +1433,46 @@
                             <constraint firstItem="zcN-0o-WH6" firstAttribute="top" secondItem="5J0-30-6bc" secondAttribute="bottom" constant="5" id="w3H-mY-iwg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JCa-Gh-yFa">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="gvs-Lc-7Bl">
+                            <connections>
+                                <action selector="closeDetallada:" destination="eIA-qK-1LU" id="UcD-Uh-oAy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="barButtonItemClose" destination="gvs-Lc-7Bl" id="h62-u1-sTh"/>
                         <outlet property="contentButtonReservar" destination="mky-r9-MZX" id="nEH-3P-NOO"/>
                         <outlet property="contentDescripSlideshow" destination="GKe-d0-JVY" id="nlP-0y-Ya5"/>
                         <outlet property="labelReservar" destination="wou-Zf-odG" id="vRK-an-uoy"/>
                         <outlet property="slideshow" destination="CNB-hn-WGU" id="0R0-GR-U6r"/>
                         <outlet property="tableView" destination="5J0-30-6bc" id="jl1-Qx-gIj"/>
+                        <segue destination="eiZ-89-MXE" kind="show" identifier="asdf" id="0Bv-0O-cX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPu-ov-jKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5925.6000000000004" y="-1299.8500749625189"/>
+            <point key="canvasLocation" x="6864.8000000000002" y="-1299.8500749625189"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yhi-ay-jDT">
+            <objects>
+                <viewController id="eiZ-89-MXE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6pO-9f-eSI"/>
+                        <viewControllerLayoutGuide type="bottom" id="rY1-tu-dJK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hMK-6z-lS3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UiK-Sm-kNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8080.8000000000002" y="-1319.6401799100452"/>
         </scene>
         <!--Eventos View Controller-->
         <scene sceneID="FB2-US-crv">
@@ -1655,7 +1682,7 @@
         <!--Detallada Eventos View Controller-->
         <scene sceneID="IVv-mg-JPK">
             <objects>
-                <viewController id="kMT-1w-T4u" customClass="DetalladaEventosViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kMT-1w-T4u" customClass="DetalladaEventosViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qEI-h9-ZB8"/>
                         <viewControllerLayoutGuide type="bottom" id="i2V-XI-wVk"/>
@@ -2457,7 +2484,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2474,6 +2501,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Py2-yr-jiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="84.107946026986511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S39-Fb-0ph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXu-6N-JiX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNk-3t-Jd5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eIA-qK-1LU" kind="relationship" relationship="rootViewController" id="Ypo-Pe-WvP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0t-j6-mMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5925.6000000000004" y="-1300.2998500749627"/>
         </scene>
     </scenes>
     <resources>
