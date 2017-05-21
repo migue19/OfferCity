@@ -353,6 +353,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="eJ7-V8-ciB" id="mnM-HV-Hz7"/>
+                                            <outlet property="delegate" destination="eJ7-V8-ciB" id="CfH-Ox-y4U"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
@@ -2482,9 +2486,9 @@
         <!--Navigation Controller-->
         <scene sceneID="wwy-Vb-stu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StoryBoardStart" automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2507,7 +2511,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXu-6N-JiX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNk-3t-Jd5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNk-3t-Jd5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

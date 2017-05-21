@@ -20,13 +20,15 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     @IBOutlet var headerImageView:UIImageView!
     @IBOutlet var headerBlurImageView:UIImageView!
     var imagenes: [Imagen] = []
+    let settingsDAO = SettingsDAO()
+    
     
     var blurredHeaderImageView:UIImageView?
     
     @IBOutlet weak var tableView: UITableView!
     
     
-    var options = ["City Points","Promociones Usadas","Ciudad","Ayuda","Reservaciones","Ajustes", "Cerrar Session"]
+    var options = ["Ciudad","City Points","Promociones Usadas","Reservaciones","Ajustes","Ayuda"]
     
     
     
@@ -36,10 +38,14 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         tableView.dataSource = self
         tableView.dataSource = self
         
+        print("El numero de imagens en la db es: ", self.settingsDAO.numberOfImageDB())
+        
         headerImageView = UIImageView(frame: header.bounds)
         headerImageView?.image = UIImage(named: "city")
         headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         header.insertSubview(headerImageView, belowSubview: headerLabel)
+        
+        tableView.tableFooterView = UIView()
         
         self.LoadImageProfile()
         
@@ -152,12 +158,83 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     
     //////Metodos TableView
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return options.count
+        switch section {
+        case 0:
+             return options.count
+        case 1:
+            return 1
+        default:
+            return 0
+        }
     }
+    
+    
+    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "que pedal"
+        case 1:
+            return "perro del Mal"
+        default:
+            return nil
+        }
+    }*/
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return 45
+            
+        default:
+            return 0
+        }
+    }
+    
+    
+    /*func tableView(_ tableView: UITableView,
+                   viewForHeaderInSection section: Int) -> UIView? {
+        
+        let newSection = UIView(frame:
+            CGRect(x: 0,
+                   y: 0,
+                   width: tableView.frame.size.width,
+                   height: 34))
+        newSection.backgroundColor = UIColor.white
+        
+        let label = UILabel(frame:
+            CGRect(x: 0,
+                   y: 0,
+                   width: newSection.bounds.width,
+                   height: newSection.bounds.height))
+        
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+        label.textAlignment = .center
+        
+        newSection.addSubview(label)
+        
+        switch section {
+        case 1:
+            label.text = "REDES SOCIALES"
+            return newSection
+        case 2:
+            label.text = "LOCALIZACIÓN"
+            return newSection
+        default:
+            return UIView()
+        }
+    }*/
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -166,19 +243,54 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         
         
         let imageView = cell.viewWithTag(10) as! UIImageView
-        imageView.image = UIImage(named: "Perfil_iconos-\(row+1)")
-        
         let textLabel = cell.viewWithTag(20) as! UILabel
-        textLabel.text = options[row]
         
         
-        
-        
-        
+        switch indexPath.section {
+        case 0:
+            imageView.image = UIImage(named: "Perfil_iconos-\(row+1)")
+            textLabel.text = options[row]
+           
+        case 1:
+            imageView.isHidden = true
+            textLabel.isHidden = true
+            
+            let button : UIButton = UIButton(type:UIButtonType.custom) as UIButton
+            
+            button.frame = CGRect(origin: CGPoint(x: 40,y :60), size: CGSize(width: cell.bounds.width*0.8, height: cell.bounds.height))
+            let cellHeight: CGFloat = 44.0
+            button.center = CGPoint(x: view.bounds.width / 2.0, y: cellHeight / 2.0)
+            
+            button.layer.cornerRadius = button.bounds.height/2
+            
+            button.backgroundColor = UIColor.init(red: 99/255.0, green: 126/255.0, blue: 165/255.0, alpha: 1)
+            button.addTarget(self, action: #selector(CerrarSession), for: UIControlEvents.touchUpInside)
+            button.setTitle("Cerrar Sesion", for: UIControlState.normal)
+            
+            cell.addSubview(button)
+            cell.accessoryType = .none;
+            cell.separatorInset = UIEdgeInsetsMake(0, cell.bounds.size.width, 0, 0);
+ 
+        default:
+            break
+        }
+
         return cell
         
     }
     
+    
+    
+    
+    func CerrarSession(){
+       settingsDAO.deleteAllImageDB()
+       settingsDAO.deleteAllSettings()
+
+        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "StoryBoardStart")
+        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+        
+    
+    }
     
     
     
@@ -194,8 +306,7 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
             
             if imagenes.count > 0 {
                 for image in imagenes{
-                    print(image.imagen ?? "")
-                    
+                    //print(image.imagen ?? "")
                     avatarImage.image = UIImage(data: image.imagen! as Data)
                     print("")
                 }

@@ -25,13 +25,15 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
     var timer: Timer!
     var updateCounter: Int!
     var settings: [Settings] = []
+    let settingsDAO = SettingsDAO()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        self.getData()
     
         updateCounter = 0
         
@@ -40,9 +42,14 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector( WelcomeViewController.updateTimer), userInfo: nil, repeats: true)
         
+        
+        
+        
         scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(4)), height: scrollView.frame.size.height )
         
         scrollView.delegate = self
+        
+        
     }
     
     //MARK: - Page Control
@@ -89,7 +96,6 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         print("Logueado Correctamente Con Facebook")
     }
     
-    
     @IBAction func CustomLoginFB(_ sender: Any) {
         FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self){
             (result,error) in
@@ -124,18 +130,13 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
                 }
                 
                 
-                self.InsertSetting(descripcion: "Name", valor: name)
-                self.InsertSetting(descripcion: "FirstName", valor: firstName)
-                self.InsertSetting(descripcion: "LastName", valor: lastName)
-                self.InsertSetting(descripcion: "Email", valor: email)
-                self.InsertSetting(descripcion: "ImageURL", valor: facebookProfileUrl)
+                self.settingsDAO.insertUserInDB(name: name, firstName: firstName, lastName: lastName, email: email, urlImage: facebookProfileUrl)
                 
                 let urlimage = URL(string: facebookProfileUrl)
                 
                 self.downloadImage(url: urlimage!)
                 
-                
-                self.getData()
+                self.settingsDAO.getData()
                 
                 self.performSegue(withIdentifier: "showCiudad", sender: self)
             }
@@ -158,176 +159,32 @@ class WelcomeViewController: UIViewController,FBSDKLoginButtonDelegate,GIDSignIn
         
         print("Logueo Google Correcto", user)
         
-     
-       self.InsertSetting(descripcion: "Name", valor: user.profile.name)
-       self.InsertSetting(descripcion: "FirstName", valor: user.profile.givenName)
-       self.InsertSetting(descripcion: "LastName", valor: user.profile.familyName)
-       self.InsertSetting(descripcion: "Email", valor: user.profile.email)
         
-       let urlimage = user.profile.imageURL(withDimension: 400)
+        let name = user.profile.name ?? ""
+        let firstName = user.profile.givenName ?? ""
+        let lastName = user.profile.familyName ?? ""
+        let email = user.profile.email ?? ""
+        let urlimage = user.profile.imageURL(withDimension: 400)!
         
-       self.InsertSetting(descripcion: "ImageURL", valor: String(describing: urlimage!))
+        settingsDAO.insertUserInDB(name: name, firstName: firstName, lastName: lastName, email: email, urlImage: String(describing: urlimage))
         
-        
-       downloadImage(url: urlimage!)
-        
-       //saveImage(tempImage, path: fileInDocumentsDirectory("tempImage"))
+       downloadImage(url: urlimage)
    
-        getData()
+        settingsDAO.getData()
         
         self.performSegue(withIdentifier: "showCiudad", sender: self)
         
     }
     
-    func getData(){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do{
-            settings = try context.fetch(Settings.fetchRequest())
-            
-            if settings.count > 0 {
-                for setting in settings{
-                    print(setting.descripcion ?? "")
-                    print(setting.valor ?? "")
-                    print("")
-                }
-            }else{
-                 print("No Hay Datos Para Mostrar")
-            }
-        }
-        catch{
-            print("Failed feching")
-        }
-        
-    }
     
-    func InsertSetting(descripcion: String, valor: String){
-        let context = AppDelegate.viewContext
-        
-        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
-        
-        request.predicate = NSPredicate(format: "descripcion = %@", descripcion)
-        
-        do{
-            let fetchResult = try context.fetch(request)
-            if fetchResult.count > 0{
-                print("Updateando Setting")
-                UpdateSettingCoreData(setting: fetchResult[0], descripcion: descripcion, valor: valor)
-            
-            }else{
-                print("Insertando Setting")
-                let userData = Settings(context: context)
-                
-                userData.descripcion = descripcion
-                userData.valor = valor
-                
-                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            }
-        }
-        catch{
-           print("No se pudo hacer la conexion con la DB")
-        
-        }
-    }
-    
-    
-    func deleteSettingCoreData(setting: Settings){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        context.delete(setting)
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
-    }
-    
-    func UpdateSettingCoreData(setting: Settings,descripcion: String, valor: String) {
-        setting.setValue(descripcion, forKey: "descripcion")
-        setting.setValue(valor, forKey: "valor")
-        
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-    
-    
-    
-    func findAndUpdateSettings(descripcion: String, valor: String){
-        let context = AppDelegate.viewContext
-        
-        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
-        
-        request.predicate = NSPredicate(format: "descripcion = %@", descripcion)
-        
-            do{
-                let settings2 = try context.fetch(request)
-                if settings2.count > 0 {
-                    for setting in settings2{
-                        self.UpdateSettingCoreData(setting: setting, descripcion: descripcion, valor: valor)
-                    }
-                }else{
-                     print("No Hay Datos Para Updatear")
-                }
-            }
-            catch{
-                print("Failed feching")
-            }
-    }
-    
-    
-    func findAndDeleteSettings(descripcion: String) {
-        let context = AppDelegate.viewContext
-        
-        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
-        
-        request.predicate = NSPredicate(format: "descripcion = %@", descripcion)
-        
-        do{
-            let settings2 = try context.fetch(request)
-            
-            if settings2.count > 0 {
-                for setting in settings2{
-                    deleteSettingCoreData(setting: setting)
-                }
-            }
-            else{
-                print("No Hay Datos Para Borrar")
-            }
-        }
-        catch{
-            print("Failed feching")
-        }
-
-        
-    }
-    
-    
-    func deleteAllSettings(){
-        let array = ["Email","Name","FirstName","LastName","ImageURL"]
-        
-        for description in array {
-            self.findAndDeleteSettings(descripcion: description)
-        }
-    }
-    
-    
-    //////Descargar Imagen y Guardarla Asyncronamente
+    // MARK: - Descargar Imagen y Guardarla en DB
     func downloadImage(url: URL) {
         print("Download Started")
         getDataFromUrl(url: url) { (data, response, error)  in
-            
-            
-            
             guard let data = data, error == nil else { return }
-            let context = AppDelegate.viewContext
             
-            let userData = Imagen(context: context)
-            
-            userData.imagen = data as NSData
-            
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-            print(response?.suggestedFilename ?? url.lastPathComponent)
+            self.settingsDAO.InsertImageDB(data: data)
             print("Download Finished")
-            /*DispatchQueue.main.async() { () -> Void in
-                self.imageView.image = UIImage(data: data)
-            }*/
         }
     }
     
