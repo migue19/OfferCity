@@ -1,5 +1,5 @@
 //
-//  CityPointsViewController.swift
+//  AjustesViewController.swift
 //  OfferCity
 //
 //  Created by Miguel Mexicano Herrera on 22/05/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CityPointsViewController: UIViewController {
+class AjustesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +16,7 @@ class CityPointsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -252,6 +252,7 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
                 print("Ir a Reservaciones")
             case 4:
                 print("Ir a Ajustes")
+                self.performSegue(withIdentifier: "showAjustes", sender: self)
             case 5:
                 print("Ir a Ayuda")
             default:
