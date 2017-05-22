@@ -1453,6 +1453,90 @@
             </objects>
             <point key="canvasLocation" x="6864.8000000000002" y="-1299.8500749625189"/>
         </scene>
+        <!--Check Out View Controller-->
+        <scene sceneID="T9x-1e-Ce1">
+            <objects>
+                <viewController storyboardIdentifier="PopCheckout" modalPresentationStyle="overCurrentContext" id="fqm-f7-gmI" customClass="CheckOutViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yt6-NQ-Oyn"/>
+                        <viewControllerLayoutGuide type="bottom" id="H7t-eP-O0P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S9i-ek-7PJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGk-9b-bbe" customClass="CheckOutUIView" customModule="OfferCity" customModuleProvider="target">
+                                <rect key="frame" x="19" y="223.5" width="337.5" height="220"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECK IN EXITOSO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA5-3U-mVc">
+                                        <rect key="frame" x="93" y="28.5" width="151" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityPoints obtenidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bT-R7-Hd0">
+                                        <rect key="frame" x="102.5" y="58" width="134" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil_iconos-2" translatesAutoresizingMaskIntoConstraints="NO" id="noK-YB-BJC">
+                                        <rect key="frame" x="129" y="95" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Hw7-ht-cnc"/>
+                                            <constraint firstAttribute="width" constant="40" id="QHV-ro-aF7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0o-sY-4Zt">
+                                        <rect key="frame" x="179" y="104" width="20.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euR-OR-ebf">
+                                        <rect key="frame" x="68" y="165" width="202.5" height="40"/>
+                                        <color key="backgroundColor" red="0.35207441449165344" green="0.47863346338272095" blue="0.62810981273651123" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6ly-Jd-yDg"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="OK"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5bT-R7-Hd0" firstAttribute="centerX" secondItem="HGk-9b-bbe" secondAttribute="centerX" id="1mo-Rc-sA8"/>
+                                    <constraint firstAttribute="height" constant="220" id="5PK-3g-JPJ"/>
+                                    <constraint firstItem="5bT-R7-Hd0" firstAttribute="top" secondItem="uA5-3U-mVc" secondAttribute="bottom" constant="10" id="5uR-5E-ywG"/>
+                                    <constraint firstItem="euR-OR-ebf" firstAttribute="top" secondItem="noK-YB-BJC" secondAttribute="bottom" constant="30" id="EhS-xb-mDx"/>
+                                    <constraint firstItem="euR-OR-ebf" firstAttribute="top" secondItem="v0o-sY-4Zt" secondAttribute="bottom" constant="40" id="I3V-vG-msc"/>
+                                    <constraint firstItem="noK-YB-BJC" firstAttribute="centerX" secondItem="HGk-9b-bbe" secondAttribute="centerX" constant="-20" id="IZq-M0-who"/>
+                                    <constraint firstItem="euR-OR-ebf" firstAttribute="centerX" secondItem="HGk-9b-bbe" secondAttribute="centerX" id="aaU-vr-nrd"/>
+                                    <constraint firstItem="noK-YB-BJC" firstAttribute="top" secondItem="5bT-R7-Hd0" secondAttribute="bottom" constant="20" id="jwb-9u-vJZ"/>
+                                    <constraint firstItem="v0o-sY-4Zt" firstAttribute="centerX" secondItem="HGk-9b-bbe" secondAttribute="centerX" constant="20" id="lTq-v0-rZh"/>
+                                    <constraint firstItem="uA5-3U-mVc" firstAttribute="centerX" secondItem="HGk-9b-bbe" secondAttribute="centerX" id="o2w-mt-QCq"/>
+                                    <constraint firstItem="euR-OR-ebf" firstAttribute="width" secondItem="HGk-9b-bbe" secondAttribute="width" multiplier="0.6" id="z3h-yf-cwN"/>
+                                    <constraint firstAttribute="bottom" secondItem="euR-OR-ebf" secondAttribute="bottom" constant="15" id="z8j-ut-QRt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HGk-9b-bbe" firstAttribute="centerX" secondItem="S9i-ek-7PJ" secondAttribute="centerX" id="5oF-1V-4Ub"/>
+                            <constraint firstItem="HGk-9b-bbe" firstAttribute="width" secondItem="S9i-ek-7PJ" secondAttribute="width" multiplier="0.9" id="hSz-Pe-Ucd"/>
+                            <constraint firstItem="HGk-9b-bbe" firstAttribute="centerY" secondItem="S9i-ek-7PJ" secondAttribute="centerY" id="i1u-pk-VB7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xzw-8f-ESD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7613.6000000000004" y="-1602.5487256371816"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="yhi-ay-jDT">
             <objects>
@@ -1469,7 +1553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UiK-Sm-kNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8080.8000000000002" y="-1319.6401799100452"/>
+            <point key="canvasLocation" x="7614" y="-676"/>
         </scene>
         <!--Eventos View Controller-->
         <scene sceneID="FB2-US-crv">
@@ -2481,7 +2565,7 @@
             <objects>
                 <navigationController storyboardIdentifier="StoryBoardStart" automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2504,7 +2588,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXu-6N-JiX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNk-3t-Jd5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNk-3t-Jd5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2521,6 +2605,7 @@
     <resources>
         <image name="Inicio0" width="1080" height="1920"/>
         <image name="Logo" width="649" height="501"/>
+        <image name="Perfil_iconos-2" width="40" height="40"/>
         <image name="borrar1" width="500" height="500"/>
         <image name="facebook" width="46" height="45"/>
         <image name="fb-logo" width="20" height="20"/>

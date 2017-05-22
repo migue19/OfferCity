@@ -10,34 +10,12 @@ import UIKit
 import GoogleMaps
 import Alamofire
 
-class MapaViewController: UIViewController {
-
+class MapaViewController: UIViewController, GMSMapViewDelegate {
+    var restaurantes: [Restaurantes] = []
+    let restaurantesDAO = RestaurantesDAO()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Obetener ubicacion y enviarla al servicio
-        /*let user = "522227113239"
-        let password = "630215"
-        
-        
-            
-        let parameters: Parameters = [
-            "userId": "522224458813",
-            "isProfile": true,
-            "imei":"000867721021924579"
-        ]
-            
-        
-        Alamofire.request("http://189.206.53.12/paychat-core/secured/chatService/profile/getShortProfile",method: .post,parameters: parameters, encoding: JSONEncoding.default).authenticate(user: user, password: password).responseJSON { response in
-            print(response.request as Any)  // original URL request
-            print(response.response!) // HTTP URL response
-            print(response.data!)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-        }*/
-
         // Do any additional setup after loading the view.
     }
 
@@ -50,21 +28,65 @@ class MapaViewController: UIViewController {
     override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
+        
+        restaurantes = restaurantesDAO.getRestaurantes()
         let camera = GMSCameraPosition.camera(withLatitude: 19.071514, longitude: -98.245873, zoom: 10.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
+        mapView.delegate = self
+        
         view = mapView
         
         
         
+       // for restaurante in restaurantes
+        //{
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 19.071514, longitude: -98.245873)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        
+        if restaurantes.count > 0{
+            print("pintando Mapas")
+            for restaurant in restaurantes{
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: restaurant.latitud, longitude: restaurant.longitud)
+                marker.title = restaurant.nombre
+                marker.snippet = restaurant.descripcion
+                print(restaurant.photo ?? "")
+                //let data = restaurant.image
+                //if data != nil
+                //{
+                 //marker.icon = UIImage(data: data! as Data)
+                //}
+                marker.map = mapView
+            }
+        }
+        else{
+            print("No hay datos para pintar")
+        }
+       // }
     }
+    
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+
+        let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
+        infoWindow.title.text = marker.title
+        infoWindow.descripcion.text = marker.snippet
+        infoWindow.Imagen.image = UIImage(data: restaurantes[0].image! as Data)
+        return infoWindow
+    }
+    
+    
+    /*func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
+        let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
+        infoWindow.title.text = marker.title
+        return infoWindow
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
+        infoWindow.title.text = marker.title
+        return infoWindow
+    }*/
     
 
     /*

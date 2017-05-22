@@ -64,6 +64,11 @@
 		7D9219441EA428BC006C6976 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193D1EA428BC006C6976 /* RestService.swift */; };
 		7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D92193E1EA428BC006C6976 /* ShortProfileResponse.swift */; };
 		7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA948811ECA67C000287356 /* SettingsDAO.swift */; };
+		7DAD18AE1ED1EA45009B37E5 /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18AD1ED1EA45009B37E5 /* CheckOutViewController.swift */; };
+		7DAD18B01ED20D0C009B37E5 /* CheckOutUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18AF1ED20D0C009B37E5 /* CheckOutUIView.swift */; };
+		7DAD18B21ED24429009B37E5 /* RestaurantesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18B11ED24429009B37E5 /* RestaurantesDAO.swift */; };
+		7DAD18B41ED27C4E009B37E5 /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAD18B31ED27C4E009B37E5 /* CustomInfoWindow.xib */; };
+		7DAD18B61ED27CFE009B37E5 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18B51ED27CFE009B37E5 /* CustomInfoWindow.swift */; };
 		EDC5F3814B2FBD50A1A76DB2 /* Pods_OfferCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904801B63E040080B7AADE64 /* Pods_OfferCity.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +135,11 @@
 		7D92193D1EA428BC006C6976 /* RestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		7D92193E1EA428BC006C6976 /* ShortProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortProfileResponse.swift; sourceTree = "<group>"; };
 		7DA948811ECA67C000287356 /* SettingsDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDAO.swift; sourceTree = "<group>"; };
+		7DAD18AD1ED1EA45009B37E5 /* CheckOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		7DAD18AF1ED20D0C009B37E5 /* CheckOutUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckOutUIView.swift; sourceTree = "<group>"; };
+		7DAD18B11ED24429009B37E5 /* RestaurantesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantesDAO.swift; sourceTree = "<group>"; };
+		7DAD18B31ED27C4E009B37E5 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
+		7DAD18B51ED27CFE009B37E5 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		904801B63E040080B7AADE64 /* Pods_OfferCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757453FFCFAC126F68E64A1 /* Pods-OfferCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */,
+				7DAD18AC1ED1EA05009B37E5 /* PopUpCheckBox */,
 				3C2A4AA51ECCE895007D279D /* Cells */,
 			);
 			name = DetalladaCerca;
@@ -194,6 +205,7 @@
 		3C32B8401EC50AD200AE78E0 /* Conexion */ = {
 			isa = PBXGroup;
 			children = (
+				3C3E4D631EB822EA0052D4B6 /* Firebase */,
 				3C32B8411EC50AF200AE78E0 /* Reachability.swift */,
 			);
 			name = Conexion;
@@ -204,7 +216,6 @@
 			children = (
 				3CB7826F1EC24B2C0023991E /* CoreData */,
 				3CB7826E1EC24A9E0023991E /* InfoPlist */,
-				3C3E4D631EB822EA0052D4B6 /* Firebase */,
 				7D9219471EA42922006C6976 /* Connection */,
 			);
 			name = Model;
@@ -297,6 +308,7 @@
 			children = (
 				7D14499E1EA2FC0F0068C597 /* OfferCity.xcdatamodeld */,
 				7DA948811ECA67C000287356 /* SettingsDAO.swift */,
+				7DAD18B11ED24429009B37E5 /* RestaurantesDAO.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -349,6 +361,8 @@
 			isa = PBXGroup;
 			children = (
 				7D9219381EA428BC006C6976 /* MapaViewController.swift */,
+				7DAD18B51ED27CFE009B37E5 /* CustomInfoWindow.swift */,
+				7DAD18B31ED27C4E009B37E5 /* CustomInfoWindow.xib */,
 			);
 			name = Mapas;
 			sourceTree = "<group>";
@@ -488,6 +502,15 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
+		7DAD18AC1ED1EA05009B37E5 /* PopUpCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				7DAD18AD1ED1EA45009B37E5 /* CheckOutViewController.swift */,
+				7DAD18AF1ED20D0C009B37E5 /* CheckOutUIView.swift */,
+			);
+			name = PopUpCheckBox;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -552,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAD18B41ED27C4E009B37E5 /* CustomInfoWindow.xib in Resources */,
 				7D1449A51EA2FC0F0068C597 /* LaunchScreen.storyboard in Resources */,
 				7D1449A21EA2FC0F0068C597 /* Assets.xcassets in Resources */,
 				7D9219371EA4275B006C6976 /* GoogleService-Info.plist in Resources */,
@@ -626,6 +650,8 @@
 				3CEDE08F1ECFF8EE003C3716 /* VDETelefonoTableViewCell.swift in Sources */,
 				3C2A4AB21ECCE8AC007D279D /* VDRatingTableViewCell.swift in Sources */,
 				3C32B8181EC4D3D300AE78E0 /* Headers.swift in Sources */,
+				7DAD18AE1ED1EA45009B37E5 /* CheckOutViewController.swift in Sources */,
+				7DAD18B21ED24429009B37E5 /* RestaurantesDAO.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
 				3CEDE0961ECFF934003C3716 /* VDERedesTableViewCell.swift in Sources */,
 				7D0330A91ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift in Sources */,
@@ -634,12 +660,14 @@
 				7D9219441EA428BC006C6976 /* RestService.swift in Sources */,
 				3C2A4AB31ECCE8AC007D279D /* VDCheckInTableViewCell.swift in Sources */,
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
+				7DAD18B61ED27CFE009B37E5 /* CustomInfoWindow.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				3CEDE0911ECFF8FE003C3716 /* VDEHoraTableViewCell.swift in Sources */,
 				3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
+				7DAD18B01ED20D0C009B37E5 /* CheckOutUIView.swift in Sources */,
 				7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */,
 				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
 				3CCA5B811ECEADF000A6AE42 /* VDRedes4TableViewCell.swift in Sources */,

@@ -58,7 +58,7 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         
         // Header - Image
         
-        self.LoadImageProfile()
+        //self.LoadImageProfile()
         
         headerImageView = UIImageView(frame: header.bounds)
         headerImageView?.image = UIImage(named: "city")
@@ -283,13 +283,30 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     
     
     func CerrarSession(){
-       settingsDAO.deleteAllImageDB()
-       settingsDAO.deleteAllSettings()
-
-        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "StoryBoardStart")
-        UIApplication.shared.keyWindow?.rootViewController = loginViewController
         
-    
+        let alertController = UIAlertController(title: "Cerrar sesión", message: "Estas Seguro de Cerrar Sesion", preferredStyle: .alert)
+        
+        //Cancelar
+        let cancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alertController.addAction(cancelar)
+        
+        //Cerrar sesion
+        let cerrarSesion = UIAlertAction(title: "Cerrar sesión", style: .destructive, handler: { (action: UIAlertAction!) in
+            
+            //Cerramos persistencia de sesion
+            self.settingsDAO.deleteAllImageDB()
+            self.settingsDAO.deleteAllSettings()
+            
+            //Regresamos al inicio de la aplicacion
+            let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "StoryBoardStart")
+            UIApplication.shared.keyWindow?.rootViewController = loginViewController
+            
+            
+        })
+        alertController.addAction(cerrarSesion)
+        
+        //Show alert
+        present(alertController, animated: true, completion: nil)
     }
     
     

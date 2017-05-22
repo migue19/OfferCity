@@ -189,6 +189,8 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDCheckInTableViewCell", for: indexPath) as! VDCheckInTableViewCell
+                  cell.parentViewController = self
+                
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDDescripcionTableViewCell", for: indexPath) as! VDDescripcionTableViewCell
@@ -568,6 +570,14 @@ extension DetalladaAcercaViewController {
     }
     
 }
+
+
+
+// MARK: - Mostar vista detallada 
+
+
+
+
 
 // MARK: - Navigation Bar Programatically
 

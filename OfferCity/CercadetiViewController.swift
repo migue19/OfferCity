@@ -27,6 +27,7 @@ class CercadetiViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var contentView: UIView!
+    let restauranteDAO = RestaurantesDAO()
     
     // MARK: - Propertys
     
@@ -163,6 +164,10 @@ extension CercadetiViewController {
                         for restaurante in restaurantes {
                             
                             if !self.isExist(id_establecimiento: restaurante.id_establecimiento) {
+                                
+                                let urlimage = URL(string: restaurante.photo)
+                                
+                                self.downloadImageAndSaveData(url: urlimage!, restauranteMapper: restaurante)
                             
                                 self.saveData(restauranteMapper: restaurante)
                             }
@@ -236,7 +241,28 @@ extension CercadetiViewController {
         
     }
     
+    
+    // MARK: - Download And Save Image
+    func downloadImageAndSaveData(url: URL, restauranteMapper: RestaurantesMapper) {
+        
+        print("Download Started")
+        getDataFromUrl(url: url) { (data, response, error)  in
+            guard let data = data, error == nil else { return }
+            
+            self.restauranteDAO.InsertRestaurantDB(data: data, id: Int32(restauranteMapper.id_establecimiento), restauranteMapper: restauranteMapper)
+            print("Download Finished")
+        }
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
 }
+
 
 // MARK: - DataSource
 

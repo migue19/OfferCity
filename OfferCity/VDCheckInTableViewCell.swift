@@ -17,6 +17,9 @@ class VDCheckInTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var checkbox: BEMCheckBox!
     
+     var parentViewController: UIViewController? = nil
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -67,6 +70,15 @@ extension VDCheckInTableViewCell: BEMCheckBoxDelegate {
     public func didTap(_ checkBox: BEMCheckBox) {
         
         print("Tap...")
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = (
+            storyboard.instantiateViewController(
+                withIdentifier: "PopCheckout")
+            )
+        vc.view.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.4)
+        vc.modalTransitionStyle = .coverVertical
+        parentViewController?.present(vc, animated: true, completion: nil)
+        
     }
     public func animationDidStop(for checkBox: BEMCheckBox) {
         
