@@ -69,6 +69,12 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
 
         let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
+       
+        var newFrame = infoWindow.frame
+        newFrame.size.width = self.view.bounds.width - 20
+        
+       
+        infoWindow.frame = newFrame
         infoWindow.title.text = marker.title
         infoWindow.descripcion.text = marker.snippet
         infoWindow.Imagen.image = UIImage(data: restaurantes[0].image! as Data)

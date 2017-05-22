@@ -69,6 +69,7 @@
 		7DAD18B21ED24429009B37E5 /* RestaurantesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18B11ED24429009B37E5 /* RestaurantesDAO.swift */; };
 		7DAD18B41ED27C4E009B37E5 /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAD18B31ED27C4E009B37E5 /* CustomInfoWindow.xib */; };
 		7DAD18B61ED27CFE009B37E5 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18B51ED27CFE009B37E5 /* CustomInfoWindow.swift */; };
+		7DAD18B81ED2B4AA009B37E5 /* ImageCustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18B71ED2B4AA009B37E5 /* ImageCustomWindow.swift */; };
 		EDC5F3814B2FBD50A1A76DB2 /* Pods_OfferCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904801B63E040080B7AADE64 /* Pods_OfferCity.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		7DAD18B11ED24429009B37E5 /* RestaurantesDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantesDAO.swift; sourceTree = "<group>"; };
 		7DAD18B31ED27C4E009B37E5 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
 		7DAD18B51ED27CFE009B37E5 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
+		7DAD18B71ED2B4AA009B37E5 /* ImageCustomWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCustomWindow.swift; sourceTree = "<group>"; };
 		904801B63E040080B7AADE64 /* Pods_OfferCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757453FFCFAC126F68E64A1 /* Pods-OfferCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,6 +365,7 @@
 				7D9219381EA428BC006C6976 /* MapaViewController.swift */,
 				7DAD18B51ED27CFE009B37E5 /* CustomInfoWindow.swift */,
 				7DAD18B31ED27C4E009B37E5 /* CustomInfoWindow.xib */,
+				7DAD18B71ED2B4AA009B37E5 /* ImageCustomWindow.swift */,
 			);
 			name = Mapas;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */,
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
 				3C32B8161EC4CDD300AE78E0 /* Token.swift in Sources */,
+				7DAD18B81ED2B4AA009B37E5 /* ImageCustomWindow.swift in Sources */,
 				3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */,
 				3C7D05531ECE3196005B3874 /* FloatRatingView.swift in Sources */,
 				7D0330A71ECC7B5B00D46CCA /* AvatarImageView.swift in Sources */,
