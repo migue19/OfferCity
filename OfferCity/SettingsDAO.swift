@@ -172,6 +172,35 @@ class SettingsDAO{
     }
     
     
+    
+    func getDateForDescription(description: String)-> String! {
+        
+        let context = AppDelegate.viewContext
+        
+        let request: NSFetchRequest<Settings> = Settings.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "descripcion = %@", description)
+        
+        do{
+            let settings2 = try context.fetch(request)
+            
+            if settings2.count > 0 {
+                
+                return settings2[0].valor
+            }
+            else{
+                print("No Hay Datos Para Borrar")
+                return nil
+            }
+        }
+        catch{
+            print("Failed feching")
+            return nil
+        }
+    
+    }
+    
+    
     func getData(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do{

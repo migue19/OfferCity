@@ -17,8 +17,11 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     @IBOutlet var avatarImage:UIImageView!
     @IBOutlet var header:UIView!
     @IBOutlet var headerLabel:UILabel!
-    @IBOutlet var headerImageView:UIImageView!
-    @IBOutlet var headerBlurImageView:UIImageView!
+    @IBOutlet weak var labelName: UILabel!
+    var headerImageView: UIImageView!
+    var headerBlurImageView: UIImageView!
+    
+    
     var imagenes: [Imagen] = []
     let settingsDAO = SettingsDAO()
     
@@ -34,19 +37,22 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
         scrollView.delegate = self
         tableView.dataSource = self
         tableView.dataSource = self
         
         print("El numero de imagens en la db es: ", self.settingsDAO.numberOfImageDB())
         
-        headerImageView = UIImageView(frame: header.bounds)
-        headerImageView?.image = UIImage(named: "city")
-        headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
-        header.insertSubview(headerImageView, belowSubview: headerLabel)
         
         tableView.tableFooterView = UIView()
         
+        let name = settingsDAO.getDateForDescription(description: "Name")
+        
+        headerLabel.text = name
+        labelName.text = name
+    
         self.LoadImageProfile()
         
         //let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -54,10 +60,11 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //navigationController?.setNavigationBarHidden(true, animated: false)
         // Header - Image
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         //self.LoadImageProfile()
         
         headerImageView = UIImageView(frame: header.bounds)
@@ -173,17 +180,6 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     }
     
     
-    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "que pedal"
-        case 1:
-            return "perro del Mal"
-        default:
-            return nil
-        }
-    }*/
-    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
@@ -196,44 +192,6 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
             return 0
         }
     }
-    
-    
-    /*func tableView(_ tableView: UITableView,
-                   viewForHeaderInSection section: Int) -> UIView? {
-        
-        let newSection = UIView(frame:
-            CGRect(x: 0,
-                   y: 0,
-                   width: tableView.frame.size.width,
-                   height: 34))
-        newSection.backgroundColor = UIColor.white
-        
-        let label = UILabel(frame:
-            CGRect(x: 0,
-                   y: 0,
-                   width: newSection.bounds.width,
-                   height: newSection.bounds.height))
-        
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
-        label.textAlignment = .center
-        
-        newSection.addSubview(label)
-        
-        switch section {
-        case 1:
-            label.text = "REDES SOCIALES"
-            return newSection
-        case 2:
-            label.text = "LOCALIZACIÓN"
-            return newSection
-        default:
-            return UIView()
-        }
-    }*/
-    
-    
-    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -279,7 +237,30 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                print("Ir a Ciudad")
+            case 1:
+                print("Ir a CityPoints")
+                self.performSegue(withIdentifier: "CityPoints", sender: self)
+            case 2:
+                print("Ir a Promociones")
+            case 3:
+                print("Ir a Reservaciones")
+            case 4:
+                print("Ir a Ajustes")
+            case 5:
+                print("Ir a Ayuda")
+            default:
+                break
+            }
+        default:
+            break
+        }
+    }
     
     
     func CerrarSession(){

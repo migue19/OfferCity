@@ -271,7 +271,7 @@
             </objects>
             <point key="canvasLocation" x="3830" y="1301"/>
         </scene>
-        <!--Perfil-->
+        <!--Perfil View Controller-->
         <scene sceneID="108-2o-2UG">
             <objects>
                 <viewController id="eJ7-V8-ciB" customClass="PerfilViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
@@ -280,7 +280,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uch-b5-4Oj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iaY-o5-Yl6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAX-ic-hBg">
@@ -301,7 +301,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="368-gI-NGQ">
-                                <rect key="frame" x="0.0" y="-20" width="375" height="687"/>
+                                <rect key="frame" x="0.0" y="-20" width="375" height="623"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="5jV-eP-Llb" customClass="AvatarImageView" customModule="OfferCity" customModuleProvider="target">
                                         <rect key="frame" x="152.5" y="120" width="70" height="70"/>
@@ -383,18 +383,113 @@
                             <constraint firstAttribute="bottom" secondItem="368-gI-NGQ" secondAttribute="bottom" id="nsC-FG-oIt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" image="perfil" id="dti-MS-9I8"/>
+                    <navigationItem key="navigationItem" id="a18-Rw-Vc6"/>
                     <connections>
                         <outlet property="avatarImage" destination="5jV-eP-Llb" id="3HG-FW-rYh"/>
                         <outlet property="header" destination="dAX-ic-hBg" id="JJV-61-Jbo"/>
                         <outlet property="headerLabel" destination="Ybx-fv-Bq8" id="l53-5q-MNj"/>
+                        <outlet property="labelName" destination="h1w-qj-g70" id="zyH-Wu-kIf"/>
                         <outlet property="scrollView" destination="368-gI-NGQ" id="6dk-MD-hHD"/>
                         <outlet property="tableView" destination="twU-PH-1HS" id="jL1-R0-fHQ"/>
+                        <segue destination="lrm-VD-izO" kind="show" identifier="CityPoints" id="vcv-Zt-F8U"/>
+                        <segue destination="G4k-6o-Dqe" kind="show" identifier="showAjustes" id="thW-is-99Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4w-WC-fzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3830" y="2048"/>
+            <point key="canvasLocation" x="4768.8000000000002" y="2047.826086956522"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9JV-xa-Bxy">
+            <objects>
+                <viewController id="G4k-6o-Dqe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UUb-Z9-b8p"/>
+                        <viewControllerLayoutGuide type="bottom" id="ei6-9z-NqX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="frj-hJ-7fq">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8z-CR-Zuv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5741" y="2520"/>
+        </scene>
+        <!--CITY POINTS-->
+        <scene sceneID="RQi-Ks-2r5">
+            <objects>
+                <viewController title="CITY POINTS" id="lrm-VD-izO" customClass="CityPointsViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zEs-6a-A0C"/>
+                        <viewControllerLayoutGuide type="bottom" id="HzF-e7-Av5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5lC-sk-DOQ">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city" translatesAutoresizingMaskIntoConstraints="NO" id="1Xx-Ni-Loq">
+                                <rect key="frame" x="-0.5" y="0.0" width="375.5" height="241"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CityPoints hasta el momento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8F3-qn-PCE">
+                                <rect key="frame" x="78" y="271" width="218.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Perfil_iconos-2" translatesAutoresizingMaskIntoConstraints="NO" id="Xf0-jj-dbZ">
+                                <rect key="frame" x="132.5" y="312" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Fss-1v-ziV"/>
+                                    <constraint firstAttribute="height" constant="50" id="TkE-Q4-CrP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="125" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kE0-mY-WO7">
+                                <rect key="frame" x="190.5" y="317" width="54" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-KG-S4F">
+                                <rect key="frame" x="0.0" y="392" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.47058823529999999" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="S9w-Pl-XLg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxt-5i-hkb">
+                                <rect key="frame" x="126" y="423" width="122" height="30"/>
+                                <state key="normal" title="¿Como Funciona?">
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zxt-5i-hkb" firstAttribute="centerX" secondItem="5lC-sk-DOQ" secondAttribute="centerX" id="105-ft-X2c"/>
+                            <constraint firstItem="1Xx-Ni-Loq" firstAttribute="height" secondItem="5lC-sk-DOQ" secondAttribute="height" multiplier="0.4" id="247-X0-7Ah"/>
+                            <constraint firstItem="VAq-KG-S4F" firstAttribute="width" secondItem="5lC-sk-DOQ" secondAttribute="width" id="4aV-XS-QFL"/>
+                            <constraint firstItem="1Xx-Ni-Loq" firstAttribute="centerX" secondItem="5lC-sk-DOQ" secondAttribute="centerX" id="BZH-Ih-c5Y"/>
+                            <constraint firstItem="Xf0-jj-dbZ" firstAttribute="centerX" secondItem="5lC-sk-DOQ" secondAttribute="centerX" constant="-30" id="Iae-Gk-mMx"/>
+                            <constraint firstItem="1Xx-Ni-Loq" firstAttribute="width" secondItem="5lC-sk-DOQ" secondAttribute="width" id="Jzd-xs-krj"/>
+                            <constraint firstItem="8F3-qn-PCE" firstAttribute="top" secondItem="1Xx-Ni-Loq" secondAttribute="bottom" constant="30" id="NjM-f3-6YQ"/>
+                            <constraint firstItem="zxt-5i-hkb" firstAttribute="top" secondItem="VAq-KG-S4F" secondAttribute="bottom" constant="30" id="OZL-Ip-Iy6"/>
+                            <constraint firstItem="VAq-KG-S4F" firstAttribute="centerX" secondItem="5lC-sk-DOQ" secondAttribute="centerX" id="QY1-C6-fc4"/>
+                            <constraint firstItem="Xf0-jj-dbZ" firstAttribute="top" secondItem="8F3-qn-PCE" secondAttribute="bottom" constant="20" id="ieO-Bu-fqo"/>
+                            <constraint firstItem="VAq-KG-S4F" firstAttribute="top" secondItem="Xf0-jj-dbZ" secondAttribute="bottom" constant="30" id="lcU-Fj-l5c"/>
+                            <constraint firstItem="8F3-qn-PCE" firstAttribute="centerX" secondItem="5lC-sk-DOQ" secondAttribute="centerX" id="qIM-4g-rML"/>
+                            <constraint firstItem="kE0-mY-WO7" firstAttribute="centerX" secondItem="5lC-sk-DOQ" secondAttribute="centerX" constant="30" id="qQD-Sh-hNs"/>
+                            <constraint firstItem="kE0-mY-WO7" firstAttribute="top" secondItem="8F3-qn-PCE" secondAttribute="bottom" constant="25" id="rmE-15-f2N"/>
+                            <constraint firstItem="1Xx-Ni-Loq" firstAttribute="top" secondItem="zEs-6a-A0C" secondAttribute="bottom" id="seM-Jn-DJw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CITY POINTS" id="enH-1d-53c"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ets-SZ-w1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6468" y="2044.2278860569718"/>
         </scene>
         <!--Home-->
         <scene sceneID="QSt-GD-K7n">
@@ -441,7 +536,7 @@
                     <connections>
                         <segue destination="sze-Jd-xac" kind="relationship" relationship="viewControllers" id="fds-sE-jzr"/>
                         <segue destination="rzI-D6-BAY" kind="relationship" relationship="viewControllers" id="rxk-Pp-0zg"/>
-                        <segue destination="eJ7-V8-ciB" kind="relationship" relationship="viewControllers" id="3gW-aP-VO5"/>
+                        <segue destination="bUe-3h-ItN" kind="relationship" relationship="viewControllers" id="3gW-aP-VO5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpF-16-4TA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2601,12 +2696,37 @@
             </objects>
             <point key="canvasLocation" x="5925.6000000000004" y="-1300.2998500749627"/>
         </scene>
+        <!--Perfil-->
+        <scene sceneID="8fn-6h-0Pw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUe-3h-ItN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Perfil" image="perfil" id="dti-MS-9I8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UhV-Zp-KaA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.3881517947" green="0.4945377111" blue="0.64784389730000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eJ7-V8-ciB" kind="relationship" relationship="rootViewController" id="hkz-Vz-Ggb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qIf-gT-PUQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3829.5999999999999" y="2047.826086956522"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Inicio0" width="1080" height="1920"/>
         <image name="Logo" width="649" height="501"/>
         <image name="Perfil_iconos-2" width="40" height="40"/>
         <image name="borrar1" width="500" height="500"/>
+        <image name="city" width="1536" height="1152"/>
         <image name="facebook" width="46" height="45"/>
         <image name="fb-logo" width="20" height="20"/>
         <image name="google-logo" width="20" height="20"/>
