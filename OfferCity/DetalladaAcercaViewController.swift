@@ -70,6 +70,7 @@ extension DetalladaAcercaViewController {
         setupSlideShow()
         
         // Setup navigation bar
+        
         setupNavigationBar()
         
         // Tableview sin linea entre cells
@@ -400,7 +401,7 @@ extension DetalladaAcercaViewController {
     }
     
     func loadImageForSlideShow() {
-     
+        
         // Array image
         
         self.localSource = [ImageSource(image: self.imageFromCellToDetall), ImageSource(image: #imageLiteral(resourceName: "borrar1"))]
@@ -408,7 +409,7 @@ extension DetalladaAcercaViewController {
         // Load Images in slideshow
         
         self.slideshow.setImageInputs(self.localSource)
-
+        
     }
     
 }
@@ -536,20 +537,6 @@ extension DetalladaAcercaViewController {
     }
 }
 
-// MARK: - Bar Button Item
-
-extension UIBarButtonItem {
-    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
-        let button = UIButton(type: .custom)
-        button.setImage(colorfulImage, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 21.0, height: 21.0)
-        button.addTarget(target, action: action, for: .touchUpInside)
-        
-        let barButtonItem = UIBarButtonItem(customView: button)
-        return barButtonItem
-    }
-}
-
 // MARK: - Navigation Bar Storyboard
 
 extension DetalladaAcercaViewController {
@@ -570,13 +557,6 @@ extension DetalladaAcercaViewController {
     }
     
 }
-
-
-
-// MARK: - Mostar vista detallada 
-
-
-
 
 
 // MARK: - Navigation Bar Programatically

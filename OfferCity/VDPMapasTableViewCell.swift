@@ -1,20 +1,19 @@
 //
-//  VDEMapaTableViewCell.swift
+//  VDPMapasTableViewCell.swift
 //  OfferCity
 //
-//  Created by ginppian on 19/05/17.
+//  Created by ginppian on 23/05/17.
 //  Copyright © 2017 Miguel Mexicano Herrera. All rights reserved.
 //
 
 import UIKit
 import GoogleMaps
 
-class VDEMapaTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var mapView: GMSMapView!
-    
-    static let identifier = "VDEMapaTableViewCell"
+class VDPMapasTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mapView: GMSMapView!
+    static let identifier = "VDPMapasTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,7 +25,11 @@ class VDEMapaTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
     @IBAction func buttonAction(_ sender: UIButton) {
-        print("Clicked...")
+        print("Mapa 📌")
     }
+    
+    
+    
 }

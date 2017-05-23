@@ -11,16 +11,37 @@ import UIKit
 class PromocionesViewController: UIViewController {
     
     // MARK: - Propertys
+    
     let arrayImage = [#imageLiteral(resourceName: "borrarPromo1"), #imageLiteral(resourceName: "borrarPromo2"), #imageLiteral(resourceName: "borrarPromo3"), #imageLiteral(resourceName: "borrarPromo4")]
     let arrayPromo = ["VILLA RICA", "THE TAVERN", "LOS PESCADORES", "VALENTINA"]
     let arrayFecha = ["¡TODOS LOS DIAS!", "MARTES Y JUEVES", "DE JUEVES A DOMINGO", "DE LUNES A VIERNES"]
+    
+    var imageFromCellToDetall: UIImage!
 
-
+    // MARK: - Constructor
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PromocionesDetalladaPromos" {
+            
+            let nav = segue.destination as? UINavigationController
+            let vc = nav?.topViewController as? DetalladaPromosViewController
+            
+            //let vc = segue.destination as! DetalladaAcercaViewController
+            if self.imageFromCellToDetall == nil {
+                
+                vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            } else {
+                
+                vc?.imageFromCellToDetall = self.imageFromCellToDetall
+            }
+            
+        }
+    }
 }
 
 // MARK: - Data Source
@@ -54,7 +75,11 @@ extension PromocionesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+
+        let cell = collectionView.cellForItem(at: indexPath) as! PromosCollectionViewCell
+        self.imageFromCellToDetall = cell.imagFoto.image
+        
+        performSegue(withIdentifier: "PromocionesDetalladaPromos", sender: self)
     }
 }
 

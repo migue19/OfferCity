@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1001DB1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1001DA1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift */; };
+		3C1001DD1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1001DC1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift */; };
+		3C1001DF1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1001DE1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift */; };
 		3C2A4AA31ECCE232007D279D /* DetalladaAcercaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */; };
 		3C2A4AB21ECCE8AC007D279D /* VDRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA71ECCE8AC007D279D /* VDRatingTableViewCell.swift */; };
 		3C2A4AB31ECCE8AC007D279D /* VDCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2A4AA81ECCE8AC007D279D /* VDCheckInTableViewCell.swift */; };
@@ -77,6 +80,9 @@
 
 /* Begin PBXFileReference section */
 		10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.release.xcconfig"; sourceTree = "<group>"; };
+		3C1001DA1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDPDescripcionTableViewCell.swift; sourceTree = "<group>"; };
+		3C1001DC1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDPEstablecimientoTableViewCell.swift; sourceTree = "<group>"; };
+		3C1001DE1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDPMapasTableViewCell.swift; sourceTree = "<group>"; };
 		3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalladaAcercaViewController.swift; sourceTree = "<group>"; };
 		3C2A4AA71ECCE8AC007D279D /* VDRatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRatingTableViewCell.swift; sourceTree = "<group>"; };
 		3C2A4AA81ECCE8AC007D279D /* VDCheckInTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDCheckInTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +175,16 @@
 				10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3C1001D91ED4B08F00F2D9CB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3C1001DA1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift */,
+				3C1001DC1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift */,
+				3C1001DE1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		3C2A4AA41ECCE23A007D279D /* DetalladaCerca */ = {
@@ -408,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				3CEDE0891ECFD8EC003C3716 /* DetalladaPromosViewController.swift */,
+				3C1001D91ED4B08F00F2D9CB /* Cells */,
 			);
 			name = DetalladaPromos;
 			sourceTree = "<group>";
@@ -680,6 +697,7 @@
 				7D92193F1EA428BC006C6976 /* MapaViewController.swift in Sources */,
 				7DAD18B61ED27CFE009B37E5 /* CustomInfoWindow.swift in Sources */,
 				7D1449A01EA2FC0F0068C597 /* OfferCity.xcdatamodeld in Sources */,
+				3C1001DF1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift in Sources */,
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				3CEDE0911ECFF8FE003C3716 /* VDEHoraTableViewCell.swift in Sources */,
 				3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */,
@@ -694,6 +712,7 @@
 				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
+				3C1001DD1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift in Sources */,
 				3CCA5B7D1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift in Sources */,
 				7D0330AB1ECC7B9800D46CCA /* CustomImageTableViewCell.swift in Sources */,
 				7DAD18BB1ED2C926009B37E5 /* CityPointsViewController.swift in Sources */,
@@ -714,6 +733,7 @@
 				7DAD18B81ED2B4AA009B37E5 /* ImageCustomWindow.swift in Sources */,
 				3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */,
 				3C7D05531ECE3196005B3874 /* FloatRatingView.swift in Sources */,
+				3C1001DB1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift in Sources */,
 				7D0330A71ECC7B5B00D46CCA /* AvatarImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
