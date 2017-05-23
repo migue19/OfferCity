@@ -75,7 +75,6 @@ class CercadetiViewController: UIViewController {
             let nav = segue.destination as? UINavigationController
             let vc = nav?.topViewController as? DetalladaAcercaViewController
             
-            //let vc = segue.destination as! DetalladaAcercaViewController
             if self.imageFromCellToDetall == nil {
                 
                 vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")

@@ -1981,7 +1981,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="0tc-c8-DQa" id="bC3-aH-pPj"/>
-                        <segue destination="kMT-1w-T4u" kind="show" identifier="eventosDetalladaEventos" id="KmH-go-TZe"/>
+                        <segue destination="PN7-Qw-zKI" kind="show" identifier="eventosDetalladaEventos" id="KmH-go-TZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMD-vT-NKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2542,7 +2542,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m86-el-lQa" customClass="GMSMapView">
-                                                    <rect key="frame" x="8" y="8" width="359" height="72.5"/>
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="72.5"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-E1-gpF">
@@ -2554,8 +2554,8 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="m86-el-lQa" secondAttribute="trailing" id="9k2-YI-MUZ"/>
-                                                <constraint firstItem="m86-el-lQa" firstAttribute="leading" secondItem="zbk-ov-l4G" secondAttribute="leadingMargin" id="K9F-Zj-94v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="m86-el-lQa" secondAttribute="trailing" constant="-8" id="9k2-YI-MUZ"/>
+                                                <constraint firstItem="m86-el-lQa" firstAttribute="leading" secondItem="zbk-ov-l4G" secondAttribute="leadingMargin" constant="-8" id="K9F-Zj-94v"/>
                                                 <constraint firstAttribute="topMargin" secondItem="m86-el-lQa" secondAttribute="top" id="Wua-Ik-QQt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="m86-el-lQa" secondAttribute="bottom" id="zgl-cF-SKj"/>
                                             </constraints>
@@ -2604,6 +2604,7 @@
                             <constraint firstAttribute="bottom" secondItem="KB9-rm-6rb" secondAttribute="bottom" id="zrT-Jp-q19"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G4T-zg-rRG"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -2615,7 +2616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2Y-Xc-8k0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5925.6000000000004" y="83.658170914542737"/>
+            <point key="canvasLocation" x="6864.8000000000002" y="83.658170914542737"/>
         </scene>
         <!--Detallada Promos View Controller-->
         <scene sceneID="xND-yQ-UUE">
@@ -2821,7 +2822,6 @@
                             <constraint firstItem="TRZ-Zp-UIe" firstAttribute="top" secondItem="JkV-sA-tvy" secondAttribute="bottom" constant="5" id="FfT-9d-Kfz"/>
                             <constraint firstItem="JkV-sA-tvy" firstAttribute="top" secondItem="sDn-Ut-ccB" secondAttribute="top" id="LjU-Ey-JoL"/>
                             <constraint firstItem="JkV-sA-tvy" firstAttribute="leading" secondItem="sDn-Ut-ccB" secondAttribute="leadingMargin" constant="-16" id="NSj-vH-UQV"/>
-                            <constraint firstItem="JkV-sA-tvy" firstAttribute="top" secondItem="sDn-Ut-ccB" secondAttribute="top" id="bCo-pp-due"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JkV-sA-tvy" secondAttribute="trailing" constant="-16" id="iay-GO-ajj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TRZ-Zp-UIe" secondAttribute="trailing" constant="-16" id="mU8-2z-7WW"/>
                             <constraint firstItem="TRZ-Zp-UIe" firstAttribute="leading" secondItem="sDn-Ut-ccB" secondAttribute="leadingMargin" constant="-16" id="wq7-19-vVo"/>
@@ -3016,7 +3016,7 @@
             <objects>
                 <navigationController storyboardIdentifier="StoryBoardStart" automaticallyAdjustsScrollViewInsets="NO" id="2i4-W8-Rpq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mc4-By-gFm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mc4-By-gFm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.38815179467201233" green="0.49453771114349365" blue="0.64784389734268188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3039,7 +3039,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bXu-6N-JiX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kNk-3t-Jd5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kNk-3t-Jd5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3058,7 +3058,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bUe-3h-ItN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Perfil" image="perfil" id="dti-MS-9I8"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UhV-Zp-KaA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UhV-Zp-KaA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3081,7 +3081,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ylH-sm-KA9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y3I-aX-Sp4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="y3I-aX-Sp4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3093,6 +3093,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p52-Bg-Ciz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5926" y="1201"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZMR-jt-uNN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PN7-Qw-zKI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OT5-dH-Zik">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kMT-1w-T4u" kind="relationship" relationship="rootViewController" id="Zn0-y2-Mgw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxM-9H-M97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5925.6000000000004" y="83.208395802098963"/>
         </scene>
     </scenes>
     <resources>

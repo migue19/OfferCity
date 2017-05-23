@@ -28,15 +28,26 @@ class DetalladaEventosViewController: UIViewController {
     //    let arrayRedes = ["twitter", "facebook"]
     //    let arrayRedes = ["twitter"]
 
+    // MARK: - Constructor
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getNavBarTransluced()
-        
         loadImageForSlideShow()
-        setupSlideShow()
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func buttonComprarAction(_ sender: UIButton) {
+        print("buttonComprarAction")
+    }
+    
+
+}
+
+// MARK: - Lifecycle
+
+extension DetalladaEventosViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -47,24 +58,38 @@ class DetalladaEventosViewController: UIViewController {
                                  width: UIScreen.main.bounds.width,
                                  height: UIScreen.main.bounds.height/2.2)
         
-        // Sin linea entre cells
+        // Setup slideshow
+        
+        setupSlideShow()
+        
+        // Setup navigation bar
+        
+        setupNavigationBar()
+        
+        // Tableview sin linea entre cells
         
         tableView.separatorStyle = .none
         
-        // Button Comprar
+        // Setup Button Reservar
+        
+        setupButtonComprar()
+        
+    }
+    
+}
+
+// MARK: - Vista
+
+extension DetalladaEventosViewController {
+    
+    func setupButtonComprar() {
         
         self.buttonComprar.layer.cornerRadius = 21
         self.buttonComprar.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
-        self.buttonComprar.titleLabel?.text = "COMPRAR2"
+        self.buttonComprar.titleLabel?.text = "COMPRAR"
         self.buttonComprar.tintColor = UIColor.white
+        
     }
-    
-    
-    @IBAction func buttonComprarAction(_ sender: UIButton) {
-        print("buttonComprarAction")
-    }
-    
-
 }
 
 // MARK: - Delegate 
@@ -329,10 +354,10 @@ extension DetalladaEventosViewController {
         
         // Add view
         
-        descriptionSlideshow()
+        putSlideshowHerarchiTop()
     }
     
-    func descriptionSlideshow() {
+    func putSlideshowHerarchiTop() {
         
         self.contentDescripSlideshow.layer.zPosition = 1000
     }
@@ -344,12 +369,163 @@ extension DetalladaEventosViewController {
     
     func loadImageForSlideShow() {
         
+        // Array image
+        
         self.localSource = [ImageSource(image: self.imageFromCellToDetall), ImageSource(image: #imageLiteral(resourceName: "borrar1"))]
+        
+        // Load Images in slideshow
+        
+        self.slideshow.setImageInputs(self.localSource)
+    
+    }
+}
+
+// MARK: - Scroll
+
+extension DetalladaEventosViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y >= (slideshow.bounds.height-50) {
+            
+            print("white")
+            leftBarButtonWhite()
+            rightBarButtonAzul()
+        } else {
+            
+            print("azul")
+            leftBarButtonAzul()
+            rightBarButtonWhite()
+        }
+    }
+}
+
+// MARK: - Bar Button Item Left
+
+extension DetalladaEventosViewController {
+    
+    func setupLeftBarButtonItemWithImage() {
+        
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
+        self.navigationItem.leftBarButtonItem = newBbi
+    }
+    
+    func close() {
+        
+        //navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        print("Dismiss 👀")
+    }
+    
+    func leftBarButtonAzul() {
+        
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"),
+                                            target: self,
+                                            action: #selector(DetalladaAcercaViewController.close))
+        
+        navigationItem.leftBarButtonItem = nbbi
+    }
+    
+    func leftBarButtonWhite() {
+        
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "closeAzul"),
+                                            target: self,
+                                            action: #selector(DetalladaAcercaViewController.close))
+        
+        navigationItem.leftBarButtonItem = nbbi
     }
     
 }
 
-// MARK: - Navigation Bar
+// MARK: - Bar Button Item Right
+
+extension DetalladaEventosViewController {
+    
+    func setupRighttBarButtonItem() {
+        
+        let buttonItem = UIBarButtonItem(title: "Compartir",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(DetalladaAcercaViewController.compartir))
+        
+        
+        buttonItem.setTitleTextAttributes([
+            NSFontAttributeName : UIFont.systemFont(ofSize: 14, weight: UIFontWeightHeavy),
+            NSForegroundColorAttributeName : UIColor.white],
+                                          for: .normal)
+        
+        
+        navigationItem.rightBarButtonItem = buttonItem
+    }
+    
+    func rightBarButtonWhite() {
+        
+        let buttonItem = UIBarButtonItem(title: "Compartir",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(DetalladaAcercaViewController.compartir))
+        
+        
+        buttonItem.setTitleTextAttributes([
+            NSFontAttributeName : UIFont.systemFont(ofSize: 14, weight: UIFontWeightHeavy),
+            NSForegroundColorAttributeName : UIColor.white],
+                                          for: .normal)
+        
+        navigationItem.rightBarButtonItem = buttonItem
+    }
+    
+    func rightBarButtonAzul() {
+        
+        let buttonItem = UIBarButtonItem(title: "Compartir",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(DetalladaAcercaViewController.compartir))
+        
+        
+        buttonItem.setTitleTextAttributes([
+            NSFontAttributeName : UIFont.systemFont(ofSize: 14, weight: UIFontWeightHeavy),
+            NSForegroundColorAttributeName : UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))],
+                                          for: .normal)
+        
+        navigationItem.rightBarButtonItem = buttonItem
+    }
+    
+    func compartir() {
+        print("Compartir")
+        
+        displayShareSheet(shareContent: "Descubre los mejores Restaurantes con Offer City")
+        
+    }
+    
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: {})
+    }
+}
+
+// MARK: - Navigation Bar Storyboard
+
+extension DetalladaEventosViewController {
+    
+    func setupNavigationBar() {
+        
+        translucedNavigationBar()
+        setupLeftBarButtonItemWithImage()
+        setupRighttBarButtonItem()
+    }
+    
+    func translucedNavigationBar() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
+    }
+    
+}
+
+
+// MARK: - Navigation Bar Programatically
 
 extension DetalladaEventosViewController {
     
@@ -391,12 +567,5 @@ extension DetalladaEventosViewController {
         self.view.addSubview(navBar)
     }
     
-    func translucedNavigationBar() {
-        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
-    }
-
 }
+

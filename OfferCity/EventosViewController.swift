@@ -29,14 +29,15 @@ class EventosViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "eventosDetalladaEventos" {
             
-            let vc = segue.destination as! DetalladaEventosViewController
+            let nav = segue.destination as? UINavigationController
+            let vc = nav?.topViewController as? DetalladaEventosViewController
             
             if self.imageFromCellToDetall == nil {
                 
-                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+                vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
             } else {
                 
-                vc.imageFromCellToDetall = self.imageFromCellToDetall
+                vc?.imageFromCellToDetall = self.imageFromCellToDetall
             }
             
         }

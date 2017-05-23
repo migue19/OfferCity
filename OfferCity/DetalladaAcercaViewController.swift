@@ -45,11 +45,6 @@ class DetalladaAcercaViewController: UIViewController {
         print("Button Reservar")
     }
     
-    @IBAction func closeDetallada(_ sender: UIBarButtonItem) {
-        
-        close()
-    }
-    
 }
 
 // MARK: - Lifecycle
