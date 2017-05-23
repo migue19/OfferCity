@@ -27,12 +27,13 @@ class CercadetiViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var contentView: UIView!
-    let restauranteDAO = RestaurantesDAO()
+    @IBOutlet weak var contenedorFiltro: UIView!
     
     // MARK: - Propertys
     
     var imageFromCellToDetall: UIImage!
-    
+    let restauranteDAO = RestaurantesDAO()
+
     fileprivate var restaurantes : [Restaurantes] = {
         
         var _restaurantes = [Restaurantes]()
@@ -86,6 +87,16 @@ class CercadetiViewController: UIViewController {
         }
     }
     
+}
+
+// MARK: Life Cycle
+
+extension CercadetiViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        contenedorFiltro.layer.cornerRadius = contenedorFiltro.bounds.width/2
+        contenedorFiltro.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+    }
 }
 
 // MARK: - Views

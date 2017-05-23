@@ -10,7 +10,12 @@ import UIKit
 
 class EventosViewController: UIViewController {
     
+    // MARK_ - Outlets
+    
+    @IBOutlet weak var contenedorFiltro: UIView!
+    
     // MARK: - Propertys
+    
     var imageFromCellToDetall: UIImage!
     
     let arrayImage = [#imageLiteral(resourceName: "borrarEvento1"), #imageLiteral(resourceName: "borrarEvento2"), #imageLiteral(resourceName: "borrarEvento3"), #imageLiteral(resourceName: "borrarEvento4")]
@@ -43,6 +48,16 @@ class EventosViewController: UIViewController {
         }
     }
 
+}
+
+// MARK: Life Cycle
+
+extension EventosViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        contenedorFiltro.layer.cornerRadius = contenedorFiltro.bounds.width/2
+        contenedorFiltro.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+    }
 }
 
 // MARK: - Data Source

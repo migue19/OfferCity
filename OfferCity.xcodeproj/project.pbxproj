@@ -31,6 +31,8 @@
 		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
 		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
 		3C7D05531ECE3196005B3874 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D05521ECE3196005B3874 /* FloatRatingView.swift */; };
+		3C9433F41ED4FAB10009FD24 /* FiltrosCercaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9433F31ED4FAB10009FD24 /* FiltrosCercaViewController.swift */; };
+		3C9433F71ED502320009FD24 /* FiltroEventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9433F61ED502320009FD24 /* FiltroEventosViewController.swift */; };
 		3CB782771EC260B50023991E /* CercadetiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */; };
 		3CCA5B7D1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B7C1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift */; };
 		3CCA5B7F1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCA5B7E1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift */; };
@@ -104,6 +106,8 @@
 		3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
 		3C7D05521ECE3196005B3874 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		3C9433F31ED4FAB10009FD24 /* FiltrosCercaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrosCercaViewController.swift; sourceTree = "<group>"; };
+		3C9433F61ED502320009FD24 /* FiltroEventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltroEventosViewController.swift; sourceTree = "<group>"; };
 		3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CercadetiCollectionViewCell.swift; sourceTree = "<group>"; };
 		3CCA5B7C1ECEADCD00A6AE42 /* VDRedes2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRedes2TableViewCell.swift; sourceTree = "<group>"; };
 		3CCA5B7E1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDRedes3TableViewCell.swift; sourceTree = "<group>"; };
@@ -306,6 +310,22 @@
 			name = CheckIn;
 			sourceTree = "<group>";
 		};
+		3C9433F21ED4FA7C0009FD24 /* FiltrosCerca */ = {
+			isa = PBXGroup;
+			children = (
+				3C9433F31ED4FAB10009FD24 /* FiltrosCercaViewController.swift */,
+			);
+			name = FiltrosCerca;
+			sourceTree = "<group>";
+		};
+		3C9433F51ED5021C0009FD24 /* FiltroEventos */ = {
+			isa = PBXGroup;
+			children = (
+				3C9433F61ED502320009FD24 /* FiltroEventosViewController.swift */,
+			);
+			name = FiltroEventos;
+			sourceTree = "<group>";
+		};
 		3CB7826D1EC24A830023991E /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +361,7 @@
 				3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */,
 				3CB782761EC260B50023991E /* CercadetiCollectionViewCell.swift */,
 				3C2A4AA41ECCE23A007D279D /* DetalladaCerca */,
+				3C9433F21ED4FA7C0009FD24 /* FiltrosCerca */,
 			);
 			name = Cercadeti;
 			sourceTree = "<group>";
@@ -351,6 +372,7 @@
 				3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */,
 				3CEDE0811ECF8BEA003C3716 /* EventosCollectionViewCell.swift */,
 				3CEDE0851ECFD8A2003C3716 /* DetalladaEventos */,
+				3C9433F51ED5021C0009FD24 /* FiltroEventos */,
 			);
 			name = Eventos;
 			sourceTree = "<group>";
@@ -706,6 +728,7 @@
 				7DAD18B01ED20D0C009B37E5 /* CheckOutUIView.swift in Sources */,
 				7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */,
 				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
+				3C9433F71ED502320009FD24 /* FiltroEventosViewController.swift in Sources */,
 				3CCA5B811ECEADF000A6AE42 /* VDRedes4TableViewCell.swift in Sources */,
 				3C2A4ABA1ECCE8AC007D279D /* VDRedesTableViewCell.swift in Sources */,
 				3CEDE0871ECFD8CE003C3716 /* DetalladaEventosViewController.swift in Sources */,
@@ -726,6 +749,7 @@
 				3C2A4AB91ECCE8AC007D279D /* VDMapaTableViewCell.swift in Sources */,
 				3CCA5B7F1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift in Sources */,
 				3CEDE08A1ECFD8EC003C3716 /* DetalladaPromosViewController.swift in Sources */,
+				3C9433F41ED4FAB10009FD24 /* FiltrosCercaViewController.swift in Sources */,
 				3CEDE08D1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift in Sources */,
 				3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */,
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
