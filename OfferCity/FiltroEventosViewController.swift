@@ -10,9 +10,15 @@ import UIKit
 
 class FiltroEventosViewController: UIViewController {
 
-    // MARK:- Propertys
+    // MARK: - Outlets
     
     @IBOutlet weak var buttonClose: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK:- Propertys
+    
+
+    // MARK: - Constructor
     
     override func viewDidLoad() {
         super.viewDidLoad()

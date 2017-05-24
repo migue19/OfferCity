@@ -646,7 +646,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="V4T-DE-HhG"/>
                     <connections>
-                        <segue destination="Cra-1S-p2j" kind="show" id="hnV-R3-XlE"/>
+                        <segue destination="Cra-1S-p2j" kind="show" identifier="" id="hnV-R3-XlE"/>
                         <segue destination="L9B-fn-jMm" kind="show" id="dpW-4S-D78"/>
                         <segue destination="IiQ-1g-Nr1" kind="show" id="VqB-Ws-53I"/>
                     </connections>
@@ -905,6 +905,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KQB-ud-7qQ">
                                 <rect key="frame" x="0.0" y="106" width="375" height="561"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4qb-Vs-rbT" id="5Ye-Rx-Yxc"/>
+                                    <outlet property="delegate" destination="4qb-Vs-rbT" id="hVz-Fi-bS8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -924,6 +928,7 @@
                     <navigationItem key="navigationItem" title="FILTRO" id="mcx-aj-Nxa"/>
                     <connections>
                         <outlet property="buttonClose" destination="Fps-aM-Kzs" id="wY6-Qk-B28"/>
+                        <outlet property="tableView" destination="KQB-ud-7qQ" id="gGj-yz-sIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zf8-ha-w1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2163,6 +2168,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-fs-ODn">
                                 <rect key="frame" x="0.0" y="106" width="375" height="561"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="i67-hr-owA" id="9sI-WK-jvq"/>
+                                    <outlet property="delegate" destination="i67-hr-owA" id="35l-Aa-dRw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2180,10 +2189,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FILTRO" id="X4s-Q3-iTh"/>
+                    <connections>
+                        <outlet property="buttonClose" destination="dq5-yi-tCk" id="dqV-cC-lNZ"/>
+                        <outlet property="tableView" destination="hWR-fs-ODn" id="y4A-tk-uAt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WD-Rp-ECB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5908" y="844.22788605697156"/>
+            <point key="canvasLocation" x="5926" y="844"/>
         </scene>
         <!--Detallada Eventos View Controller-->
         <scene sceneID="IVv-mg-JPK">

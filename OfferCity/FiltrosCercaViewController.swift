@@ -10,9 +10,12 @@ import UIKit
 
 class FiltrosCercaViewController: UIViewController {
     
-    // MARK:- Propertys
+    // MARK: - Outlets
     
     @IBOutlet weak var buttonClose: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Propertys
 
     override func viewDidLoad() {
         super.viewDidLoad()
