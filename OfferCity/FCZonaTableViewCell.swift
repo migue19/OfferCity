@@ -1,5 +1,5 @@
 //
-//  FEComidaTableViewCell.swift
+//  FCZonaTableViewCell.swift
 //  OfferCity
 //
 //  Created by ginppian on 24/05/17.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class FEComidaTableViewCell: UITableViewCell {
+class FCZonaTableViewCell: UITableViewCell {
+    
+    @IBOutlet fileprivate weak var collectionView: UICollectionView!
+    static let identifier = "FCZonaTableViewCell"
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    static let identifier = "FEComidaTableViewCell"
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -24,11 +23,12 @@ class FEComidaTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
     }
 
 }
 
-extension FEComidaTableViewCell {
+extension FCZonaTableViewCell {
     
     func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
         

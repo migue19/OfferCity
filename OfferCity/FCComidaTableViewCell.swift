@@ -1,5 +1,5 @@
 //
-//  FEComidaTableViewCell.swift
+//  FCComidaTableViewCell.swift
 //  OfferCity
 //
 //  Created by ginppian on 24/05/17.
@@ -8,15 +8,14 @@
 
 import UIKit
 
-class FEComidaTableViewCell: UITableViewCell {
-
+class FCComidaTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    static let identifier = "FEComidaTableViewCell"
-    
+    static let identifier = "FCComidaTableViewCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         // Tranparent Collection View
         
         collectionView.backgroundColor = UIColor.clear
@@ -24,11 +23,12 @@ class FEComidaTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
     }
 
 }
 
-extension FEComidaTableViewCell {
+extension FCComidaTableViewCell {
     
     func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int) {
         

@@ -14,12 +14,13 @@ class FiltroEventosViewController: UIViewController {
     
     @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var buttonAplicar: UIButton!
     
     // MARK:- Propertys
     
     let arrayZonas = ["Todo", "Angelópolis", "La Paz", "La Juárez", "El Centro", "Cholula"]
     let arrayComida = ["Todo", "Pizza", "Pasta", "Vegana", "Mexicana", "Española", "Shushi", "Mariscos", "Ensaladas"]
-    let arrayComidaImage = [#imageLiteral(resourceName: "azulOffer"), #imageLiteral(resourceName: "pizza"), #imageLiteral(resourceName: "pasta"), #imageLiteral(resourceName: "vegana"), #imageLiteral(resourceName: "mexicana"), #imageLiteral(resourceName: "espanola"), #imageLiteral(resourceName: "shushi"), #imageLiteral(resourceName: "mariscos"), #imageLiteral(resourceName: "ensaladas")]
+    let arrayComidaImage = [#imageLiteral(resourceName: "city"), #imageLiteral(resourceName: "pizza"), #imageLiteral(resourceName: "pasta"), #imageLiteral(resourceName: "vegana"), #imageLiteral(resourceName: "mexicana"), #imageLiteral(resourceName: "espanola"), #imageLiteral(resourceName: "shushi"), #imageLiteral(resourceName: "mariscos"), #imageLiteral(resourceName: "ensaladas")]
 
     // MARK: - Constructor
     
@@ -36,6 +37,14 @@ class FiltroEventosViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         print("Dismiss 👀")
     }
+    
+    @IBAction func buttonAplicarAction(_ sender: UIButton) {
+        print("Button Aplicar")
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+        print("Dismiss 👀")
+    }
+    
 
 }
 
@@ -50,7 +59,12 @@ extension FiltroEventosViewController {
         setupNavigationBar()
         
         // Setup Table View
+        
         setupTableView()
+        
+        // Setup Button aplicar
+        
+        setupButtonAplicar()
     }
 }
 
@@ -66,6 +80,11 @@ extension FiltroEventosViewController {
         // Tableview sin linea entre cells
         
         tableView.separatorStyle = .none
+    }
+    
+    func setupButtonAplicar() {
+    
+        self.buttonAplicar.layer.cornerRadius = 21
     }
 }
 // MARK: - Table Data Source
@@ -286,13 +305,69 @@ extension FiltroEventosViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("cv: \(collectionView.tag), item: \(indexPath.item)")
+        
+        
+        switch collectionView.tag {
+        case 0:
+            let cell = collectionView.cellForItem(at: indexPath) as! FEZonaCollectionViewCell
+            if cell.tag == 1 {
+                cell.tag = 0
+                cell.backgroundColor = UIColor.white
+                cell.label.textColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+            } else {
+                cell.tag = 1
+                cell.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))
+                cell.label.textColor = UIColor.white
+            }
+
+        case 1:
+            let cell = collectionView.cellForItem(at: indexPath) as! FEComidaCollectionViewCell
+            if cell.tag == 1 {
+                cell.tag = 0
+                cell.imagen.image = arrayComidaImage[indexPath.item]
+            } else {
+                cell.tag = 1
+                cell.imagen.image = #imageLiteral(resourceName: "azulOffer")
+            }
+        default:
+            return
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         
+        // Bordes redondos
+        
         cell.layer.cornerRadius = 21
+        
+        // Size Font Label
+        
+        switch collectionView.tag {
+        case 0:
+            let cell = cell as! FEZonaCollectionViewCell
+            if UIScreen.main.bounds.width > 320 {
+                
+                cell.label.font = UIFont.boldSystemFont(ofSize: 14.0)
+            } else {
+                
+                cell.label.font = UIFont.boldSystemFont(ofSize: 10.0)
+            }
+        case 1:
+            let cell = cell as! FEComidaCollectionViewCell
+            if UIScreen.main.bounds.width > 320 {
+                
+                cell.label.font = UIFont.boldSystemFont(ofSize: 14.0)
+            } else {
+                
+                cell.label.font = UIFont.boldSystemFont(ofSize: 10.0)
+            }
+        default:
+            return
+        }
+
     }
     
     // Cell Size
