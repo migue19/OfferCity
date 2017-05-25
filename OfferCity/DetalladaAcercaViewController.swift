@@ -37,7 +37,6 @@ class DetalladaAcercaViewController: UIViewController {
         
         loadImageForSlideShow()
     }
- 
     
     // MARK: - Actions
     
@@ -282,14 +281,65 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         
+        // Prin Section and Row
+        
+        print("Section: \(indexPath.section), Row: \(indexPath.row)")
+        
         // Deselect Cell
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // Prin Section and Row
-        print("Section: \(indexPath.section), Row: \(indexPath.row)")
+        switch indexPath.section {
+            
+        case 0: // SECTION
+            switch indexPath.row {
+                
+            case 0: // RATING
+                break
+            case 1: // CHECK IN
+                break
+            case 2: // DESCRIPCION
+                break
+            case 3: // TELEFONO
+                
+                let cell = tableView.cellForRow(at: indexPath) as! VDTelefonoTableViewCell
+                    if let phoneCallURL = URL(string: "tel://\(Int(cell.label.text!)!)") {
+                        let application:UIApplication = UIApplication.shared
+                        if (application.canOpenURL(phoneCallURL)) {
+                            application.open(phoneCallURL, options: [:], completionHandler: nil)
+                        }
+                    }
+                break
+            case 4: // HORA
+                break
+            case 5: // BOTONES
+                break
+            default:
+                return
+            }
+            
+        case 1: // SECTION
+            switch indexPath.row {
+                
+            case 0: // REDES SCIALES
+                break
+            default:
+                return
+            }
+            
+        case 2: // SECTION
+            switch indexPath.row {
+            case 0: // MAPAS
+                break
+            default:
+                return
+            }
+            
+        default:
+            return
+        }
         
-        performSegue(withIdentifier: "asdf", sender: self)
+        //performSegue(withIdentifier: "asdf", sender: self)
     }
     
     func tableView(_ tableView: UITableView,

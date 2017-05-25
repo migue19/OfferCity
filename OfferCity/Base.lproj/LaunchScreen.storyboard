@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,18 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-LW-idz">
-                                <rect key="frame" x="71" y="261" width="233" height="144"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="233" id="1DE-Ve-8nr"/>
-                                    <constraint firstAttribute="height" constant="144" id="D1n-13-j9I"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="zHa-PK-72v">
+                                <rect key="frame" x="93.5" y="266.5" width="187.5" height="133"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.35294117650000001" green="0.47843137250000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dlw-LW-idz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ItH-vC-vfF"/>
-                            <constraint firstItem="dlw-LW-idz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="k8U-AS-0Sf"/>
+                            <constraint firstItem="zHa-PK-72v" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8NT-j8-mEi"/>
+                            <constraint firstItem="zHa-PK-72v" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:5" id="Gt8-md-zAn"/>
+                            <constraint firstItem="zHa-PK-72v" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HSm-Me-NoN"/>
+                            <constraint firstItem="zHa-PK-72v" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:2" id="c95-7t-lgM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="649" height="501"/>
+        <image name="launch" width="300" height="301"/>
     </resources>
 </document>

@@ -106,6 +106,52 @@ extension DetalladaEventosViewController: UITableViewDelegate {
         // Print
         
         print("Section : \(indexPath.section), Row: \(indexPath.row)")
+        
+        
+        switch indexPath.section {
+            
+        case 0: // SECTION
+            switch indexPath.row {
+                
+            case 0: // DESCRIPCION
+                break
+            case 1: // TELEFONO
+                
+                let cell = tableView.cellForRow(at: indexPath) as! VDETelefonoTableViewCell
+                if let phoneCallURL = URL(string: "tel://\(Int(cell.label.text!)!)") {
+                    let application:UIApplication = UIApplication.shared
+                    if (application.canOpenURL(phoneCallURL)) {
+                        application.open(phoneCallURL, options: [:], completionHandler: nil)
+                    }
+                }
+                break
+            case 2: // HORA
+                break
+            default:
+                break
+            }
+            
+        case 1: // SECTION
+            switch indexPath.row {
+                
+            case 0: // REDES SCIALES
+                break
+            default:
+                break
+            }
+            
+        case 2: // SECTION
+            switch indexPath.row {
+                
+            case 0: // MAPAS
+                break
+            default:
+                break
+            }
+            
+        default:
+            break
+        }
     
     }
     
