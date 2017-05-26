@@ -14,6 +14,9 @@ class VDRedes2TableViewCell: UITableViewCell {
 
     @IBOutlet weak var imagen1: UIImageView!
     @IBOutlet weak var imagen2: UIImageView!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    
     
     // MARK: - Constructor
     
@@ -26,16 +29,6 @@ class VDRedes2TableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-    }
-    
-    // MARK: - Actions
-    
-    @IBAction func button1Action(_ sender: UIButton) {
-        print("button1")
-    }
-    
-    @IBAction func button2Action(_ sender: UIButton) {
-        print("button2")
     }
     
 }

@@ -19,8 +19,8 @@ class FiltroEventosViewController: UIViewController {
     // MARK:- Propertys
     
     let arrayZonas = ["Todo", "Angelópolis", "La Paz", "La Juárez", "El Centro", "Cholula"]
-    let arrayComida = ["Todo", "Pizza", "Pasta", "Vegana", "Mexicana", "Española", "Shushi", "Mariscos", "Ensaladas"]
-    let arrayComidaImage = [#imageLiteral(resourceName: "city"), #imageLiteral(resourceName: "pizza"), #imageLiteral(resourceName: "pasta"), #imageLiteral(resourceName: "vegana"), #imageLiteral(resourceName: "mexicana"), #imageLiteral(resourceName: "espanola"), #imageLiteral(resourceName: "shushi"), #imageLiteral(resourceName: "mariscos"), #imageLiteral(resourceName: "ensaladas")]
+    let arrayComida = ["Todo", "Concierto", "Festival", "Stand Up", "Conferencias", "Teatro", "Arte", "Cine"]
+    let arrayComidaImage = [#imageLiteral(resourceName: "city"), #imageLiteral(resourceName: "concierto"), #imageLiteral(resourceName: "festival"), #imageLiteral(resourceName: "standup"), #imageLiteral(resourceName: "conferencias"), #imageLiteral(resourceName: "teatro"), #imageLiteral(resourceName: "arte"), #imageLiteral(resourceName: "cine")]
 
     // MARK: - Constructor
     

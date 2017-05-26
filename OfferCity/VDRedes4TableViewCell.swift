@@ -17,6 +17,11 @@ class VDRedes4TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen3: UIImageView!
     @IBOutlet weak var imagen4: UIImageView!
 
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    
     // MARK: - Constructor
     
     override func awakeFromNib() {

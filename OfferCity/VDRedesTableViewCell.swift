@@ -13,6 +13,7 @@ class VDRedesTableViewCell: UITableViewCell {
     // MARK: - Outlets
 
     @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var button1: UIButton!
     
     // MARK: - Constructor
     override func awakeFromNib() {
@@ -25,12 +26,7 @@ class VDRedesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
-    // MARK: - Actions
     
-    @IBAction func buttonAction(_ sender: UIButton) {
-        print("One Social Network...")
-    }
 }
 
 extension VDRedesTableViewCell {
