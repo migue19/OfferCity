@@ -125,7 +125,7 @@ extension ResenasViewController {
     
     func setupRightBarButtonItem() {
         
-        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(ResenasViewController.agregarResena))
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "addResena"), target: self, action: #selector(ResenasViewController.agregarResena))
         self.navigationItem.rightBarButtonItem = newBbi
     }
     

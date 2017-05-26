@@ -23,15 +23,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="zHa-PK-72v">
-                                <rect key="frame" x="93.5" y="266.5" width="187.5" height="133"/>
+                                <rect key="frame" x="63" y="237.5" width="250" height="191"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.35294117650000001" green="0.47843137250000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zHa-PK-72v" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8NT-j8-mEi"/>
-                            <constraint firstItem="zHa-PK-72v" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:5" id="Gt8-md-zAn"/>
+                            <constraint firstItem="zHa-PK-72v" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:3.5" id="Gt8-md-zAn"/>
                             <constraint firstItem="zHa-PK-72v" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HSm-Me-NoN"/>
-                            <constraint firstItem="zHa-PK-72v" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:2" id="c95-7t-lgM"/>
+                            <constraint firstItem="zHa-PK-72v" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:1.5" id="c95-7t-lgM"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -743,7 +743,7 @@ extension DetalladaAcercaViewController {
 
     func setupLeftBarButtonItemWithImage() {
         
-        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backWhite"), target: self, action: #selector(DetalladaAcercaViewController.close))
         self.navigationItem.leftBarButtonItem = newBbi
     }
     
@@ -756,7 +756,7 @@ extension DetalladaAcercaViewController {
     
     func leftBarButtonAzul() {
         
-        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"),
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backWhite"),
                                             target: self,
                                             action: #selector(DetalladaAcercaViewController.close))
         
@@ -765,7 +765,7 @@ extension DetalladaAcercaViewController {
     
     func leftBarButtonWhite() {
         
-        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "closeAzul"),
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backBlue"),
                                             target: self,
                                             action: #selector(DetalladaAcercaViewController.close))
         

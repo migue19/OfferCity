@@ -82,8 +82,52 @@ extension DetalladaPromosViewController {
 
 extension DetalladaPromosViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print("section: \(indexPath.section), row: \(indexPath.row)")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Deselect Cell
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // Print
+        
+        print("Section : \(indexPath.section), Row: \(indexPath.row)")
+        
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
+        let auxView = UIView()
+        auxView.backgroundColor = UIColor(red: 100/255.0,
+                                          green: 127/255.0,
+                                          blue: 164/255.0,
+                                          alpha: 0.3)
+        
+        cell.selectedBackgroundView = auxView
+        
+    }
+    
+    public func tableView(_ tableView: UITableView,
+                          shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0: // DESCRIPCION
+
+                return false
+            case 1: // ESTABLECIMIENTO
+
+                return true
+            default:
+                return true
+            }
+        case 1: // MAPA
+            return false
+        default:
+            return true
+        }
     }
 }
 
@@ -366,7 +410,7 @@ extension DetalladaPromosViewController {
     
     func setupLeftBarButtonItemWithImage() {
         
-        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backWhite"), target: self, action: #selector(DetalladaAcercaViewController.close))
         self.navigationItem.leftBarButtonItem = newBbi
     }
     
@@ -379,7 +423,7 @@ extension DetalladaPromosViewController {
     
     func leftBarButtonAzul() {
         
-        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"),
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backWhite"),
                                             target: self,
                                             action: #selector(DetalladaAcercaViewController.close))
         
@@ -388,7 +432,7 @@ extension DetalladaPromosViewController {
     
     func leftBarButtonWhite() {
         
-        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "closeAzul"),
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backBlue"),
                                             target: self,
                                             action: #selector(DetalladaAcercaViewController.close))
         

@@ -1261,7 +1261,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2227802098" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJw-FN-Cr8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7971054094" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJw-FN-Cr8">
                                                     <rect key="frame" x="47" y="17" width="320" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -2874,7 +2874,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2227802098" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPy-2U-s5E">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7971054094" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPy-2U-s5E">
                                                     <rect key="frame" x="47" y="17" width="320" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -3495,26 +3495,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="establecimiento" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-UY-r2d">
-                                                    <rect key="frame" x="8" y="10" width="34" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="34" id="AWs-S7-TSr"/>
-                                                        <constraint firstAttribute="height" constant="34" id="KX7-3n-B9N"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver establecimiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-Rk-MqX">
-                                                    <rect key="frame" x="50" y="18" width="317" height="20"/>
+                                                    <rect key="frame" x="37" y="18" width="330" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="establecimiento" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-UY-r2d">
+                                                    <rect key="frame" x="8" y="17" width="21" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="21" id="Uak-2f-Fxe"/>
+                                                        <constraint firstAttribute="height" constant="21" id="hnz-g9-2GM"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yS7-UY-r2d" firstAttribute="leading" secondItem="BcF-8n-Kg4" secondAttribute="leadingMargin" id="662-6w-1II"/>
-                                                <constraint firstItem="dnV-Rk-MqX" firstAttribute="leading" secondItem="yS7-UY-r2d" secondAttribute="trailing" constant="8" id="9NG-aO-mXY"/>
+                                                <constraint firstItem="yS7-UY-r2d" firstAttribute="centerY" secondItem="BcF-8n-Kg4" secondAttribute="centerY" id="35g-zP-k0x"/>
+                                                <constraint firstItem="dnV-Rk-MqX" firstAttribute="leading" secondItem="yS7-UY-r2d" secondAttribute="trailing" constant="8" id="JDB-8e-sek"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="yS7-UY-r2d" secondAttribute="leading" id="LwJ-Yk-jej"/>
                                                 <constraint firstItem="dnV-Rk-MqX" firstAttribute="centerY" secondItem="BcF-8n-Kg4" secondAttribute="centerY" id="Qsx-j3-Dle"/>
                                                 <constraint firstItem="dnV-Rk-MqX" firstAttribute="trailing" secondItem="BcF-8n-Kg4" secondAttribute="trailingMargin" id="W6y-7M-WYJ"/>
-                                                <constraint firstItem="yS7-UY-r2d" firstAttribute="centerY" secondItem="BcF-8n-Kg4" secondAttribute="centerY" id="yl6-N0-sZd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -3604,7 +3604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7b-oA-vOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6977" y="1838"/>
+            <point key="canvasLocation" x="6975.9375" y="1837.5"/>
         </scene>
         <!--Promociones View Controller-->
         <scene sceneID="Cl3-oI-95r">
@@ -3925,7 +3925,7 @@
         <image name="city" width="1536" height="1152"/>
         <image name="citypoints" width="35" height="34"/>
         <image name="close" width="46" height="45"/>
-        <image name="establecimiento" width="42" height="50"/>
+        <image name="establecimiento" width="34" height="34"/>
         <image name="facebook" width="46" height="45"/>
         <image name="fb-logo" width="20" height="20"/>
         <image name="filtro" width="100" height="100"/>
