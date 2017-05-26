@@ -14,8 +14,11 @@ class VDRedes2TableViewCell: UITableViewCell {
 
     @IBOutlet weak var imagen1: UIImageView!
     @IBOutlet weak var imagen2: UIImageView!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
+
+    // MARK: - Propertys
+    
+    var delegate: RedesSocialesDelegate!
+
     
     
     // MARK: - Constructor
@@ -31,6 +34,15 @@ class VDRedes2TableViewCell: UITableViewCell {
 
     }
     
+    @IBAction func button1Action(_ sender: UIButton) {
+        
+        self.delegate.abrirRedSocial(index: imagen1.tag)
+    }
+    
+    @IBAction func button2Action(_ sender: UIButton) {
+        
+        self.delegate.abrirRedSocial(index: imagen2.tag)
+    }
 }
 
 extension VDRedes2TableViewCell {

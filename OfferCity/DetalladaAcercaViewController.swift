@@ -30,21 +30,16 @@ class DetalladaAcercaViewController: UIViewController {
     // y el segundo envia la informacion del link al web view
     // la cantidad puede ser de 1 red social a 4 (3 redes sociales mas web)
     
-//    let arrayOrdenRedes = ["f", "i", "w", "t"]
-//    
-//    let arrayRedes = ["https://www.facebook.com/",
+//    let arrayOrdenRedes = ["twitter", "fb", "instagram", "web"]
+//
+//    let arrayLinkRedes = ["https://twitter.com/",
+//                      "https://www.facebook.com/",
 //                      "https://www.instagram.com/",
-//                      "http://offercity.mx/",
-//                      "https://twitter.com/"]
+//                      "http://offercity.mx/"]
     
-    let arrayOrdenRedes = ["t", "f", "i", "w"]
-
-    let arrayRedes = ["https://twitter.com/",
-                      "https://www.facebook.com/",
-                      "https://www.instagram.com/",
-                      "http://offercity.mx/"]
+    let arrayOrdenRedes = ["instagram"]
     
-    var enlace = "http://offercity.mx/"
+    let arrayLinkRedes = ["https://www.instagram.com/"]
     
     // MARK: - Constructor
     
@@ -119,7 +114,7 @@ extension DetalladaAcercaViewController {
 
 // MARK: - Data Source
 
-extension DetalladaAcercaViewController: UITableViewDataSource {
+extension DetalladaAcercaViewController: UITableViewDataSource, RedesSocialesDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -218,29 +213,35 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
         case 1: // REDES
-            switch self.arrayRedes.count {
+            switch self.arrayLinkRedes.count {
             case 1:
                 
                 // Obtenemos celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedesTableViewCell", for: indexPath) as! VDRedesTableViewCell
                 
-                // Cargamos imagen
+                // Cargamos elementos
                 switch self.arrayOrdenRedes[0] {
-                case "t":
+                case "twitter":
                     cell.imagen.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "fb":
                     cell.imagen.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "instagram":
                     cell.imagen.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "web":
                     cell.imagen.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
                 default:
                     cell.imagen.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
                 }
-                
-                // Indice de la red en arrayRedes que tomara
-                cell.button1.tag = 1
-                cell.button1.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
                 
                 return cell
             case 2:
@@ -248,39 +249,53 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
                 // Obtenemos celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedes2TableViewCell", for: indexPath) as! VDRedes2TableViewCell
                
-                // Cargamos imagen1
+                // Cargamos elementos1
                 switch self.arrayOrdenRedes[0] {
-                case "t":
+                case "twitter":
                     cell.imagen1.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
                     cell.imagen1.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
                     cell.imagen1.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
                     cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
                 default:
                     cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
                 }
                 
-                // Cargamos imagen2
+                // Cargamos elementos2
                 switch self.arrayOrdenRedes[1] {
-                case "t":
+                case "twitter":
                     cell.imagen2.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
                     cell.imagen2.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
                     cell.imagen2.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
                     cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
                 default:
                     cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
                 }
-                
-                // Indice de la red en arrayRedes que tomara
-                cell.button1.tag = 1
-                cell.button2.tag = 2
-                cell.button1.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
-                cell.button2.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
                 
                 return cell
             case 3:
@@ -288,128 +303,179 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
                 // Obtenemos celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedes3TableViewCell", for: indexPath) as! VDRedes3TableViewCell
                 
-                // Cargamos imagen1
+                // Cargamos elementos1
                 switch self.arrayOrdenRedes[0] {
-                case "t":
+                case "twitter":
                     cell.imagen1.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
                     cell.imagen1.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
                     cell.imagen1.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
                     cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
                 default:
                     cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
                 }
                 
-                // Cargamos imagen2
+                // Cargamos elementos2
                 switch self.arrayOrdenRedes[1] {
-                case "t":
+                case "twitter":
                     cell.imagen2.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
                     cell.imagen2.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
                     cell.imagen2.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
                     cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
                 default:
                     cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
                 }
-                
-                // Cargamos imagen3
-                switch self.arrayOrdenRedes[2] {
-                case "t":
-                    cell.imagen3.image = #imageLiteral(resourceName: "twitter")
-                case "f":
-                    cell.imagen3.image = #imageLiteral(resourceName: "facebook")
-                case "i":
-                    cell.imagen3.image = #imageLiteral(resourceName: "instagram")
-                case "w":
-                    cell.imagen3.image = #imageLiteral(resourceName: "web")
-                default:
-                    cell.imagen3.image = #imageLiteral(resourceName: "web")
-                }
-                
-                // Indice de la red en arrayRedes que tomara
-                cell.button1.tag = 1
-                cell.button2.tag = 2
-                cell.button3.tag = 3
-                cell.button1.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
-                cell.button2.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
-                cell.button3.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
 
+                // Cargamos elementos3
+                switch self.arrayOrdenRedes[2] {
+                case "twitter":
+                    cell.imagen3.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "fb":
+                    cell.imagen3.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "instagram":
+                    cell.imagen3.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "web":
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                default:
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                }
+                
                 return cell
             case 4:
                 
                 // Obtenemos la celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedes4TableViewCell", for: indexPath) as! VDRedes4TableViewCell
                 
-                // Cargamos imagen1
+                // Cargamos elementos1
                 switch self.arrayOrdenRedes[0] {
-                case "t":
+                case "twitter":
                     cell.imagen1.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
                     cell.imagen1.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
                     cell.imagen1.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
                     cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
                 default:
                     cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
                 }
                 
-                // Cargamos imagen2
+                // Cargamos elementos2
                 switch self.arrayOrdenRedes[1] {
-                case "t":
+                case "twitter":
                     cell.imagen2.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
                     cell.imagen2.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
                     cell.imagen2.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
                     cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
                 default:
                     cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
                 }
                 
-                // Cargamos imagen3
+                // Cargamos elementos3
                 switch self.arrayOrdenRedes[2] {
-                case "t":
+                case "twitter":
                     cell.imagen3.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "fb":
                     cell.imagen3.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "instagram":
                     cell.imagen3.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "web":
                     cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
                 default:
                     cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
                 }
                 
-                // Cargamos imagen4
+                // Cargamos elementos4
                 switch self.arrayOrdenRedes[3] {
-                case "t":
+                case "twitter":
                     cell.imagen4.image = #imageLiteral(resourceName: "twitter")
-                case "f":
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "fb":
                     cell.imagen4.image = #imageLiteral(resourceName: "facebook")
-                case "i":
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "instagram":
                     cell.imagen4.image = #imageLiteral(resourceName: "instagram")
-                case "w":
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "web":
                     cell.imagen4.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
                 default:
                     cell.imagen4.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
                 }
-                
-                // Indice de la red en arrayRedes que tomara
-                cell.button1.tag = 1
-                cell.button2.tag = 2
-                cell.button3.tag = 3
-                cell.button4.tag = 4
-                
-                cell.button1.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
-                cell.button2.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
-                cell.button3.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
-                cell.button4.addTarget(self, action: #selector(DetalladaAcercaViewController.abrirRedSocial(_:)), for: .touchUpInside)
 
                 return cell
             default:
@@ -844,57 +910,30 @@ extension DetalladaAcercaViewController {
 
 }
 
-// MARK: - Go Redes Sociales
-
-extension DetalladaAcercaViewController {
- 
-    func abrirRedSocial(_ sender:UIButton!) {
-        
-        self.performSegue(withIdentifier: "detalladaWebViewSocial", sender: sender)
-    }
-}
-
-// MARK: - Navigation
-
 extension DetalladaAcercaViewController {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func abrirRedSocial(index: Int) {
         
-//        if segue.identifier == "detalladaWebViewSocial" {
-//            
-//            let wvs = segue.destination as! WebViewSocialViewController
-//            wvs.enlance = self.enlace
-//        }
-
-        if let wvs = segue.destination as? WebViewSocialViewController {
+        let redSocialApp = arrayOrdenRedes[index]
+        let redSocialWeb = arrayLinkRedes[index]
+        
+        let _appUrl = URL(string: "\(redSocialApp)://app")
+        
+        if UIApplication.shared.canOpenURL(_appUrl!) {
             
-            if let button:UIButton = sender as! UIButton? {
-                print(button.tag)
-
-                
-                switch button.tag {
-                case 1:
-                    wvs.enlance = self.arrayRedes[0]
-                case 2:
-                    wvs.enlance = self.arrayRedes[1]
-                case 3:
-                    wvs.enlance = self.arrayRedes[2]
-                case 4:
-                    wvs.enlance = self.arrayRedes[3]
-                default:
-                    wvs.enlance = "http://offercity.mx/"
-                }
-                
-                
+            UIApplication.shared.open(_appUrl!,
+                                      options: [:],
+                                      completionHandler: nil)
             
-            }
+        } else {
+            
+            UIApplication.shared.open(URL(string: redSocialWeb)!,
+                                      options: [:],
+                                      completionHandler: nil)
         }
+        
     }
 }
-
-
-
-
 
 
 

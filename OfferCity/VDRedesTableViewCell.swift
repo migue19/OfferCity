@@ -13,7 +13,9 @@ class VDRedesTableViewCell: UITableViewCell {
     // MARK: - Outlets
 
     @IBOutlet weak var imagen: UIImageView!
-    @IBOutlet weak var button1: UIButton!
+    
+    var delegate: RedesSocialesDelegate!
+
     
     // MARK: - Constructor
     override func awakeFromNib() {
@@ -27,6 +29,13 @@ class VDRedesTableViewCell: UITableViewCell {
 
     }
     
+    // MARK: - Actions
+    
+    @IBAction func button1Actions(_ sender: UIButton) {
+        
+        
+        self.delegate.abrirRedSocial(index: imagen.tag)
+    }
 }
 
 extension VDRedesTableViewCell {

@@ -40,6 +40,7 @@ class DetalladaEventosViewController: UIViewController {
     
     @IBAction func buttonComprarAction(_ sender: UIButton) {
         print("buttonComprarAction")
+        
     }
     
 

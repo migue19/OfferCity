@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol RedesSocialesDelegate {
+    
+    func abrirRedSocial(index: Int)
+}
+
 class VDRedes4TableViewCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -16,17 +21,14 @@ class VDRedes4TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen2: UIImageView!
     @IBOutlet weak var imagen3: UIImageView!
     @IBOutlet weak var imagen4: UIImageView!
-
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
+    
+    var delegate: RedesSocialesDelegate!
     
     // MARK: - Constructor
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         setupCell()
     }
 
@@ -38,20 +40,24 @@ class VDRedes4TableViewCell: UITableViewCell {
     // MARK: - Actions
     
     @IBAction func button1Action(_ sender: UIButton) {
-        print("button1")
+        
+        self.delegate.abrirRedSocial(index: imagen1.tag)
     }
     
     @IBAction func button2Action(_ sender: UIButton) {
-        print("button2")
+        
+        self.delegate.abrirRedSocial(index: imagen2.tag)
     }
     
     @IBAction func button3Action(_ sender: UIButton) {
-        print("button3")
+        
+        self.delegate.abrirRedSocial(index: imagen3.tag)
     }
     
     @IBAction func button4Action(_ sender: UIButton) {
-        print("button4")
-    }    
+        
+        self.delegate.abrirRedSocial(index: imagen4.tag)
+    }
     
 }
 

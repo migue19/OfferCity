@@ -16,9 +16,9 @@ class VDRedes3TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen2: UIImageView!
     @IBOutlet weak var imagen3: UIImageView!
     
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
+    // MARK: - Propertys
+    
+    var delegate: RedesSocialesDelegate!
     
     // MARK: - Constructor
     
@@ -32,7 +32,21 @@ class VDRedes3TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
+    
+    @IBAction func button1Action(_ sender: UIButton) {
+        
+        self.delegate.abrirRedSocial(index: imagen1.tag)
+    }
+    
+    @IBAction func button2Action(_ sender: UIButton) {
+        
+        self.delegate.abrirRedSocial(index: imagen2.tag)
+    }
+    
+    @IBAction func button3Action(_ sender: UIButton) {
+        
+        self.delegate.abrirRedSocial(index: imagen3.tag)
+    }
 }
 
 extension VDRedes3TableViewCell {

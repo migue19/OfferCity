@@ -1490,6 +1490,9 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy3-8i-tPU">
                                                     <rect key="frame" x="8" y="0.0" width="359" height="55"/>
+                                                    <connections>
+                                                        <action selector="button1Actions:" destination="cN5-Ev-DsF" eventType="touchUpInside" id="fFJ-2E-Mqt"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1502,7 +1505,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="button1" destination="Yy3-8i-tPU" id="uug-Tq-GY3"/>
                                             <outlet property="imagen" destination="Cfg-DM-cKA" id="wI4-hw-pJ4"/>
                                         </connections>
                                     </tableViewCell>
@@ -1525,6 +1527,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrm-SO-o6G">
                                                             <rect key="frame" x="0.0" y="0.0" width="178" height="55"/>
+                                                            <connections>
+                                                                <action selector="button1Action:" destination="S2P-HG-w0Q" eventType="touchUpInside" id="fHP-Wc-1XY"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1549,6 +1554,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bON-9w-a6n">
                                                             <rect key="frame" x="0.0" y="0.0" width="178" height="55"/>
+                                                            <connections>
+                                                                <action selector="button2Action:" destination="S2P-HG-w0Q" eventType="touchUpInside" id="nfz-Hu-GQm"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1574,8 +1582,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="button1" destination="Vrm-SO-o6G" id="rxI-ea-C4D"/>
-                                            <outlet property="button2" destination="bON-9w-a6n" id="YYA-Vr-vsh"/>
                                             <outlet property="imagen1" destination="z8k-xI-g5G" id="vBS-zS-IcB"/>
                                             <outlet property="imagen2" destination="QPd-rg-H32" id="sDx-vp-eLN"/>
                                         </connections>
@@ -1599,6 +1605,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uet-fw-4ty">
                                                             <rect key="frame" x="0.0" y="0.0" width="117.5" height="55"/>
+                                                            <connections>
+                                                                <action selector="button1Action:" destination="Pxe-gn-LNk" eventType="touchUpInside" id="9Ip-CB-1BY"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1623,6 +1632,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YY-2X-WCV">
                                                             <rect key="frame" x="0.0" y="0.0" width="117.5" height="55"/>
+                                                            <connections>
+                                                                <action selector="button3Action:" destination="Pxe-gn-LNk" eventType="touchUpInside" id="TYb-aE-aQb"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1647,6 +1659,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tg-w6-gjd">
                                                             <rect key="frame" x="0.0" y="0.0" width="118" height="55"/>
+                                                            <connections>
+                                                                <action selector="button2Action:" destination="Pxe-gn-LNk" eventType="touchUpInside" id="0GI-W3-Vly"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1676,9 +1691,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="button1" destination="Uet-fw-4ty" id="idk-Ir-ik7"/>
-                                            <outlet property="button2" destination="8Tg-w6-gjd" id="kDy-Kq-Vgt"/>
-                                            <outlet property="button3" destination="3YY-2X-WCV" id="BoF-HI-2Rc"/>
                                             <outlet property="imagen1" destination="c6K-sF-q4i" id="Nhb-lM-jgj"/>
                                             <outlet property="imagen2" destination="Tpb-SF-20Q" id="TEd-li-uwD"/>
                                             <outlet property="imagen3" destination="HyF-qQ-1hH" id="FRC-4Q-adz"/>
@@ -1703,6 +1715,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNe-Ho-y6Q">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.5" height="55"/>
+                                                            <connections>
+                                                                <action selector="button1Action:" destination="9fN-7v-fvf" eventType="touchUpInside" id="DRH-Ax-VCX"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1727,6 +1742,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC3-aj-Ldy">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.5" height="55"/>
+                                                            <connections>
+                                                                <action selector="button2Action:" destination="9fN-7v-fvf" eventType="touchUpInside" id="DIa-DC-eyl"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1751,6 +1769,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MND-Jo-Wc8">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.5" height="55"/>
+                                                            <connections>
+                                                                <action selector="button3Action:" destination="9fN-7v-fvf" eventType="touchUpInside" id="0YR-89-GHl"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1775,6 +1796,9 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arO-ab-M0h">
                                                             <rect key="frame" x="0.0" y="0.0" width="87.5" height="55"/>
+                                                            <connections>
+                                                                <action selector="button4Action:" destination="9fN-7v-fvf" eventType="touchUpInside" id="eAG-BV-cRm"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1808,10 +1832,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="button1" destination="SNe-Ho-y6Q" id="PJD-kA-eXa"/>
-                                            <outlet property="button2" destination="rC3-aj-Ldy" id="HYu-cZ-MDx"/>
-                                            <outlet property="button3" destination="MND-Jo-Wc8" id="GFW-8c-9Jp"/>
-                                            <outlet property="button4" destination="arO-ab-M0h" id="rGD-Gx-WfF"/>
                                             <outlet property="imagen1" destination="sEc-lV-pod" id="x58-cj-prW"/>
                                             <outlet property="imagen2" destination="v7p-dK-d1z" id="VwD-m1-u1J"/>
                                             <outlet property="imagen3" destination="r7a-qb-Qcs" id="ycg-G4-yPD"/>
@@ -1919,57 +1939,11 @@
                         <outlet property="labelReservar" destination="wou-Zf-odG" id="vRK-an-uoy"/>
                         <outlet property="slideshow" destination="CNB-hn-WGU" id="0R0-GR-U6r"/>
                         <outlet property="tableView" destination="5J0-30-6bc" id="jl1-Qx-gIj"/>
-                        <segue destination="8SU-Rw-c6b" kind="show" identifier="detalladaWebViewSocial" id="ZFf-Gg-1iD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPu-ov-jKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6976.8000000000002" y="-2079.7601199400301"/>
-        </scene>
-        <!--Web View Social View Controller-->
-        <scene sceneID="0ct-LQ-bz8">
-            <objects>
-                <viewController id="8SU-Rw-c6b" customClass="WebViewSocialViewController" customModule="OfferCity" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JiU-uJ-2eU"/>
-                        <viewControllerLayoutGuide type="bottom" id="fct-Hz-6Tr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aXT-ZK-qx2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cx9-Wn-XNM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="q1R-b1-zma">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="TnL-mb-TFB"/>
-                                    <constraint firstAttribute="height" constant="20" id="hko-4y-X6k"/>
-                                </constraints>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cx9-Wn-XNM" firstAttribute="top" secondItem="aXT-ZK-qx2" secondAttribute="top" id="KWx-XQ-AGW"/>
-                            <constraint firstItem="cx9-Wn-XNM" firstAttribute="bottom" secondItem="fct-Hz-6Tr" secondAttribute="top" id="O5T-PV-zPx"/>
-                            <constraint firstAttribute="trailing" secondItem="cx9-Wn-XNM" secondAttribute="trailing" id="nXg-s1-ERE"/>
-                            <constraint firstItem="q1R-b1-zma" firstAttribute="centerY" secondItem="aXT-ZK-qx2" secondAttribute="centerY" id="nfc-S8-re7"/>
-                            <constraint firstItem="cx9-Wn-XNM" firstAttribute="leading" secondItem="aXT-ZK-qx2" secondAttribute="leading" id="sgh-Mw-ck8"/>
-                            <constraint firstItem="q1R-b1-zma" firstAttribute="centerX" secondItem="aXT-ZK-qx2" secondAttribute="centerX" id="wGl-Sf-VCm"/>
-                        </constraints>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                    <connections>
-                        <outlet property="activity" destination="q1R-b1-zma" id="mDW-gn-mWw"/>
-                        <outlet property="webView" destination="cx9-Wn-XNM" id="VZx-Hc-yti"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tgc-qG-17Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8149.6875" y="-1476.2323943661972"/>
         </scene>
         <!--Check Out View Controller-->
         <scene sceneID="T9x-1e-Ce1">
