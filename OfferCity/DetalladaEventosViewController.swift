@@ -23,10 +23,18 @@ class DetalladaEventosViewController: UIViewController {
     var imageFromCellToDetall: UIImage!
     var localSource = [ImageSource]()
     
-    let arrayRedes = ["twitter", "facebook", "instagram", "web"]
-    //    let arrayRedes = ["twitter", "facebook", "instagram"]
-    //    let arrayRedes = ["twitter", "facebook"]
-    //    let arrayRedes = ["twitter"]
+    // ⚠️ arrayOrdenRedes y arrayRedes deben coincidir
+    // ya que el primero se usa para posiciona la imagen
+    // y el segundo envia la informacion del link al web view
+    // la cantidad puede ser de 1 red social a 4 (3 redes sociales mas web)
+    
+    let arrayOrdenRedes = ["twitter", "fb", "instagram", "web"]
+    
+    let arrayLinkRedes = ["https://twitter.com/",
+                          "https://www.facebook.com/",
+                          "https://www.instagram.com/",
+                          "http://offercity.mx/"]
+
 
     // MARK: - Constructor
     
@@ -214,7 +222,7 @@ extension DetalladaEventosViewController: UITableViewDelegate {
 
 // MARK: - Datasource
 
-extension DetalladaEventosViewController: UITableViewDataSource {
+extension DetalladaEventosViewController: UITableViewDataSource, RedesSocialesEventosDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -303,18 +311,262 @@ extension DetalladaEventosViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
         case 1: // REDES
-            switch self.arrayRedes.count {
+            switch self.arrayLinkRedes.count {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDERedesTableViewCell", for: indexPath) as! VDERedesTableViewCell
+                
+                // Cargamos elementos
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "fb":
+                    cell.imagen.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "instagram":
+                    cell.imagen.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "web":
+                    cell.imagen.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                default:
+                    cell.imagen.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                }
+                
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDERedes2TableViewCell", for: indexPath) as! VDERedes2TableViewCell
+                
+                // Cargamos elementos1
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen1.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
+                    cell.imagen1.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
+                    cell.imagen1.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                default:
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                }
+                
+                // Cargamos elementos2
+                switch self.arrayOrdenRedes[1] {
+                case "twitter":
+                    cell.imagen2.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
+                    cell.imagen2.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
+                    cell.imagen2.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                default:
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                }
+                
                 return cell
             case 3:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDERedes3TableViewCell", for: indexPath) as! VDERedes3TableViewCell
+                
+                // Cargamos elementos1
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen1.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
+                    cell.imagen1.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
+                    cell.imagen1.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                default:
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                }
+                
+                // Cargamos elementos2
+                switch self.arrayOrdenRedes[1] {
+                case "twitter":
+                    cell.imagen2.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
+                    cell.imagen2.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
+                    cell.imagen2.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                default:
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                }
+                
+                // Cargamos elementos3
+                switch self.arrayOrdenRedes[2] {
+                case "twitter":
+                    cell.imagen3.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "fb":
+                    cell.imagen3.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "instagram":
+                    cell.imagen3.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "web":
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                default:
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                }
+                
                 return cell
             case 4:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDERedes4TableViewCell", for: indexPath) as! VDERedes4TableViewCell
+                
+                // Cargamos elementos1
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen1.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
+                    cell.imagen1.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
+                    cell.imagen1.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                default:
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                }
+                
+                // Cargamos elementos2
+                switch self.arrayOrdenRedes[1] {
+                case "twitter":
+                    cell.imagen2.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
+                    cell.imagen2.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
+                    cell.imagen2.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                default:
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                }
+                
+                // Cargamos elementos3
+                switch self.arrayOrdenRedes[2] {
+                case "twitter":
+                    cell.imagen3.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "fb":
+                    cell.imagen3.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "instagram":
+                    cell.imagen3.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "web":
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                default:
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                }
+                
+                // Cargamos elementos4
+                switch self.arrayOrdenRedes[3] {
+                case "twitter":
+                    cell.imagen4.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "fb":
+                    cell.imagen4.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "instagram":
+                    cell.imagen4.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "web":
+                    cell.imagen4.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                default:
+                    cell.imagen4.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                }
+                
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedesTableViewCell", for: indexPath) as! VDRedesTableViewCell
@@ -616,3 +868,29 @@ extension DetalladaEventosViewController {
     
 }
 
+// MARK: - Redes Sociales
+
+extension DetalladaEventosViewController {
+    
+    func abrirRedSocial(index: Int) {
+        
+        let redSocialApp = arrayOrdenRedes[index]
+        let redSocialWeb = arrayLinkRedes[index]
+        
+        let _appUrl = URL(string: "\(redSocialApp)://app")
+        
+        if UIApplication.shared.canOpenURL(_appUrl!) {
+            
+            UIApplication.shared.open(_appUrl!,
+                                      options: [:],
+                                      completionHandler: nil)
+            
+        } else {
+            
+            UIApplication.shared.open(URL(string: redSocialWeb)!,
+                                      options: [:],
+                                      completionHandler: nil)
+        }
+        
+    }
+}

@@ -17,7 +17,7 @@ class VDRedes2TableViewCell: UITableViewCell {
 
     // MARK: - Propertys
     
-    var delegate: RedesSocialesDelegate!
+    var delegate: RedesSocialesAcercaDelegate!
 
     
     

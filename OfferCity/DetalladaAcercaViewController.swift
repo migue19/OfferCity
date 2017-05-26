@@ -30,16 +30,12 @@ class DetalladaAcercaViewController: UIViewController {
     // y el segundo envia la informacion del link al web view
     // la cantidad puede ser de 1 red social a 4 (3 redes sociales mas web)
     
-//    let arrayOrdenRedes = ["twitter", "fb", "instagram", "web"]
-//
-//    let arrayLinkRedes = ["https://twitter.com/",
-//                      "https://www.facebook.com/",
-//                      "https://www.instagram.com/",
-//                      "http://offercity.mx/"]
+    let arrayOrdenRedes = ["twitter", "fb", "instagram", "web"]
     
-    let arrayOrdenRedes = ["instagram"]
-    
-    let arrayLinkRedes = ["https://www.instagram.com/"]
+    let arrayLinkRedes = ["https://twitter.com/",
+                          "https://www.facebook.com/",
+                          "https://www.instagram.com/",
+                          "http://offercity.mx/"]
     
     // MARK: - Constructor
     
@@ -114,7 +110,7 @@ extension DetalladaAcercaViewController {
 
 // MARK: - Data Source
 
-extension DetalladaAcercaViewController: UITableViewDataSource, RedesSocialesDelegate {
+extension DetalladaAcercaViewController: UITableViewDataSource, RedesSocialesAcercaDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -909,6 +905,8 @@ extension DetalladaAcercaViewController {
     }
 
 }
+
+// MARK: - Redes Sociales
 
 extension DetalladaAcercaViewController {
     

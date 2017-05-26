@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RedesSocialesDelegate {
+protocol RedesSocialesAcercaDelegate {
     
     func abrirRedSocial(index: Int)
 }
@@ -22,7 +22,7 @@ class VDRedes4TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen3: UIImageView!
     @IBOutlet weak var imagen4: UIImageView!
     
-    var delegate: RedesSocialesDelegate!
+    var delegate: RedesSocialesAcercaDelegate!
     
     // MARK: - Constructor
     

@@ -14,7 +14,7 @@ class VDRedesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imagen: UIImageView!
     
-    var delegate: RedesSocialesDelegate!
+    var delegate: RedesSocialesAcercaDelegate!
 
     
     // MARK: - Constructor
@@ -32,7 +32,6 @@ class VDRedesTableViewCell: UITableViewCell {
     // MARK: - Actions
     
     @IBAction func button1Actions(_ sender: UIButton) {
-        
         
         self.delegate.abrirRedSocial(index: imagen.tag)
     }

@@ -12,6 +12,7 @@ class VDERedesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imagen: UIImageView!
     
+    var delegate: RedesSocialesEventosDelegate!
     static let identifier = "VDERedesTableViewCell"
 
     override func awakeFromNib() {
@@ -27,7 +28,8 @@ class VDERedesTableViewCell: UITableViewCell {
     }
 
     @IBAction func buttonAction(_ sender: UIButton) {
-        print("Button Action")
+        
+        self.delegate.abrirRedSocial(index: imagen.tag)
     }
 }
 

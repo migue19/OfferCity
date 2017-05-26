@@ -14,6 +14,7 @@ class VDERedes3TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen2: UIImageView!
     @IBOutlet weak var imagen3: UIImageView!
     
+    var delegate: RedesSocialesEventosDelegate!
     static let identifier = "VDERedes3TableViewCell"
     
     override func awakeFromNib() {
@@ -29,15 +30,18 @@ class VDERedes3TableViewCell: UITableViewCell {
     }
     
     @IBAction func button1Action(_ sender: UIButton) {
-        print("button1Action")
+        
+        self.delegate.abrirRedSocial(index: imagen1.tag)
     }
     
     @IBAction func button2Action(_ sender: UIButton) {
-        print("button2Action")
+        
+        self.delegate.abrirRedSocial(index: imagen2.tag)
     }
     
     @IBAction func button3Action(_ sender: UIButton) {
-        print("button3Action")
+        
+        self.delegate.abrirRedSocial(index: imagen3.tag)
     }
 
 }
