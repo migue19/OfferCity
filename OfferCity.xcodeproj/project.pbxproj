@@ -30,6 +30,10 @@
 		3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */; };
 		3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */; };
 		3C3E4D6E1EB826320052D4B6 /* PromocionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */; };
+		3C5F57281ED8B0CD00029282 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F57271ED8B0CD00029282 /* MenuViewController.swift */; };
+		3C5F572C1ED8B14600029282 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F572B1ED8B14600029282 /* MenuCollectionViewCell.swift */; };
+		3C5F572E1ED8C36800029282 /* SubMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F572D1ED8C36800029282 /* SubMenuViewController.swift */; };
+		3C5F57311ED8C61500029282 /* SubmenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F57301ED8C61500029282 /* SubmenuTableViewCell.swift */; };
 		3C7D05531ECE3196005B3874 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D05521ECE3196005B3874 /* FloatRatingView.swift */; };
 		3C9433F41ED4FAB10009FD24 /* FiltrosCercaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9433F31ED4FAB10009FD24 /* FiltrosCercaViewController.swift */; };
 		3C9433F71ED502320009FD24 /* FiltroEventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9433F61ED502320009FD24 /* FiltroEventosViewController.swift */; };
@@ -60,6 +64,8 @@
 		3CEDE0981ECFF93E003C3716 /* VDERedes2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0971ECFF93E003C3716 /* VDERedes2TableViewCell.swift */; };
 		3CEDE09A1ECFF94C003C3716 /* VDERedes3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE0991ECFF94C003C3716 /* VDERedes3TableViewCell.swift */; };
 		3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEDE09B1ECFF959003C3716 /* VDERedes4TableViewCell.swift */; };
+		3CF7C7E91ED8E26200695CE7 /* PrecioSubMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF7C7E81ED8E26200695CE7 /* PrecioSubMenuViewController.swift */; };
+		3CF7C7EB1ED8E28900695CE7 /* PrecioSubMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF7C7EA1ED8E28900695CE7 /* PrecioSubMenuTableViewCell.swift */; };
 		7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */; };
 		7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A41ECC7B4900D46CCA /* FXBlurView.m */; };
 		7D0330A71ECC7B5B00D46CCA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0330A61ECC7B5B00D46CCA /* AvatarImageView.swift */; };
@@ -116,6 +122,10 @@
 		3C3E4D681EB8260F0052D4B6 /* CercadetiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CercadetiViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6A1EB8261C0052D4B6 /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		3C3E4D6D1EB826320052D4B6 /* PromocionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesViewController.swift; sourceTree = "<group>"; };
+		3C5F57271ED8B0CD00029282 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3C5F572B1ED8B14600029282 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		3C5F572D1ED8C36800029282 /* SubMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubMenuViewController.swift; sourceTree = "<group>"; };
+		3C5F57301ED8C61500029282 /* SubmenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmenuTableViewCell.swift; sourceTree = "<group>"; };
 		3C7D05521ECE3196005B3874 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		3C9433F31ED4FAB10009FD24 /* FiltrosCercaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrosCercaViewController.swift; sourceTree = "<group>"; };
 		3C9433F61ED502320009FD24 /* FiltroEventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltroEventosViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +156,8 @@
 		3CEDE0971ECFF93E003C3716 /* VDERedes2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedes2TableViewCell.swift; sourceTree = "<group>"; };
 		3CEDE0991ECFF94C003C3716 /* VDERedes3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedes3TableViewCell.swift; sourceTree = "<group>"; };
 		3CEDE09B1ECFF959003C3716 /* VDERedes4TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDERedes4TableViewCell.swift; sourceTree = "<group>"; };
+		3CF7C7E81ED8E26200695CE7 /* PrecioSubMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecioSubMenuViewController.swift; sourceTree = "<group>"; };
+		3CF7C7EA1ED8E28900695CE7 /* PrecioSubMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecioSubMenuTableViewCell.swift; sourceTree = "<group>"; };
 		7D0330A01ECC68B300D46CCA /* TabBarPrincipalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPrincipalController.swift; sourceTree = "<group>"; };
 		7D0330A21ECC7B4800D46CCA /* OfferCity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OfferCity-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0330A31ECC7B4900D46CCA /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -231,7 +243,7 @@
 				3C2A4AA91ECCE8AC007D279D /* VDDescripcionTableViewCell.swift */,
 				3C2A4AAA1ECCE8AC007D279D /* VDTelefonoTableViewCell.swift */,
 				3C2A4AAB1ECCE8AC007D279D /* VDHoraTableViewCell.swift */,
-				3C2A4AAC1ECCE8AC007D279D /* VDBotonesTableViewCell.swift */,
+				3C5F57251ED8B06900029282 /* Botones */,
 				3CCA5B7B1ECEAD8500A6AE42 /* RedeSociales */,
 				3C2A4AAE1ECCE8AC007D279D /* VDMapaTableViewCell.swift */,
 			);
@@ -315,12 +327,41 @@
 			name = Slides;
 			sourceTree = "<group>";
 		};
+		3C5F57251ED8B06900029282 /* Botones */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A4AAC1ECCE8AC007D279D /* VDBotonesTableViewCell.swift */,
+				3C94340C1ED664A10009FD24 /* Resenas */,
+				3C5F57261ED8B09C00029282 /* Menu */,
+			);
+			name = Botones;
+			sourceTree = "<group>";
+		};
+		3C5F57261ED8B09C00029282 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3C5F57271ED8B0CD00029282 /* MenuViewController.swift */,
+				3C5F572B1ED8B14600029282 /* MenuCollectionViewCell.swift */,
+				3C5F572F1ED8C4AA00029282 /* Submenu */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		3C5F572F1ED8C4AA00029282 /* Submenu */ = {
+			isa = PBXGroup;
+			children = (
+				3C5F572D1ED8C36800029282 /* SubMenuViewController.swift */,
+				3C5F57301ED8C61500029282 /* SubmenuTableViewCell.swift */,
+				3CF7C7E71ED8E21F00695CE7 /* PrecioSubMenu */,
+			);
+			name = Submenu;
+			sourceTree = "<group>";
+		};
 		3C7D05511ECE3172005B3874 /* Rating */ = {
 			isa = PBXGroup;
 			children = (
 				3C2A4AA71ECCE8AC007D279D /* VDRatingTableViewCell.swift */,
 				3C7D05521ECE3196005B3874 /* FloatRatingView.swift */,
-				3C94340C1ED664A10009FD24 /* Resenas */,
 			);
 			name = Rating;
 			sourceTree = "<group>";
@@ -547,6 +588,15 @@
 			name = RedesSociales;
 			sourceTree = "<group>";
 		};
+		3CF7C7E71ED8E21F00695CE7 /* PrecioSubMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3CF7C7E81ED8E26200695CE7 /* PrecioSubMenuViewController.swift */,
+				3CF7C7EA1ED8E28900695CE7 /* PrecioSubMenuTableViewCell.swift */,
+			);
+			name = PrecioSubMenu;
+			sourceTree = "<group>";
+		};
 		7BD7666BB43E8D09519E36B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +821,7 @@
 				3CEDE0841ECFA9AC003C3716 /* PromosCollectionViewCell.swift in Sources */,
 				7D9219421EA428BC006C6976 /* PreferenciasViewController.swift in Sources */,
 				3C2A4AB61ECCE8AC007D279D /* VDHoraTableViewCell.swift in Sources */,
+				3C5F572E1ED8C36800029282 /* SubMenuViewController.swift in Sources */,
 				3CEDE09A1ECFF94C003C3716 /* VDERedes3TableViewCell.swift in Sources */,
 				3CEDE0931ECFF90B003C3716 /* VDEMapaTableViewCell.swift in Sources */,
 				3C2A4AB71ECCE8AC007D279D /* VDBotonesTableViewCell.swift in Sources */,
@@ -784,6 +835,7 @@
 				7DAD18B21ED24429009B37E5 /* RestaurantesDAO.swift in Sources */,
 				3C9434091ED60C3F0009FD24 /* FCComidaTableViewCell.swift in Sources */,
 				7D9219451EA428BC006C6976 /* ShortProfileResponse.swift in Sources */,
+				3C5F572C1ED8B14600029282 /* MenuCollectionViewCell.swift in Sources */,
 				3CEDE0961ECFF934003C3716 /* VDERedesTableViewCell.swift in Sources */,
 				3C9433FB1ED51A3C0009FD24 /* FEZonaCollectionViewCell.swift in Sources */,
 				7DAD18BD1ED31F88009B37E5 /* AjustesViewController.swift in Sources */,
@@ -799,11 +851,13 @@
 				3C1001DF1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift in Sources */,
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				3CEDE0911ECFF8FE003C3716 /* VDEHoraTableViewCell.swift in Sources */,
+				3CF7C7E91ED8E26200695CE7 /* PrecioSubMenuViewController.swift in Sources */,
 				3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
 				3C3E4D6B1EB8261C0052D4B6 /* EventosViewController.swift in Sources */,
 				7DAD18B01ED20D0C009B37E5 /* CheckOutUIView.swift in Sources */,
 				7D0330A51ECC7B4900D46CCA /* FXBlurView.m in Sources */,
+				3C5F57311ED8C61500029282 /* SubmenuTableViewCell.swift in Sources */,
 				7D0330A11ECC68B300D46CCA /* TabBarPrincipalController.swift in Sources */,
 				3C9433F71ED502320009FD24 /* FiltroEventosViewController.swift in Sources */,
 				3CCA5B811ECEADF000A6AE42 /* VDRedes4TableViewCell.swift in Sources */,
@@ -826,6 +880,7 @@
 				3C2A4AA31ECCE232007D279D /* DetalladaAcercaViewController.swift in Sources */,
 				3C9433FF1ED54B0C0009FD24 /* FEComidaCollectionViewCell.swift in Sources */,
 				3C9433FD1ED54AF50009FD24 /* FEComidaTableViewCell.swift in Sources */,
+				3C5F57281ED8B0CD00029282 /* MenuViewController.swift in Sources */,
 				3C32B8141EC4CB5800AE78E0 /* Url.swift in Sources */,
 				3C94340B1ED60D330009FD24 /* FCComidaCollectionViewCell.swift in Sources */,
 				3C2A4AB91ECCE8AC007D279D /* VDMapaTableViewCell.swift in Sources */,
@@ -838,6 +893,7 @@
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,
 				3C32B8161EC4CDD300AE78E0 /* Token.swift in Sources */,
 				7DAD18B81ED2B4AA009B37E5 /* ImageCustomWindow.swift in Sources */,
+				3CF7C7EB1ED8E28900695CE7 /* PrecioSubMenuTableViewCell.swift in Sources */,
 				3C3E4D691EB8260F0052D4B6 /* CercadetiViewController.swift in Sources */,
 				3C7D05531ECE3196005B3874 /* FloatRatingView.swift in Sources */,
 				3C9434101ED66A870009FD24 /* ResenasTableViewCell.swift in Sources */,
