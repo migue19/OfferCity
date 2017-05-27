@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol RedesSocialesEventosDelegate {
+    
+    func abrirRedSocial(index: Int)
+}
+
 class VDERedes4TableViewCell: UITableViewCell {
     
     @IBOutlet weak var imagen1: UIImageView!
@@ -16,7 +21,8 @@ class VDERedes4TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen4: UIImageView!
     
     static let identifier = "VDERedes4TableViewCell"
-    
+    var delegate: RedesSocialesEventosDelegate!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,22 +36,26 @@ class VDERedes4TableViewCell: UITableViewCell {
     }
 
     @IBAction func button1Action(_ sender: UIButton) {
-        print("button1Action")
+        
+        self.delegate.abrirRedSocial(index: imagen1.tag)
     }
     
     
     @IBAction func button2Action(_ sender: UIButton) {
-        print("button2Action")
+        
+        self.delegate.abrirRedSocial(index: imagen2.tag)
     }
     
     
     @IBAction func button3Action(_ sender: UIButton) {
-        print("button3Action")
+        
+        self.delegate.abrirRedSocial(index: imagen3.tag)
     }
     
     
     @IBAction func button4Action(_ sender: UIButton) {
-        print("button4Action")
+        
+        self.delegate.abrirRedSocial(index: imagen4.tag)
     }
 
 }

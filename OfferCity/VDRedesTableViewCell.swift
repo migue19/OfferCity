@@ -14,6 +14,9 @@ class VDRedesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imagen: UIImageView!
     
+    var delegate: RedesSocialesAcercaDelegate!
+
+    
     // MARK: - Constructor
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,11 +28,12 @@ class VDRedesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
+    
     // MARK: - Actions
     
-    @IBAction func buttonAction(_ sender: UIButton) {
-        print("One Social Network...")
+    @IBAction func button1Actions(_ sender: UIButton) {
+        
+        self.delegate.abrirRedSocial(index: imagen.tag)
     }
 }
 

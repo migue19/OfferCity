@@ -16,6 +16,10 @@ class VDRedes3TableViewCell: UITableViewCell {
     @IBOutlet weak var imagen2: UIImageView!
     @IBOutlet weak var imagen3: UIImageView!
     
+    // MARK: - Propertys
+    
+    var delegate: RedesSocialesAcercaDelegate!
+    
     // MARK: - Constructor
     
     override func awakeFromNib() {
@@ -28,21 +32,21 @@ class VDRedes3TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
-    // MARK: - Actions
     
     @IBAction func button1Action(_ sender: UIButton) {
-        print("button1")
+        
+        self.delegate.abrirRedSocial(index: imagen1.tag)
     }
     
     @IBAction func button2Action(_ sender: UIButton) {
-        print("button2")
+        
+        self.delegate.abrirRedSocial(index: imagen2.tag)
     }
     
     @IBAction func button3Action(_ sender: UIButton) {
-        print("button3")
+        
+        self.delegate.abrirRedSocial(index: imagen3.tag)
     }
-
 }
 
 extension VDRedes3TableViewCell {

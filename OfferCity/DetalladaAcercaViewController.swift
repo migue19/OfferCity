@@ -25,10 +25,17 @@ class DetalladaAcercaViewController: UIViewController {
     var imageFromCellToDetall: UIImage!
     var localSource = [ImageSource]()
     
-//    let arrayRedes = ["twitter", "facebook", "instagram", "web"]
-    let arrayRedes = ["twitter", "facebook", "instagram"]
-//    let arrayRedes = ["twitter", "facebook"]
-//    let arrayRedes = ["twitter"]
+    // ⚠️ arrayOrdenRedes y arrayRedes deben coincidir
+    // ya que el primero se usa para posiciona la imagen
+    // y el segundo envia la informacion del link al web view
+    // la cantidad puede ser de 1 red social a 4 (3 redes sociales mas web)
+    
+    let arrayOrdenRedes = ["twitter", "fb", "instagram", "web"]
+    
+    let arrayLinkRedes = ["https://twitter.com/",
+                          "https://www.facebook.com/",
+                          "https://www.instagram.com/",
+                          "http://offercity.mx/"]
     
     // MARK: - Constructor
     
@@ -37,17 +44,11 @@ class DetalladaAcercaViewController: UIViewController {
         
         loadImageForSlideShow()
     }
- 
     
     // MARK: - Actions
     
     @IBAction func buttonReservarAction(_ sender: UIButton) {
         print("Button Reservar")
-    }
-    
-    @IBAction func closeDetallada(_ sender: UIBarButtonItem) {
-        
-        close()
     }
     
 }
@@ -70,6 +71,7 @@ extension DetalladaAcercaViewController {
         setupSlideShow()
         
         // Setup navigation bar
+        
         setupNavigationBar()
         
         // Tableview sin linea entre cells
@@ -108,7 +110,7 @@ extension DetalladaAcercaViewController {
 
 // MARK: - Data Source
 
-extension DetalladaAcercaViewController: UITableViewDataSource {
+extension DetalladaAcercaViewController: UITableViewDataSource, RedesSocialesAcercaDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -190,7 +192,6 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDCheckInTableViewCell", for: indexPath) as! VDCheckInTableViewCell
                   cell.parentViewController = self
-                
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDDescripcionTableViewCell", for: indexPath) as! VDDescripcionTableViewCell
@@ -208,18 +209,270 @@ extension DetalladaAcercaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
         case 1: // REDES
-            switch self.arrayRedes.count {
+            switch self.arrayLinkRedes.count {
             case 1:
+                
+                // Obtenemos celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedesTableViewCell", for: indexPath) as! VDRedesTableViewCell
+                
+                // Cargamos elementos
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "fb":
+                    cell.imagen.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "instagram":
+                    cell.imagen.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                case "web":
+                    cell.imagen.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                default:
+                    cell.imagen.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen.tag = 0
+                }
+                
                 return cell
             case 2:
+                
+                // Obtenemos celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedes2TableViewCell", for: indexPath) as! VDRedes2TableViewCell
+               
+                // Cargamos elementos1
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen1.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
+                    cell.imagen1.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
+                    cell.imagen1.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                default:
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                }
+                
+                // Cargamos elementos2
+                switch self.arrayOrdenRedes[1] {
+                case "twitter":
+                    cell.imagen2.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
+                    cell.imagen2.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
+                    cell.imagen2.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                default:
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                }
+                
                 return cell
             case 3:
+                
+                // Obtenemos celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedes3TableViewCell", for: indexPath) as! VDRedes3TableViewCell
+                
+                // Cargamos elementos1
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen1.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
+                    cell.imagen1.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
+                    cell.imagen1.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                default:
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                }
+                
+                // Cargamos elementos2
+                switch self.arrayOrdenRedes[1] {
+                case "twitter":
+                    cell.imagen2.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
+                    cell.imagen2.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
+                    cell.imagen2.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                default:
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                }
+
+                // Cargamos elementos3
+                switch self.arrayOrdenRedes[2] {
+                case "twitter":
+                    cell.imagen3.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "fb":
+                    cell.imagen3.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "instagram":
+                    cell.imagen3.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "web":
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                default:
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                }
+                
                 return cell
             case 4:
+                
+                // Obtenemos la celda
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedes4TableViewCell", for: indexPath) as! VDRedes4TableViewCell
+                
+                // Cargamos elementos1
+                switch self.arrayOrdenRedes[0] {
+                case "twitter":
+                    cell.imagen1.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "fb":
+                    cell.imagen1.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "instagram":
+                    cell.imagen1.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                case "web":
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                default:
+                    cell.imagen1.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen1.tag = 0
+                }
+                
+                // Cargamos elementos2
+                switch self.arrayOrdenRedes[1] {
+                case "twitter":
+                    cell.imagen2.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "fb":
+                    cell.imagen2.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "instagram":
+                    cell.imagen2.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                case "web":
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                default:
+                    cell.imagen2.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen2.tag = 1
+                }
+                
+                // Cargamos elementos3
+                switch self.arrayOrdenRedes[2] {
+                case "twitter":
+                    cell.imagen3.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "fb":
+                    cell.imagen3.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "instagram":
+                    cell.imagen3.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                case "web":
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                default:
+                    cell.imagen3.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen3.tag = 2
+                }
+                
+                // Cargamos elementos4
+                switch self.arrayOrdenRedes[3] {
+                case "twitter":
+                    cell.imagen4.image = #imageLiteral(resourceName: "twitter")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "fb":
+                    cell.imagen4.image = #imageLiteral(resourceName: "facebook")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "instagram":
+                    cell.imagen4.image = #imageLiteral(resourceName: "instagram")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                case "web":
+                    cell.imagen4.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                default:
+                    cell.imagen4.image = #imageLiteral(resourceName: "web")
+                    cell.delegate = self
+                    cell.imagen4.tag = 3
+                }
+
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VDRedesTableViewCell", for: indexPath) as! VDRedesTableViewCell
@@ -286,14 +539,65 @@ extension DetalladaAcercaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         
+        // Prin Section and Row
+        
+        print("Section: \(indexPath.section), Row: \(indexPath.row)")
+        
         // Deselect Cell
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // Prin Section and Row
-        print("Section: \(indexPath.section), Row: \(indexPath.row)")
+        switch indexPath.section {
+            
+        case 0: // SECTION
+            switch indexPath.row {
+                
+            case 0: // RATING
+                break
+            case 1: // CHECK IN
+                break
+            case 2: // DESCRIPCION
+                break
+            case 3: // TELEFONO
+                
+                let cell = tableView.cellForRow(at: indexPath) as! VDTelefonoTableViewCell
+                    if let phoneCallURL = URL(string: "tel://\(Int(cell.label.text!)!)") {
+                        let application:UIApplication = UIApplication.shared
+                        if (application.canOpenURL(phoneCallURL)) {
+                            application.open(phoneCallURL, options: [:], completionHandler: nil)
+                        }
+                    }
+                break
+            case 4: // HORA
+                break
+            case 5: // BOTONES
+                break
+            default:
+                return
+            }
+            
+        case 1: // SECTION
+            switch indexPath.row {
+                
+            case 0: // REDES SCIALES
+                break
+            default:
+                return
+            }
+            
+        case 2: // SECTION
+            switch indexPath.row {
+            case 0: // MAPAS
+                break
+            default:
+                return
+            }
+            
+        default:
+            return
+        }
         
-        performSegue(withIdentifier: "asdf", sender: self)
+        //performSegue(withIdentifier: "asdf", sender: self)
     }
     
     func tableView(_ tableView: UITableView,
@@ -400,7 +704,7 @@ extension DetalladaAcercaViewController {
     }
     
     func loadImageForSlideShow() {
-     
+        
         // Array image
         
         self.localSource = [ImageSource(image: self.imageFromCellToDetall), ImageSource(image: #imageLiteral(resourceName: "borrar1"))]
@@ -408,7 +712,7 @@ extension DetalladaAcercaViewController {
         // Load Images in slideshow
         
         self.slideshow.setImageInputs(self.localSource)
-
+        
     }
     
 }
@@ -439,7 +743,7 @@ extension DetalladaAcercaViewController {
 
     func setupLeftBarButtonItemWithImage() {
         
-        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"), target: self, action: #selector(DetalladaAcercaViewController.close))
+        let newBbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backWhite"), target: self, action: #selector(DetalladaAcercaViewController.close))
         self.navigationItem.leftBarButtonItem = newBbi
     }
     
@@ -452,7 +756,7 @@ extension DetalladaAcercaViewController {
     
     func leftBarButtonAzul() {
         
-        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "close"),
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backWhite"),
                                             target: self,
                                             action: #selector(DetalladaAcercaViewController.close))
         
@@ -461,7 +765,7 @@ extension DetalladaAcercaViewController {
     
     func leftBarButtonWhite() {
         
-        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "closeAzul"),
+        let nbbi = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "backBlue"),
                                             target: self,
                                             action: #selector(DetalladaAcercaViewController.close))
         
@@ -536,20 +840,6 @@ extension DetalladaAcercaViewController {
     }
 }
 
-// MARK: - Bar Button Item
-
-extension UIBarButtonItem {
-    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
-        let button = UIButton(type: .custom)
-        button.setImage(colorfulImage, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 21.0, height: 21.0)
-        button.addTarget(target, action: action, for: .touchUpInside)
-        
-        let barButtonItem = UIBarButtonItem(customView: button)
-        return barButtonItem
-    }
-}
-
 // MARK: - Navigation Bar Storyboard
 
 extension DetalladaAcercaViewController {
@@ -570,13 +860,6 @@ extension DetalladaAcercaViewController {
     }
     
 }
-
-
-
-// MARK: - Mostar vista detallada 
-
-
-
 
 
 // MARK: - Navigation Bar Programatically
@@ -623,11 +906,32 @@ extension DetalladaAcercaViewController {
 
 }
 
+// MARK: - Redes Sociales
 
-
-
-
-
+extension DetalladaAcercaViewController {
+    
+    func abrirRedSocial(index: Int) {
+        
+        let redSocialApp = arrayOrdenRedes[index]
+        let redSocialWeb = arrayLinkRedes[index]
+        
+        let _appUrl = URL(string: "\(redSocialApp)://app")
+        
+        if UIApplication.shared.canOpenURL(_appUrl!) {
+            
+            UIApplication.shared.open(_appUrl!,
+                                      options: [:],
+                                      completionHandler: nil)
+            
+        } else {
+            
+            UIApplication.shared.open(URL(string: redSocialWeb)!,
+                                      options: [:],
+                                      completionHandler: nil)
+        }
+        
+    }
+}
 
 
 
