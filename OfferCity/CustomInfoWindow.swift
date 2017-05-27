@@ -10,7 +10,7 @@ import UIKit
 
 class CustomInfoWindow: UIView {
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var descripcion: UILabel!
+    @IBOutlet weak var descripcion: UITextView!
     @IBOutlet weak var extra: UILabel!
     @IBOutlet weak var Imagen: UIImageView!
     
