@@ -161,32 +161,45 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
     
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        performSegue(withIdentifier: "acercadetiDetallada", sender: marker)
+        if segment == 0
+        {
+          performSegue(withIdentifier: "acercadetiDetallada", sender: marker)
+        }else{
+          performSegue(withIdentifier: "eventosDetallada", sender: marker)
+        }
     }
     
 
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let marker = sender as! GMSMarker
+        let dataMarker = marker.userData as! [String: Any]
+        let indice = dataMarker["index"] as! Int
+        
         if segue.identifier == "acercadetiDetallada" {
-            
-            let marker = sender as! GMSMarker
-            let dataMarker = marker.userData as! [String: Any]
-            let indice = dataMarker["index"] as! Int
-            
             let image = UIImage(data: restaurantes[indice].image! as Data)
             
+        
+                let nav = segue.destination as! UINavigationController
+                let vc = nav.topViewController as! DetalladaAcercaViewController
+                if image == nil {
+                    vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+                }else{
+                    vc.imageFromCellToDetall = image
+                }
             
-            let nav = segue.destination as! UINavigationController
-            let vc = nav.topViewController as! DetalladaAcercaViewController
-
+            return
+        }
+        if segue.identifier == "eventosDetallada"{
+            let image = arrayImage[indice]
+        
+                let nav = segue.destination as! UINavigationController
+                let vc = nav.topViewController as! DetalladaEventosViewController
             
-            if image == nil {
-                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
-            }else{
-               vc.imageFromCellToDetall = image
-            }
+                vc.imageFromCellToDetall = image
+           
+            return
         }
     }
-
 }
