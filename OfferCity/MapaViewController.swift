@@ -17,22 +17,19 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
     var restaurantes: [Restaurantes] = []
     let restaurantesDAO = RestaurantesDAO()
     
+    let arrayImage = [#imageLiteral(resourceName: "borrarEvento1"), #imageLiteral(resourceName: "borrarEvento2"), #imageLiteral(resourceName: "borrarEvento3"), #imageLiteral(resourceName: "borrarEvento4")]
+    let arrayEvento = ["Marc Anthony ", "LOS ANGELES AZULES", "Mijares", "Sofía Niño de Rivera"]
+    let arrayFecha = ["16 de mayo", "26 DE MAYO", "24 junio", "15 de junio"]
+    let arrayUbicacion = ["Complejo cultural universitario", "Auditorio metropolitano", "Auditorio del C.C.U.", "Auditorio del C.C.U."]
+    let arrayLatitud = [19.019807,19.035273,19.019357,19.018949]
+    let arrayLongitud =  [-98.240838,-98.236860,-98.239941,98.239717]
+    
+    var segment = 0  /////0 es lugares : 1 es eventos
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMap()
-        createMarkers()
-        
-        // Do any additional setup after loading the view.
-        /*let button = UIButton()
-        button.frame = (frame: CGRect(x: self.view.frame.size.width - 60, y: 20, width: 50, height: 50)) as! CGRect
-        button.backgroundColor = UIColor.red
-        button.setTitle("Name your Button ", for: .normal)
-        //button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        self.view.addSubview(button)*/
-        
-        
-        
-        
+        createMarkersPlaces()
     }
     
     
@@ -51,10 +48,14 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
     
     
     
-    func createMarkers(){
+    func createMarkersPlaces(){
+        
+        
         restaurantes = restaurantesDAO.getRestaurantes()
         
         if restaurantes.count > 0{
+            mapView.clear()
+            
             print("pintando Mapas")
             for  (index, restaurant) in restaurantes.enumerated(){
                 let marker = GMSMarker()
@@ -73,68 +74,59 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
                    descripcion = descripcion.substring(to: index)+"..."
                 }
                 
-                
-                
                 marker.snippet = descripcion
-                //print(restaurant.photo ?? "")
-                //let data = restaurant.image
-                //if data != nil
-                //{
-                //marker.icon = UIImage(data: data! as Data)
-                //}
                 marker.map = mapView
             }
         }
         else{
             print("No hay datos para pintar")
         }
-    
-    
     }
     
-    /*override func loadView() {
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        
-        restaurantes = restaurantesDAO.getRestaurantes()
-        let camera = GMSCameraPosition.camera(withLatitude: 19.071514, longitude: -98.245873, zoom: 10.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        mapView.delegate = self
-        
-        self.view = mapView
-        
-        
-        
-
-        
-        
-        
-       // for restaurante in restaurantes
-        //{
-        
-        
-        if restaurantes.count > 0{
-            print("pintando Mapas")
-            for restaurant in restaurantes{
+    
+    func createMarkersEventos(){
+        if arrayEvento.count > 0{
+            mapView.clear()
+            print("pintando Eventos")
+            for  (index, evento) in arrayEvento.enumerated(){
                 let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2D(latitude: restaurant.latitud, longitude: restaurant.longitud)
-                marker.title = restaurant.nombre
-                marker.snippet = restaurant.descripcion
-                print(restaurant.photo ?? "")
-                //let data = restaurant.image
-                //if data != nil
-                //{
-                 //marker.icon = UIImage(data: data! as Data)
-                //}
+                marker.position = CLLocationCoordinate2D(latitude: arrayLatitud[index], longitude: arrayLongitud[index])
+                
+                marker.userData = ["index": index]
+                
+                marker.title = evento
+                
+                let descripcion =  "Fecha: " + arrayFecha[index] + "\n" + "Lugar: " + arrayUbicacion[index]
+                
+                marker.snippet = descripcion
                 marker.map = mapView
             }
         }
         else{
             print("No hay datos para pintar")
         }
-       // }
-    }*/
+
+    }
+    
+    
+    @IBAction func changeMarkers(_ sender: Any) {
+        
+        switch (sender as AnyObject).selectedSegmentIndex {
+        case 0:
+            segment = 0
+            createMarkersPlaces()
+            print("cerca de tiº")
+        case 1:
+            createMarkersEventos()
+            segment = 1
+            print("eventos")
+        default:
+            break
+        }
+        
+        
+    }
+    
     
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
@@ -156,7 +148,13 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
         infoWindow.frame = newFrame
         infoWindow.title.text = marker.title
         infoWindow.descripcion.text = marker.snippet
-        infoWindow.Imagen.image = UIImage(data: restaurantes[indice].image! as Data)
+        
+        
+        if segment == 0{
+          infoWindow.Imagen.image = UIImage(data: restaurantes[indice].image! as Data)
+        }else{
+          infoWindow.Imagen.image = arrayImage[indice]
+        }
         
         return infoWindow
     }
@@ -167,8 +165,6 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
     }
     
 
-    
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -190,29 +186,7 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
             }else{
                vc.imageFromCellToDetall = image
             }
-
-            
-            /*let nav = segue.destination as? UINavigationController
-            let vc = nav?.topViewController as? DetalladaAcercaViewController
-            
-            if image == nil {
-                
-                vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
-            } else {
-                
-                vc?.imageFromCellToDetall = image
-            }*/
-            
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
