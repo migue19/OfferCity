@@ -44,6 +44,22 @@ class PromocionesViewController: UIViewController {
     }
 }
 
+// MARK: - Life Cycle
+
+extension PromocionesViewController {
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // Setup Navigation Bar
+        setupNavigationBar()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.default // Hora y Pila
+    }
+}
+
 // MARK: - Data Source
 
 extension PromocionesViewController: UICollectionViewDataSource {
@@ -114,5 +130,16 @@ extension PromocionesViewController: UICollectionViewDelegateFlowLayout {
                                  insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+}
+
+// MARK: - Navigation Bar
+
+extension PromocionesViewController {
+
+
+    func setupNavigationBar() {
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
 }
