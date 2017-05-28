@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2i4-W8-Rpq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2i4-W8-Rpq">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1375,6 +1375,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="103.5" height="39"/>
                                                                     <connections>
                                                                         <action selector="promosAction:" destination="XJB-kO-4oE" eventType="touchUpInside" id="hgm-0J-LpV"/>
+                                                                        <segue destination="IiQ-1g-Nr1" kind="show" id="7MN-NC-3cz"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -3880,7 +3881,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7b-oA-vOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6975.9375" y="1837.5"/>
+            <point key="canvasLocation" x="10420" y="1839"/>
         </scene>
         <!--Promociones View Controller-->
         <scene sceneID="Cl3-oI-95r">
@@ -3891,21 +3892,21 @@
                         <viewControllerLayoutGuide type="bottom" id="naI-o0-GmD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="q8T-Eo-XNF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T6-Tp-tZ5">
-                                <rect key="frame" x="0.0" y="195" width="320" height="178"/>
+                                <rect key="frame" x="0.0" y="244.5" width="375" height="178"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nodisponible" translatesAutoresizingMaskIntoConstraints="NO" id="27a-T6-pz8">
-                                        <rect key="frame" x="115.5" y="0.0" width="89" height="89"/>
+                                        <rect key="frame" x="143" y="0.0" width="89" height="89"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="89" id="EVf-1Z-S3W"/>
                                             <constraint firstAttribute="height" constant="89" id="Yf5-rv-s9x"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ningún resultado disponible por el momento" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckz-3L-PHP">
-                                        <rect key="frame" x="0.0" y="89" width="320" height="89"/>
+                                        <rect key="frame" x="0.0" y="89" width="375" height="89"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="89" id="pRd-C4-Vxz"/>
                                         </constraints>
@@ -3925,14 +3926,14 @@
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eVz-3W-T9C">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="MmD-EZ-8rA"/>
                                     <constraint firstAttribute="height" constant="20" id="cil-cP-BOW"/>
                                 </constraints>
                             </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PzJ-UA-SI2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.47843137250000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1h8-Ns-wUd">
                                     <size key="itemSize" width="50" height="50"/>
@@ -3942,7 +3943,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="promosCell" id="rDQ-Gi-24Z" customClass="PromosCollectionViewCell" customModule="OfferCity" customModuleProvider="target">
-                                        <rect key="frame" x="43.5" y="0.0" width="233" height="233"/>
+                                        <rect key="frame" x="71" y="0.0" width="233" height="233"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="233" height="233"/>
@@ -4044,13 +4045,15 @@
                             <constraint firstItem="PzJ-UA-SI2" firstAttribute="trailing" secondItem="5T6-Tp-tZ5" secondAttribute="trailing" id="s4r-my-bu5"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <segue destination="ylH-sm-KA9" kind="show" identifier="PromocionesDetalladaPromos" id="wMy-gX-7cf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddd-7m-4QX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4969" y="1839"/>
+            <point key="canvasLocation" x="8335" y="1839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wwy-Vb-stu">
@@ -4122,7 +4125,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ylH-sm-KA9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y3I-aX-Sp4">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="y3I-aX-Sp4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4133,7 +4138,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p52-Bg-Ciz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5926" y="1838"/>
+            <point key="canvasLocation" x="9421" y="1840"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZMR-jt-uNN">
