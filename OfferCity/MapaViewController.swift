@@ -56,12 +56,27 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
         
         if restaurantes.count > 0{
             print("pintando Mapas")
-            for restaurant in restaurantes{
+            for  (index, restaurant) in restaurantes.enumerated(){
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: restaurant.latitud, longitude: restaurant.longitud)
                 marker.title = restaurant.nombre
-                marker.snippet = restaurant.descripcion
-                print(restaurant.photo ?? "")
+                
+                var descripcion = restaurant.descripcion!
+                
+            
+                marker.userData = ["index": index]
+                
+                
+                if descripcion.characters.count > 150
+                {
+                   let index = descripcion.index(descripcion.startIndex, offsetBy: 150)
+                   descripcion = descripcion.substring(to: index)+"..."
+                }
+                
+                
+                
+                marker.snippet = descripcion
+                //print(restaurant.photo ?? "")
                 //let data = restaurant.image
                 //if data != nil
                 //{
@@ -133,19 +148,63 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
         newFrame.size.width = width
         newFrame.size.height = height
         
+        let dataMarker = marker.userData as! [String: Any]
+        
+        let indice = dataMarker["index"] as! Int
         
         
-       
         infoWindow.frame = newFrame
         infoWindow.title.text = marker.title
         infoWindow.descripcion.text = marker.snippet
-        infoWindow.Imagen.image = UIImage(data: restaurantes[0].image! as Data)
+        infoWindow.Imagen.image = UIImage(data: restaurantes[indice].image! as Data)
+        
         return infoWindow
     }
     
     
-   
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        performSegue(withIdentifier: "acercadetiDetallada", sender: marker)
+    }
+    
 
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "acercadetiDetallada" {
+            
+            let marker = sender as! GMSMarker
+            let dataMarker = marker.userData as! [String: Any]
+            let indice = dataMarker["index"] as! Int
+            
+            let image = UIImage(data: restaurantes[indice].image! as Data)
+            
+            
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.topViewController as! DetalladaAcercaViewController
+
+            
+            if image == nil {
+                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            }else{
+               vc.imageFromCellToDetall = image
+            }
+
+            
+            /*let nav = segue.destination as? UINavigationController
+            let vc = nav?.topViewController as? DetalladaAcercaViewController
+            
+            if image == nil {
+                
+                vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            } else {
+                
+                vc?.imageFromCellToDetall = image
+            }*/
+            
+        }
+    }
     /*
     // MARK: - Navigation
 
