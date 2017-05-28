@@ -275,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				3CB7826F1EC24B2C0023991E /* CoreData */,
-				3CB7826E1EC24A9E0023991E /* InfoPlist */,
 				7D9219471EA42922006C6976 /* Connection */,
 			);
 			name = Model;
@@ -284,6 +283,7 @@
 		3C3E4D611EB8228A0052D4B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CB7826E1EC24A9E0023991E /* InfoPlist */,
 				7D14499B1EA2FC0F0068C597 /* Main.storyboard */,
 				7D1449A11EA2FC0F0068C597 /* Assets.xcassets */,
 				7D1449A31EA2FC0F0068C597 /* LaunchScreen.storyboard */,

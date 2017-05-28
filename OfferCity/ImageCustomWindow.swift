@@ -14,7 +14,7 @@ class ImageCustomWindow: UIImageView {
         self.layer.cornerRadius = self.layer.frame.width/8
         self.clipsToBounds = true
         self.layer.borderColor = UIColor.init(red: 99/255.0, green: 126/255.0, blue: 165/255.0, alpha: 1).cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = 2.0
     }
 
     /*

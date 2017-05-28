@@ -11,14 +11,38 @@ import GoogleMaps
 import Alamofire
 
 class MapaViewController: UIViewController, GMSMapViewDelegate {
+    @IBOutlet weak var mapView: GMSMapView!
+    
+    
     var restaurantes: [Restaurantes] = []
     let restaurantesDAO = RestaurantesDAO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupMap()
+        createMarkers()
+        
         // Do any additional setup after loading the view.
+        /*let button = UIButton()
+        button.frame = (frame: CGRect(x: self.view.frame.size.width - 60, y: 20, width: 50, height: 50)) as! CGRect
+        button.backgroundColor = UIColor.red
+        button.setTitle("Name your Button ", for: .normal)
+        //button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.view.addSubview(button)*/
+        
+        
+        
+        
     }
     
+    
+    private func setupMap(){
+        let camera = GMSCameraPosition.camera(withLatitude: 19.071514, longitude: -98.245873, zoom: 10.0)
+        
+        mapView.camera = camera
+        mapView.isMyLocationEnabled = true
+        mapView.delegate = self
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,7 +50,49 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
     }
     
     
-    override func loadView() {
+    
+    func createMarkers(){
+        restaurantes = restaurantesDAO.getRestaurantes()
+        
+        if restaurantes.count > 0{
+            print("pintando Mapas")
+            for  (index, restaurant) in restaurantes.enumerated(){
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: restaurant.latitud, longitude: restaurant.longitud)
+                marker.title = restaurant.nombre
+                
+                var descripcion = restaurant.descripcion!
+                
+            
+                marker.userData = ["index": index]
+                
+                
+                if descripcion.characters.count > 150
+                {
+                   let index = descripcion.index(descripcion.startIndex, offsetBy: 150)
+                   descripcion = descripcion.substring(to: index)+"..."
+                }
+                
+                
+                
+                marker.snippet = descripcion
+                //print(restaurant.photo ?? "")
+                //let data = restaurant.image
+                //if data != nil
+                //{
+                //marker.icon = UIImage(data: data! as Data)
+                //}
+                marker.map = mapView
+            }
+        }
+        else{
+            print("No hay datos para pintar")
+        }
+    
+    
+    }
+    
+    /*override func loadView() {
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
         
@@ -36,7 +102,11 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
         
-        view = mapView
+        self.view = mapView
+        
+        
+        
+
         
         
         
@@ -64,7 +134,7 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
             print("No hay datos para pintar")
         }
        // }
-    }
+    }*/
     
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
@@ -72,30 +142,69 @@ class MapaViewController: UIViewController, GMSMapViewDelegate {
         let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
        
         var newFrame = infoWindow.frame
-        newFrame.size.width = self.view.bounds.width - 20
+        let width = self.view.bounds.width * 0.95
+        let height = width * 0.4
         
-       
+        newFrame.size.width = width
+        newFrame.size.height = height
+        
+        let dataMarker = marker.userData as! [String: Any]
+        
+        let indice = dataMarker["index"] as! Int
+        
+        
         infoWindow.frame = newFrame
         infoWindow.title.text = marker.title
         infoWindow.descripcion.text = marker.snippet
-        infoWindow.Imagen.image = UIImage(data: restaurantes[0].image! as Data)
+        infoWindow.Imagen.image = UIImage(data: restaurantes[indice].image! as Data)
+        
         return infoWindow
     }
     
     
-    /*func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
-        let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
-        infoWindow.title.text = marker.title
-        return infoWindow
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        performSegue(withIdentifier: "acercadetiDetallada", sender: marker)
     }
-    
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        let infoWindow = Bundle.main.loadNibNamed("CustomInfoWindow", owner: self.view, options: nil)!.first! as! CustomInfoWindow
-        infoWindow.title.text = marker.title
-        return infoWindow
-    }*/
     
 
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "acercadetiDetallada" {
+            
+            let marker = sender as! GMSMarker
+            let dataMarker = marker.userData as! [String: Any]
+            let indice = dataMarker["index"] as! Int
+            
+            let image = UIImage(data: restaurantes[indice].image! as Data)
+            
+            
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.topViewController as! DetalladaAcercaViewController
+
+            
+            if image == nil {
+                vc.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            }else{
+               vc.imageFromCellToDetall = image
+            }
+
+            
+            /*let nav = segue.destination as? UINavigationController
+            let vc = nav?.topViewController as? DetalladaAcercaViewController
+            
+            if image == nil {
+                
+                vc?.imageFromCellToDetall = #imageLiteral(resourceName: "placeholder")
+            } else {
+                
+                vc?.imageFromCellToDetall = image
+            }*/
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

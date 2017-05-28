@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1680560025571185</string>
+				<string>fb137002320001024</string>
 			</array>
 		</dict>
 		<dict>
@@ -36,15 +36,16 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>1680560025571185</string>
+	<string>137002320001024</string>
 	<key>FacebookDisplayName</key>
-	<string>OfferCity</string>
+	<string>Offer City</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>instagram</string>
+		<string>fb</string>
 		<string>fbapi</string>
-		<string>fb-messenger-api</string>
+		<string>twitter</string>
 		<string>fbauth2</string>
-		<string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -67,22 +68,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <!--Include to allow all connections (DANGER)-->
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
-    
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Esta app usa tu ubicación para mostrarte restaurantes cercanos</string>
-
-<key>LSApplicationQueriesSchemes</key>
-<array>
-    <string>instagram</string>
-    <string>fb</string>
-    <string>twitter</string>
-</array>
-
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Esta app usa tu ubicación para mostrarte restaurantes cercanos</string>
 </dict>
 </plist>

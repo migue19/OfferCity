@@ -707,8 +707,14 @@ extension DetalladaAcercaViewController {
         
         // Array image
         
-        self.localSource = [ImageSource(image: self.imageFromCellToDetall), ImageSource(image: #imageLiteral(resourceName: "borrar1"))]
         
+        if self.imageFromCellToDetall != nil
+        {
+        self.localSource = [ImageSource(image: self.imageFromCellToDetall), ImageSource(image: #imageLiteral(resourceName: "borrar1"))]
+        }
+        else{
+        self.localSource = [ImageSource(image: #imageLiteral(resourceName: "borrar1")), ImageSource(image: #imageLiteral(resourceName: "borrar1"))]
+        }
         // Load Images in slideshow
         
         self.slideshow.setImageInputs(self.localSource)
