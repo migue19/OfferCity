@@ -94,6 +94,10 @@
 		7DAD18B81ED2B4AA009B37E5 /* ImageCustomWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18B71ED2B4AA009B37E5 /* ImageCustomWindow.swift */; };
 		7DAD18BB1ED2C926009B37E5 /* CityPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18BA1ED2C926009B37E5 /* CityPointsViewController.swift */; };
 		7DAD18BD1ED31F88009B37E5 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAD18BC1ED31F88009B37E5 /* AjustesViewController.swift */; };
+		7DEB68A01EDB692400D77A29 /* CiudadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB689F1EDB692400D77A29 /* CiudadViewController.swift */; };
+		7DEB68A21EDB92DD00D77A29 /* PromocionesUsadasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB68A11EDB92DD00D77A29 /* PromocionesUsadasViewController.swift */; };
+		7DEB68A51EDB979E00D77A29 /* PromocionesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB68A31EDB979E00D77A29 /* PromocionesTableViewCell.swift */; };
+		7DEB68A61EDB979E00D77A29 /* PromocionesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DEB68A41EDB979E00D77A29 /* PromocionesTableViewCell.xib */; };
 		EDC5F3814B2FBD50A1A76DB2 /* Pods_OfferCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 904801B63E040080B7AADE64 /* Pods_OfferCity.framework */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +194,10 @@
 		7DAD18B71ED2B4AA009B37E5 /* ImageCustomWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCustomWindow.swift; sourceTree = "<group>"; };
 		7DAD18BA1ED2C926009B37E5 /* CityPointsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPointsViewController.swift; sourceTree = "<group>"; };
 		7DAD18BC1ED31F88009B37E5 /* AjustesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
+		7DEB689F1EDB692400D77A29 /* CiudadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CiudadViewController.swift; sourceTree = "<group>"; };
+		7DEB68A11EDB92DD00D77A29 /* PromocionesUsadasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesUsadasViewController.swift; sourceTree = "<group>"; };
+		7DEB68A31EDB979E00D77A29 /* PromocionesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocionesTableViewCell.swift; sourceTree = "<group>"; };
+		7DEB68A41EDB979E00D77A29 /* PromocionesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromocionesTableViewCell.xib; sourceTree = "<group>"; };
 		904801B63E040080B7AADE64 /* Pods_OfferCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OfferCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C757453FFCFAC126F68E64A1 /* Pods-OfferCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -504,7 +512,7 @@
 		3CB782731EC260110023991E /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				7DAD18B91ED2C901009B37E5 /* TableSegue */,
+				7DAD18B91ED2C901009B37E5 /* Settings */,
 				7D0330A31ECC7B4900D46CCA /* FXBlurView.h */,
 				7D0330A41ECC7B4900D46CCA /* FXBlurView.m */,
 				7D0330A81ECC7B7C00D46CCA /* CustomHeaderSectionTableViewCell.swift */,
@@ -681,13 +689,25 @@
 			name = PopUpCheckBox;
 			sourceTree = "<group>";
 		};
-		7DAD18B91ED2C901009B37E5 /* TableSegue */ = {
+		7DAD18B91ED2C901009B37E5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				7DAD18BA1ED2C926009B37E5 /* CityPointsViewController.swift */,
 				7DAD18BC1ED31F88009B37E5 /* AjustesViewController.swift */,
+				7DEB689F1EDB692400D77A29 /* CiudadViewController.swift */,
+				7DEB68A11EDB92DD00D77A29 /* PromocionesUsadasViewController.swift */,
+				7DEB68A71EDBAEB400D77A29 /* cell */,
 			);
-			name = TableSegue;
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		7DEB68A71EDBAEB400D77A29 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7DEB68A31EDB979E00D77A29 /* PromocionesTableViewCell.swift */,
+				7DEB68A41EDB979E00D77A29 /* PromocionesTableViewCell.xib */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,6 +778,7 @@
 				7D1449A51EA2FC0F0068C597 /* LaunchScreen.storyboard in Resources */,
 				7D1449A21EA2FC0F0068C597 /* Assets.xcassets in Resources */,
 				7D9219371EA4275B006C6976 /* GoogleService-Info.plist in Resources */,
+				7DEB68A61EDB979E00D77A29 /* PromocionesTableViewCell.xib in Resources */,
 				7D14499D1EA2FC0F0068C597 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,6 +872,7 @@
 				3C1001DF1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift in Sources */,
 				3C32B8471EC5296F00AE78E0 /* DownloadImage.swift in Sources */,
 				3CEDE0911ECFF8FE003C3716 /* VDEHoraTableViewCell.swift in Sources */,
+				7DEB68A21EDB92DD00D77A29 /* PromocionesUsadasViewController.swift in Sources */,
 				3CF7C7E91ED8E26200695CE7 /* PrecioSubMenuViewController.swift in Sources */,
 				3CEDE09C1ECFF959003C3716 /* VDERedes4TableViewCell.swift in Sources */,
 				7D1449981EA2FC0F0068C597 /* AppDelegate.swift in Sources */,
@@ -872,6 +894,7 @@
 				7D0330AB1ECC7B9800D46CCA /* CustomImageTableViewCell.swift in Sources */,
 				3C9434071ED60C1D0009FD24 /* FCZonaCollectionViewCell.swift in Sources */,
 				7DAD18BB1ED2C926009B37E5 /* CityPointsViewController.swift in Sources */,
+				7DEB68A01EDB692400D77A29 /* CiudadViewController.swift in Sources */,
 				3C2A4AB41ECCE8AC007D279D /* VDDescripcionTableViewCell.swift in Sources */,
 				3C2A4AB51ECCE8AC007D279D /* VDTelefonoTableViewCell.swift in Sources */,
 				7DA948821ECA67C000287356 /* SettingsDAO.swift in Sources */,
@@ -886,6 +909,7 @@
 				3C2A4AB91ECCE8AC007D279D /* VDMapaTableViewCell.swift in Sources */,
 				3CCA5B7F1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift in Sources */,
 				3CEDE08A1ECFD8EC003C3716 /* DetalladaPromosViewController.swift in Sources */,
+				7DEB68A51EDB979E00D77A29 /* PromocionesTableViewCell.swift in Sources */,
 				3C9433F41ED4FAB10009FD24 /* FiltrosCercaViewController.swift in Sources */,
 				3CEDE08D1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift in Sources */,
 				3C9434121ED67D010009FD24 /* AgregarResenaViewController.swift in Sources */,

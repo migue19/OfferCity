@@ -238,16 +238,19 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         switch indexPath.section {
         case 0:
             switch indexPath.row {
             case 0:
                 print("Ir a Ciudad")
+                self.performSegue(withIdentifier: "showCiudad", sender: self)
             case 1:
                 print("Ir a CityPoints")
                 self.performSegue(withIdentifier: "CityPoints", sender: self)
             case 2:
                 print("Ir a Promociones")
+                self.performSegue(withIdentifier: "showCustom", sender: self)
             case 3:
                 print("Ir a Reservaciones")
             case 4:
@@ -261,9 +264,23 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
         default:
             break
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
+    /*func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
+        let auxView = UIView()
+        auxView.backgroundColor = UIColor(red: 100/255.0,
+                                          green: 127/255.0,
+                                          blue: 164/255.0,
+                                          alpha: 0.3)
+        
+        cell.selectedBackgroundView = auxView
+        
+    }*/
     func CerrarSession(){
         
         let alertController = UIAlertController(title: "Cerrar sesión", message: "Estas Seguro de Cerrar Sesion", preferredStyle: .alert)
@@ -325,4 +342,6 @@ class PerfilViewController: UIViewController,UIScrollViewDelegate,UITableViewDel
     
     
 }
+
+
 
