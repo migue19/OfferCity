@@ -797,8 +797,16 @@ extension DetalladaAcercaViewController {
             NSForegroundColorAttributeName : UIColor.white],
                                           for: .normal)
 
+        
+        // Espacio Boton Derecho
+        let buttonItemEngano = UIBarButtonItem()
+        
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 3 // adjust as needed
+        navigationItem.rightBarButtonItems = [buttonItemEngano, space, buttonItem]
+ 
     
-        navigationItem.rightBarButtonItem = buttonItem
+        //navigationItem.rightBarButtonItem = buttonItem
     }
     
     func rightBarButtonWhite() {
@@ -814,7 +822,14 @@ extension DetalladaAcercaViewController {
             NSForegroundColorAttributeName : UIColor.white],
                                           for: .normal)
         
-        navigationItem.rightBarButtonItem = buttonItem
+        // Espacio Boton Derecho
+        let buttonItemEngano = UIBarButtonItem()
+        
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 3 // adjust as needed
+        navigationItem.rightBarButtonItems = [buttonItemEngano, space, buttonItem]
+        
+        //navigationItem.rightBarButtonItem = buttonItem
     }
     
     func rightBarButtonAzul() {
@@ -830,7 +845,15 @@ extension DetalladaAcercaViewController {
             NSForegroundColorAttributeName : UIColor(patternImage: #imageLiteral(resourceName: "azulOffer"))],
                                           for: .normal)
         
-        navigationItem.rightBarButtonItem = buttonItem
+        
+        // Espacio Boton Derecho
+        let buttonItemEngano = UIBarButtonItem()
+        
+        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        space.width = 3 // adjust as needed
+        navigationItem.rightBarButtonItems = [buttonItemEngano, space, buttonItem]
+        
+        //navigationItem.rightBarButtonItem = buttonItem
     }
     
     func compartir() {
@@ -938,6 +961,7 @@ extension DetalladaAcercaViewController {
         
     }
 }
+
 
 
 

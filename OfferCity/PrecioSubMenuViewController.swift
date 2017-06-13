@@ -16,7 +16,7 @@ class PrecioSubMenuViewController: UIViewController {
     
     // MARK: - Propertys
     
-    let arrayTamano = ["Chicoo", "Mediano", "Grande"]
+    let arrayTamano = ["Chico", "Mediano", "Grande"]
     let arrayPrecio = ["$55.00", "$65.00", "$75.00"]
     
     var tituloTiempo = String()

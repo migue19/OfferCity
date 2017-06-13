@@ -632,11 +632,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OfferCity/DetalladaAcercaViewController.swift"
-            timestampString = "517513891.360044"
+            timestampString = "519074282.315031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "918"
-            endingLineNumber = "918"
+            startingLineNumber = "941"
+            endingLineNumber = "941"
             landmarkName = "DetalladaAcercaViewController"
             landmarkType = "4">
          </BreakpointContent>

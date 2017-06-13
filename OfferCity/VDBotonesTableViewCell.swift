@@ -67,7 +67,7 @@ extension VDBotonesTableViewCell {
         
         labelResenas.text = "Reseñas"
         labelMenu.text = "Menú"
-        labelPromos.text = "Promociones"
+        labelPromos.text = "Promos"
         
         labelResenas.textColor = .white
         labelMenu.textColor = .white
