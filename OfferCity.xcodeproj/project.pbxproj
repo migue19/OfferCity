@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C09C4751EF09C2700005ED5 /* ReservasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09C4741EF09C2700005ED5 /* ReservasViewController.swift */; };
+		3C09C47A1EF0B00500005ED5 /* ResHoraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09C4791EF0B00500005ED5 /* ResHoraTableViewCell.swift */; };
+		3C09C47C1EF0B01100005ED5 /* ResPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09C47B1EF0B01100005ED5 /* ResPeopleTableViewCell.swift */; };
+		3C09C47E1EF0B02000005ED5 /* ResComentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09C47D1EF0B02000005ED5 /* ResComentsTableViewCell.swift */; };
+		3C09C4801EF0B03700005ED5 /* ResBirthdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09C47F1EF0B03700005ED5 /* ResBirthdayTableViewCell.swift */; };
+		3C09C4821EF0CCAE00005ED5 /* ResFechaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C09C4811EF0CCAE00005ED5 /* ResFechaTableViewCell.swift */; };
 		3C1001DB1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1001DA1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift */; };
 		3C1001DD1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1001DC1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift */; };
 		3C1001DF1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1001DE1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift */; };
@@ -103,6 +109,12 @@
 
 /* Begin PBXFileReference section */
 		10C5E5E56F89F66B89BB007A /* Pods-OfferCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OfferCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OfferCity/Pods-OfferCity.release.xcconfig"; sourceTree = "<group>"; };
+		3C09C4741EF09C2700005ED5 /* ReservasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservasViewController.swift; sourceTree = "<group>"; };
+		3C09C4791EF0B00500005ED5 /* ResHoraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResHoraTableViewCell.swift; sourceTree = "<group>"; };
+		3C09C47B1EF0B01100005ED5 /* ResPeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResPeopleTableViewCell.swift; sourceTree = "<group>"; };
+		3C09C47D1EF0B02000005ED5 /* ResComentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResComentsTableViewCell.swift; sourceTree = "<group>"; };
+		3C09C47F1EF0B03700005ED5 /* ResBirthdayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResBirthdayTableViewCell.swift; sourceTree = "<group>"; };
+		3C09C4811EF0CCAE00005ED5 /* ResFechaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResFechaTableViewCell.swift; sourceTree = "<group>"; };
 		3C1001DA1ED4B0DE00F2D9CB /* VDPDescripcionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDPDescripcionTableViewCell.swift; sourceTree = "<group>"; };
 		3C1001DC1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDPEstablecimientoTableViewCell.swift; sourceTree = "<group>"; };
 		3C1001DE1ED4B11500F2D9CB /* VDPMapasTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VDPMapasTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +235,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3C09C4731EF09C1100005ED5 /* Reservas */ = {
+			isa = PBXGroup;
+			children = (
+				3C09C4741EF09C2700005ED5 /* ReservasViewController.swift */,
+				3C09C4781EF0AFEB00005ED5 /* Cell */,
+			);
+			name = Reservas;
+			sourceTree = "<group>";
+		};
+		3C09C4781EF0AFEB00005ED5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3C09C4811EF0CCAE00005ED5 /* ResFechaTableViewCell.swift */,
+				3C09C4791EF0B00500005ED5 /* ResHoraTableViewCell.swift */,
+				3C09C47B1EF0B01100005ED5 /* ResPeopleTableViewCell.swift */,
+				3C09C47D1EF0B02000005ED5 /* ResComentsTableViewCell.swift */,
+				3C09C47F1EF0B03700005ED5 /* ResBirthdayTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		3C1001D91ED4B08F00F2D9CB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +272,7 @@
 				3C2A4AA21ECCE232007D279D /* DetalladaAcercaViewController.swift */,
 				7DAD18AC1ED1EA05009B37E5 /* PopUpCheckBox */,
 				3C2A4AA51ECCE895007D279D /* Cells */,
+				3C09C4731EF09C1100005ED5 /* Reservas */,
 			);
 			name = DetalladaCerca;
 			sourceTree = "<group>";
@@ -844,6 +878,7 @@
 				3C2A4AB61ECCE8AC007D279D /* VDHoraTableViewCell.swift in Sources */,
 				3C5F572E1ED8C36800029282 /* SubMenuViewController.swift in Sources */,
 				3CEDE09A1ECFF94C003C3716 /* VDERedes3TableViewCell.swift in Sources */,
+				3C09C4821EF0CCAE00005ED5 /* ResFechaTableViewCell.swift in Sources */,
 				3CEDE0931ECFF90B003C3716 /* VDEMapaTableViewCell.swift in Sources */,
 				3C2A4AB71ECCE8AC007D279D /* VDBotonesTableViewCell.swift in Sources */,
 				3CEDE0981ECFF93E003C3716 /* VDERedes2TableViewCell.swift in Sources */,
@@ -886,7 +921,9 @@
 				3C2A4ABA1ECCE8AC007D279D /* VDRedesTableViewCell.swift in Sources */,
 				3CEDE0871ECFD8CE003C3716 /* DetalladaEventosViewController.swift in Sources */,
 				3C94340E1ED664FE0009FD24 /* ResenasViewController.swift in Sources */,
+				3C09C47E1EF0B02000005ED5 /* ResComentsTableViewCell.swift in Sources */,
 				3C3E4D661EB824B50052D4B6 /* InicioViewController.swift in Sources */,
+				3C09C4751EF09C2700005ED5 /* ReservasViewController.swift in Sources */,
 				7D9219431EA428BC006C6976 /* RestConnection.swift in Sources */,
 				7D9219401EA428BC006C6976 /* PerfilViewController.swift in Sources */,
 				3C1001DD1ED4B10800F2D9CB /* VDPEstablecimientoTableViewCell.swift in Sources */,
@@ -910,8 +947,11 @@
 				3CCA5B7F1ECEADE400A6AE42 /* VDRedes3TableViewCell.swift in Sources */,
 				3CEDE08A1ECFD8EC003C3716 /* DetalladaPromosViewController.swift in Sources */,
 				7DEB68A51EDB979E00D77A29 /* PromocionesTableViewCell.swift in Sources */,
+				3C09C4801EF0B03700005ED5 /* ResBirthdayTableViewCell.swift in Sources */,
 				3C9433F41ED4FAB10009FD24 /* FiltrosCercaViewController.swift in Sources */,
 				3CEDE08D1ECFF8D5003C3716 /* VDEDescripcionTableViewCell.swift in Sources */,
+				3C09C47A1EF0B00500005ED5 /* ResHoraTableViewCell.swift in Sources */,
+				3C09C47C1EF0B01100005ED5 /* ResPeopleTableViewCell.swift in Sources */,
 				3C9434121ED67D010009FD24 /* AgregarResenaViewController.swift in Sources */,
 				3C32B81D1EC4DA8C00AE78E0 /* Encoding.swift in Sources */,
 				7D9219411EA428BC006C6976 /* Places.swift in Sources */,

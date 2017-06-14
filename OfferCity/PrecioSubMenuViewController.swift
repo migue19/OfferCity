@@ -85,6 +85,7 @@ extension PrecioSubMenuViewController: UITableViewDelegate {
         // Deselect Cell
         
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView,
