@@ -275,5 +275,18 @@ extension ReservasViewController {
         
         self.buttonConfirmar.layer.cornerRadius = 21
     }
+    
+//    func setupFont() {
+//        
+//        // iPhone SE or iPhone 7
+//        
+//        if UIScreen.main.bounds.width > 320 {
+//            
+//            labelReservar.font = UIFont.boldSystemFont(ofSize: 14.0)
+//        } else {
+//            
+//            labelReservar.font = UIFont.boldSystemFont(ofSize: 10.0)
+//        }
+//    }
 }
 
